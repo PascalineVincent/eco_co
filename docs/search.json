@@ -334,5 +334,124 @@
     "title": "Module 5 — Économie internationale",
     "section": "✅ QCM de consolidation",
     "text": "✅ QCM de consolidation\n\nQuestion 1 — Avantage comparatif\n\n  Le principe d'avantage comparatif (Ricardo) signifie qu'un pays a intérêt à se spécialiser :\n   Dans la production où son désavantage relatif est le plus faible\n   Uniquement dans les secteurs où il est le plus productif au monde\n   Dans les secteurs où sa main-d'œuvre est la moins chère\n   Dans les industries à forte valeur ajoutée uniquement\n  \n  Valider\n\n\n\nQuestion 2 — Taux de change\n\n  Une dépréciation de l'euro par rapport au dollar a pour effet de :\n   Renchérir les exportations européennes et alléger les importations\n   Réduire à la fois les exportations et les importations européennes\n   Rendre les exportations européennes moins chères et les importations plus chères\n   N'avoir aucun effet sur les échanges commerciaux\n  \n  Valider\n\n\n\nQuestion 3 — Politique commerciale\n\n  Un droit de douane est :\n   Une limite en volume imposée aux produits importés\n   Une taxe prélevée sur les produits importés à la frontière\n   Une aide publique accordée aux entreprises exportatrices\n   Un accord bilatéral de commerce préférentiel\n  \n  Valider\n\n\n\n  ← Module 4\n  \n     Mon bilan de progression →"
+  },
+  {
+    "objectID": "fil-rouge.html",
+    "href": "fil-rouge.html",
+    "title": "📰 Le fil rouge",
+    "section": "",
+    "text": "Le fil rouge est un scénario narratif qui traverse tous les modules. Plutôt que d’étudier l’économie de manière abstraite, vous suivez l’actualité économique française de la rentrée 2024 à juin 2025 : une période marquée par des défis importants.\n\n\n\n\n\n\nImportantContexte de la saison 2024–2025\n\n\n\nLa France entre dans cette période avec une dette publique à 110 % du PIB, un déficit budgétaire autour de 5,5 % (bien au-delà des 3 % de Maastricht), un taux de chômage à 7,3 % qui résiste à la baisse, et une croissance atone (~1 %). Dans le même temps, la transition écologique exerce une pression croissante sur les choix budgétaires.\nUn contexte parfait pour mobiliser tous les outils du cours."
+  },
+  {
+    "objectID": "fil-rouge.html#quest-ce-que-le-fil-rouge",
+    "href": "fil-rouge.html#quest-ce-que-le-fil-rouge",
+    "title": "📰 Le fil rouge",
+    "section": "",
+    "text": "Le fil rouge est un scénario narratif qui traverse tous les modules. Plutôt que d’étudier l’économie de manière abstraite, vous suivez l’actualité économique française de la rentrée 2024 à juin 2025 : une période marquée par des défis importants.\n\n\n\n\n\n\nImportantContexte de la saison 2024–2025\n\n\n\nLa France entre dans cette période avec une dette publique à 110 % du PIB, un déficit budgétaire autour de 5,5 % (bien au-delà des 3 % de Maastricht), un taux de chômage à 7,3 % qui résiste à la baisse, et une croissance atone (~1 %). Dans le même temps, la transition écologique exerce une pression croissante sur les choix budgétaires.\nUn contexte parfait pour mobiliser tous les outils du cours."
+  },
+  {
+    "objectID": "fil-rouge.html#épisode-1-les-choix-impossibles-du-budget-2025",
+    "href": "fil-rouge.html#épisode-1-les-choix-impossibles-du-budget-2025",
+    "title": "📰 Le fil rouge",
+    "section": "Épisode 1 — Les choix impossibles du budget 2025",
+    "text": "Épisode 1 — Les choix impossibles du budget 2025\nEn lien avec : Module 1 (arbitrages) + Module 3 (dette)\nLe gouvernement présente en octobre 2024 un projet de budget avec 60 milliards d’économies. Chaque ligne de coupe illustre un arbitrage réel : réduire les dépenses de santé, ou de défense ? Augmenter les impôts des plus riches, ou couper les aides aux entreprises ?\nQuestions à explorer :\n\nQuels sont les arguments positifs et normatifs dans le débat budgétaire ?\nComment illustrer le coût d’opportunité d’une réduction des dépenses d’éducation ?\nQuelle est la part des intérêts de la dette dans le budget ? (Cherchez sur data.gouv.fr)"
+  },
+  {
+    "objectID": "fil-rouge.html#épisode-2-la-croissance-française-en-panne",
+    "href": "fil-rouge.html#épisode-2-la-croissance-française-en-panne",
+    "title": "📰 Le fil rouge",
+    "section": "Épisode 2 — La croissance française en panne ?",
+    "text": "Épisode 2 — La croissance française en panne ?\nEn lien avec : Module 2 (croissance)\nLa France croît moins vite que ses voisins européens. Le FMI et l’OCDE publient leurs prévisions : 1,1 % pour 2025, loin des 2 % espérés. Mais que mesure vraiment ce chiffre ?\nRessources à consulter :\n\nINSEE — Comptes nationaux\nFrance Culture — L’économie en questions : épisode sur la croissance\nAlternatives Économiques — dossier “Au-delà du PIB”\n\nActivité : Téléchargez les données INSEE sur le PIB trimestriel et reproduisez le graphique en R."
+  },
+  {
+    "objectID": "fil-rouge.html#épisode-3-lemploi-résiste-mais-pour-combien-de-temps",
+    "href": "fil-rouge.html#épisode-3-lemploi-résiste-mais-pour-combien-de-temps",
+    "title": "📰 Le fil rouge",
+    "section": "Épisode 3 — L’emploi résiste, mais pour combien de temps ?",
+    "text": "Épisode 3 — L’emploi résiste, mais pour combien de temps ?\nEn lien avec : Module 4 (chômage)\nLe marché du travail français montre des signes contradictoires : le chômage reste stable à 7,3 %, mais le sous-emploi progresse et les “travailleurs pauvres” se multiplient. L’IA et l’automatisation commencent à peser sur certains secteurs.\nDonnées en temps réel :\n\n\nVoir le code R\nlibrary(ggplot2)\nlibrary(dplyr)\n\ndf_age &lt;- data.frame(\n  annee = rep(2018:2024, 3),\n  taux = c(\n    # Moins de 25 ans\n    20.2, 19.6, 20.1, 19.0, 17.6, 16.8, 16.0,\n    # 25-49 ans\n    8.5, 8.1, 8.2, 7.8, 7.3, 7.0, 6.9,\n    # 50 ans et plus\n    6.5, 6.2, 6.4, 6.1, 5.8, 5.6, 5.4\n  ),\n  tranche = rep(c(\"Moins de 25 ans\", \"25–49 ans\", \"50 ans et plus\"), each = 7)\n)\n\nggplot(df_age, aes(x = annee, y = taux, color = tranche, group = tranche)) +\n  geom_line(linewidth = 1.3) +\n  geom_point(size = 2.5) +\n  scale_color_manual(values = c(\"#1a5c96\", \"#2c7a4b\", \"#e8a020\")) +\n  scale_x_continuous(breaks = 2018:2024) +\n  theme_minimal(base_size = 12) +\n  labs(x = NULL, y = \"Taux de chômage (%)\", color = \"Tranche d'âge\",\n       title = \"Chômage par tranche d'âge — Les jeunes toujours les plus exposés\",\n       subtitle = \"Données illustratives — Source : DARES / INSEE\") +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\nFigure 1: Illustration — évolution du chômage par tranche d’âge (données illustratives)"
+  },
+  {
+    "objectID": "fil-rouge.html#épisode-4-la-france-dans-la-mondialisation",
+    "href": "fil-rouge.html#épisode-4-la-france-dans-la-mondialisation",
+    "title": "📰 Le fil rouge",
+    "section": "Épisode 4 — La France dans la mondialisation",
+    "text": "Épisode 4 — La France dans la mondialisation\nEn lien avec : Module 5 (économie internationale)\nLa montée des tensions commerciales (USA–Chine, relocalisations post-COVID) interroge le modèle d’ouverture commerciale de la France. Les droits de douane américains sur les produits européens sont revenus dans l’actualité en 2025.\nDébat :\n\n“Le protectionnisme est-il une réponse légitime à la mondialisation ?”\n\nMobilisez le principe d’avantage comparatif, l’analyse des effets sur les consommateurs, et les données sur la balance commerciale française."
+  },
+  {
+    "objectID": "fil-rouge.html#votre-journal-de-bord",
+    "href": "fil-rouge.html#votre-journal-de-bord",
+    "title": "📰 Le fil rouge",
+    "section": "Votre journal de bord",
+    "text": "Votre journal de bord\n\n📓 Activité transversale — Tenir un journal économique\nTout au long du semestre, tenez un journal de 5 entrées (une par module) :\n\nUn article de presse en lien avec le module (source : Les Échos, Alternatives Éco, Le Monde)\nUn fait économique tiré de l’article, formulé de manière positive\nUn jugement de valeur présent dans l’article (économie normative)\nUn concept du cours que l’article illustre\nVotre opinion argumentée en 3 lignes\n\nCe journal est un excellent outil de préparation à l’examen écrit."
+  },
+  {
+    "objectID": "modules/m2-croissance.html",
+    "href": "modules/m2-croissance.html",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "",
+    "text": "NoteObjectifs du module\n\n\n\n\nSavoir calculer et interpréter le taux de croissance du PIB\nIdentifier les facteurs de croissance (travail, capital, progrès technique)\nComprendre les limites du PIB comme indicateur de bien-être\nAnalyser les enjeux de la croissance durable"
+  },
+  {
+    "objectID": "modules/m2-croissance.html#quest-ce-que-la-croissance-économique",
+    "href": "modules/m2-croissance.html#quest-ce-que-la-croissance-économique",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "1. Qu’est-ce que la croissance économique ?",
+    "text": "1. Qu’est-ce que la croissance économique ?\nLa croissance économique désigne l’augmentation soutenue de la production d’une économie sur une période longue. Elle se mesure principalement par le taux de variation du PIB en volume.\n\\[\\text{Taux de croissance} = \\frac{\\text{PIB}_t - \\text{PIB}_{t-1}}{\\text{PIB}_{t-1}} \\times 100\\]\n\n\nVoir le code R\nlibrary(ggplot2)\n\npib_df &lt;- data.frame(\n  annee = 2010:2024,\n  taux = c(1.9, 2.1, 0.3, 0.6, 1.0, 1.1, 1.2, 2.3, 1.8, 1.5,\n           -7.9, 6.8, 2.6, 0.9, 1.1)\n)\n\nggplot(pib_df, aes(x = annee, y = taux,\n                   fill = ifelse(taux &gt;= 0, \"#93c5fd\", \"#fca5a5\"))) +\n  geom_col(alpha = 0.85, width = 0.75) +\n  geom_hline(yintercept = 0, color = \"#374151\", linewidth = 0.5) +\n  scale_fill_identity() +\n  scale_x_continuous(breaks = 2010:2024) +\n  theme_minimal(base_size = 11) +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +\n  labs(x = NULL, y = \"Taux de croissance (%)\",\n       title = \"Croissance du PIB en France — 2010 à 2024\",\n       subtitle = \"La chute de 2020 (COVID-19) et le rebond de 2021 dominent la période — Données illustratives\")\n\n\n\n\n\n\n\n\nFigure 1: Taux de croissance du PIB français (%) — Source : INSEE, comptes nationaux base 2020"
+  },
+  {
+    "objectID": "modules/m2-croissance.html#les-facteurs-de-croissance",
+    "href": "modules/m2-croissance.html#les-facteurs-de-croissance",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "2. Les facteurs de croissance",
+    "text": "2. Les facteurs de croissance\nLa fonction de production de Solow décompose la croissance en trois sources :\n\n\n\n\n\n\n\n\nFacteur\nDescription\nExemple\n\n\n\n\nTravail (L)\nQuantité et qualité de main-d’œuvre\nHausse du taux d’activité, formation\n\n\nCapital (K)\nStock d’équipements productifs\nInvestissement en machines, bâtiments\n\n\nProgrès technique (A)\nProductivité totale des facteurs\nInnovation, R&D, numérique"
+  },
+  {
+    "objectID": "modules/m2-croissance.html#les-limites-du-pib",
+    "href": "modules/m2-croissance.html#les-limites-du-pib",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "3. Les limites du PIB",
+    "text": "3. Les limites du PIB\n\nFil rouge — “Le PIB ne dit pas tout”\nEn 2024, la France a connu une croissance de ~1,1 % du PIB. Mais dans le même temps : les inégalités de revenus ont progressé, les émissions de CO₂ n’ont pas atteint les objectifs climatiques, et le bien-être subjectif des Français est resté stable.\n→ Faut-il compléter le PIB par d’autres indicateurs ?\n\n\n📊 Activité — Lire un graphe de l’INSEE\nRendez-vous sur insee.fr → Statistiques → Indicateurs de richesse.\n\nComparez l’évolution du PIB et de l’IDH (Indice de Développement Humain) sur 20 ans.\nCherchez le taux de pauvreté en France : suit-il le PIB ?\nConclusion : le PIB est-il un bon résumé du “progrès” d’une société ?"
+  },
+  {
+    "objectID": "modules/m2-croissance.html#qcm-de-consolidation",
+    "href": "modules/m2-croissance.html#qcm-de-consolidation",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "✅ QCM de consolidation",
+    "text": "✅ QCM de consolidation\n\nQuestion 1 — Le PIB\n\n  Parmi ces propositions, laquelle est une limite reconnue du PIB comme indicateur de bien-être ?\n   Le PIB ne mesure pas la production des entreprises étrangères\n   Le PIB ne prend pas en compte les inégalités de distribution des revenus\n   Le PIB surestime la production industrielle par rapport aux services\n   Le PIB est calculé chaque mois ce qui le rend peu fiable\n  \n  Valider\n\n\n\nQuestion 2 — Facteurs de croissance\n\n  Selon les théories de la croissance endogène, quel est le principal moteur de la croissance à long terme ?\n   L'augmentation de la population active\n   L'accumulation de capital physique (machines, équipements)\n   Le progrès technique et l'innovation\n   La consommation des ménages\n  \n  Valider\n\n\n\nQuestion 3 — Indicateurs alternatifs\n\n  L'IDH (Indice de Développement Humain) mesure :\n   L'espérance de vie, le niveau d'éducation et le revenu\n   La croissance économique, l'inflation et le chômage\n   Le PIB par habitant et le niveau des inégalités\n   Le bonheur déclaré et le niveau de vie matériel\n  \n  Valider\n\n\n\n  ← Module 1\n  \n     Module 3 — Dette publique →"
+  },
+  {
+    "objectID": "modules/m4-chomage.html",
+    "href": "modules/m4-chomage.html",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "",
+    "text": "NoteObjectifs du module\n\n\n\n\nMaîtriser les définitions et mesures du chômage (BIT, INSEE)\nComprendre les déterminants du marché du travail\nDistinguer politiques actives et passives de l’emploi\nAnalyser l’efficacité des politiques publiques en matière d’emploi"
+  },
+  {
+    "objectID": "modules/m4-chomage.html#mesurer-le-chômage",
+    "href": "modules/m4-chomage.html#mesurer-le-chômage",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "1. Mesurer le chômage",
+    "text": "1. Mesurer le chômage\n\nLa définition du BIT\nSelon le Bureau International du Travail, est chômeur toute personne qui :\n\nEst sans emploi sur la semaine de référence\nEst disponible pour travailler dans les deux semaines\nA effectué des démarches actives de recherche dans le mois précédent\n\n\n\nVoir le code R\nlibrary(ggplot2)\n\nchom_df &lt;- data.frame(\n  annee = 2010:2024,\n  taux = c(9.3, 9.6, 9.8, 10.4, 10.4, 10.4, 10.1, 9.4, 9.0,\n           8.4, 8.0, 7.9, 7.3, 7.3, 7.3)\n)\n\nggplot(chom_df, aes(x = annee, y = taux)) +\n  geom_area(fill = \"#bfdbfe\", alpha = 0.4) +\n  geom_line(color = \"#1a5c96\", linewidth = 1.5) +\n  geom_point(color = \"#1a5c96\", size = 2.5) +\n  geom_hline(yintercept = 7, linetype = \"dashed\", color = \"#e8a020\", linewidth = 0.8) +\n  annotate(\"text\", x = 2013, y = 6.7, label = \"Seuil 'plein emploi' conventionnel : ~7 %\",\n           color = \"#e8a020\", size = 3, fontface = \"italic\") +\n  scale_x_continuous(breaks = 2010:2024) +\n  scale_y_continuous(limits = c(6, 12)) +\n  theme_minimal(base_size = 11) +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +\n  labs(x = NULL, y = \"Taux de chômage (%)\",\n       title = \"Taux de chômage en France — 2010 à 2024\",\n       subtitle = \"Données illustratives — Tendance générale à la baisse depuis 2015\")\n\n\n\n\n\n\n\n\nFigure 1: Taux de chômage en France (%) — Source : INSEE, enquête Emploi"
+  },
+  {
+    "objectID": "modules/m4-chomage.html#les-types-de-chômage",
+    "href": "modules/m4-chomage.html#les-types-de-chômage",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "2. Les types de chômage",
+    "text": "2. Les types de chômage\n\n\n\n\n\n\n\n\nType\nDéfinition\nPolitique adaptée\n\n\n\n\nFrictionnel\nEntre deux emplois (transition normale)\nAméliorer l’information sur le marché\n\n\nStructurel\nInadéquation qualifications/postes disponibles\nFormation, reconversion\n\n\nConjoncturel\nLié au ralentissement économique\nPolitiques de relance\n\n\nTechnologique\nRemplacement par le capital/IA\nTransition professionnelle"
+  },
+  {
+    "objectID": "modules/m4-chomage.html#politiques-actives-vs-passives",
+    "href": "modules/m4-chomage.html#politiques-actives-vs-passives",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "3. Politiques actives vs passives",
+    "text": "3. Politiques actives vs passives\n\n🔎 Simulation — Vous êtes conseiller du ministre\nLa France a un taux de chômage de 7,3 %. Vous disposez de 5 milliards € de budget supplémentaire. Choisissez parmi :\n\nA : 500 000 formations professionnelles à 10 000 € chacune\nB : Réduction des charges patronales pour les bas salaires (3 Md€)\nC : Augmentation des allocations chômage (+20 % pendant 1 an)\nD : Création directe d’emplois publics aidés (50 000 postes)\n\nArgumentez votre choix en mobilisant les concepts du cours."
+  },
+  {
+    "objectID": "modules/m4-chomage.html#qcm-de-consolidation",
+    "href": "modules/m4-chomage.html#qcm-de-consolidation",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "✅ QCM de consolidation",
+    "text": "✅ QCM de consolidation\n\nQuestion 1 — Définition du chômage\n\n  Selon la définition du BIT, un chômeur est une personne qui :\n   N'a pas d'emploi et a renoncé à en chercher un\n   Est sans emploi, disponible et en recherche active d'emploi\n   Travaille moins de 35 heures par semaine\n   Perçoit des allocations chômage de Pôle Emploi\n  \n  Valider\n\n\n\nQuestion 2 — Politiques de l’emploi\n\n  Les politiques actives de l'emploi visent à :\n   Améliorer le fonctionnement du marché du travail via la formation et les incitations\n   Indemniser les personnes privées d'emploi via l'assurance chômage\n   Réduire le temps de travail pour partager l'emploi disponible\n   Contrôler l'immigration pour protéger le marché du travail national\n  \n  Valider\n\n\n\nQuestion 3 — Types de chômage\n\n  Le chômage frictionnel désigne :\n   Le chômage lié à une récession économique grave\n   L'inadéquation entre les compétences des travailleurs et les besoins des entreprises\n   Les personnes momentanément entre deux emplois lors d'une transition\n   Le chômage causé par l'automatisation et les robots\n  \n  Valider\n\n\n\n  ← Module 3\n  \n     Module 5 — Éco. internationale →"
   }
 ]

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 2 — La croissance économique en débat – Économie Contemporaine — L1 EG</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-612344f33efe495ea23d9d66e0ead968.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,600;1,8..60,300&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Économie Contemporaine — L1 EG</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">🏠 Accueil</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-parcours" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">📍 Parcours</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-parcours">    
+        <li>
+    <a class="dropdown-item" href="../diagnostic.html">
+ <span class="dropdown-text">Diagnostic de départ</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../modules/m1-principes.html">
+ <span class="dropdown-text">Module 1 — Grands principes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/m2-croissance.html">
+ <span class="dropdown-text">Module 2 — La croissance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/m3-dette.html">
+ <span class="dropdown-text">Module 3 — Dette publique</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/m4-chomage.html">
+ <span class="dropdown-text">Module 4 — Chômage &amp; emploi</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/m5-international.html">
+ <span class="dropdown-text">Module 5 — Éco. internationale</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../fil-rouge.html"> 
+<span class="menu-text">📰 Fil rouge</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../glossaire.html"> 
+<span class="menu-text">📖 Glossaire</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../carnet.html"> 
+<span class="menu-text">📓 Carnet</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../ressources.html"> 
+<span class="menu-text">📚 Ressources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../bilan.html"> 
+<span class="menu-text">📊 Mon bilan</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../a-propos.html"> 
+<span class="menu-text">À propos</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#quest-ce-que-la-croissance-économique" id="toc-quest-ce-que-la-croissance-économique" class="nav-link active" data-scroll-target="#quest-ce-que-la-croissance-économique">1. Qu’est-ce que la croissance économique ?</a></li>
+  <li><a href="#les-facteurs-de-croissance" id="toc-les-facteurs-de-croissance" class="nav-link" data-scroll-target="#les-facteurs-de-croissance">2. Les facteurs de croissance</a></li>
+  <li><a href="#les-limites-du-pib" id="toc-les-limites-du-pib" class="nav-link" data-scroll-target="#les-limites-du-pib">3. Les limites du PIB</a></li>
+  <li><a href="#qcm-de-consolidation" id="toc-qcm-de-consolidation" class="nav-link" data-scroll-target="#qcm-de-consolidation">✅ QCM de consolidation</a>
+  <ul class="collapse">
+  <li><a href="#question-1-le-pib" id="toc-question-1-le-pib" class="nav-link" data-scroll-target="#question-1-le-pib">Question 1 — Le PIB</a></li>
+  <li><a href="#question-2-facteurs-de-croissance" id="toc-question-2-facteurs-de-croissance" class="nav-link" data-scroll-target="#question-2-facteurs-de-croissance">Question 2 — Facteurs de croissance</a></li>
+  <li><a href="#question-3-indicateurs-alternatifs" id="toc-question-3-indicateurs-alternatifs" class="nav-link" data-scroll-target="#question-3-indicateurs-alternatifs">Question 3 — Indicateurs alternatifs</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Module 2 — La croissance économique en débat</h1>
+<p class="subtitle lead">PIB · Facteurs de croissance · Limites · Croissance durable</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objectifs du module
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Savoir calculer et interpréter le taux de croissance du PIB</li>
+<li>Identifier les facteurs de croissance (travail, capital, progrès technique)</li>
+<li>Comprendre les limites du PIB comme indicateur de bien-être</li>
+<li>Analyser les enjeux de la croissance durable</li>
+</ul>
+</div>
+</div>
+<hr>
+<section id="quest-ce-que-la-croissance-économique" class="level2">
+<h2 class="anchored" data-anchor-id="quest-ce-que-la-croissance-économique">1. Qu’est-ce que la croissance économique ?</h2>
+<p>La <strong>croissance économique</strong> désigne l’augmentation soutenue de la production d’une économie sur une période longue. Elle se mesure principalement par le <strong>taux de variation du PIB en volume</strong>.</p>
+<p><span class="math display">\[\text{Taux de croissance} = \frac{\text{PIB}_t - \text{PIB}_{t-1}}{\text{PIB}_{t-1}} \times 100\]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Voir le code R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pib_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">annee =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">taux =</span> <span class="fu">c</span>(<span class="fl">1.9</span>, <span class="fl">2.1</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>, <span class="fl">1.0</span>, <span class="fl">1.1</span>, <span class="fl">1.2</span>, <span class="fl">2.3</span>, <span class="fl">1.8</span>, <span class="fl">1.5</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>           <span class="sc">-</span><span class="fl">7.9</span>, <span class="fl">6.8</span>, <span class="fl">2.6</span>, <span class="fl">0.9</span>, <span class="fl">1.1</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pib_df, <span class="fu">aes</span>(<span class="at">x =</span> annee, <span class="at">y =</span> taux,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fill =</span> <span class="fu">ifelse</span>(taux <span class="sc">&gt;=</span> <span class="dv">0</span>, <span class="st">"#93c5fd"</span>, <span class="st">"#fca5a5"</span>))) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">alpha =</span> <span class="fl">0.85</span>, <span class="at">width =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#374151"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_identity</span>() <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Taux de croissance (%)"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Croissance du PIB en France — 2010 à 2024"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"La chute de 2020 (COVID-19) et le rebond de 2021 dominent la période — Données illustratives"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-pib-france" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pib-france-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="m2-croissance_files/figure-html/fig-pib-france-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pib-france-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Taux de croissance du PIB français (%) — Source : INSEE, comptes nationaux base 2020
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="les-facteurs-de-croissance" class="level2">
+<h2 class="anchored" data-anchor-id="les-facteurs-de-croissance">2. Les facteurs de croissance</h2>
+<p>La fonction de production de <strong>Solow</strong> décompose la croissance en trois sources :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Facteur</th>
+<th>Description</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Travail</strong> (L)</td>
+<td>Quantité et qualité de main-d’œuvre</td>
+<td>Hausse du taux d’activité, formation</td>
+</tr>
+<tr class="even">
+<td><strong>Capital</strong> (K)</td>
+<td>Stock d’équipements productifs</td>
+<td>Investissement en machines, bâtiments</td>
+</tr>
+<tr class="odd">
+<td><strong>Progrès technique</strong> (A)</td>
+<td>Productivité totale des facteurs</td>
+<td>Innovation, R&amp;D, numérique</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="les-limites-du-pib" class="level2">
+<h2 class="anchored" data-anchor-id="les-limites-du-pib">3. Les limites du PIB</h2>
+<div class="fil-rouge-box">
+<p><strong>Fil rouge — “Le PIB ne dit pas tout”</strong></p>
+<p>En 2024, la France a connu une croissance de ~1,1 % du PIB. Mais dans le même temps : les inégalités de revenus ont progressé, les émissions de CO₂ n’ont pas atteint les objectifs climatiques, et le bien-être subjectif des Français est resté stable.</p>
+<p>→ Faut-il compléter le PIB par d’autres indicateurs ?</p>
+</div>
+<div class="activite-box">
+<p><strong>📊 Activité — Lire un graphe de l’INSEE</strong></p>
+<p>Rendez-vous sur <a href="https://www.insee.fr">insee.fr</a> → Statistiques → Indicateurs de richesse.</p>
+<ol type="1">
+<li>Comparez l’évolution du PIB et de l’IDH (Indice de Développement Humain) sur 20 ans.</li>
+<li>Cherchez le taux de pauvreté en France : suit-il le PIB ?</li>
+<li>Conclusion : le PIB est-il un bon résumé du “progrès” d’une société ?</li>
+</ol>
+</div>
+<hr>
+</section>
+<section id="qcm-de-consolidation" class="level2">
+<h2 class="anchored" data-anchor-id="qcm-de-consolidation">✅ QCM de consolidation</h2>
+<section id="question-1-le-pib" class="level3">
+<h3 class="anchored" data-anchor-id="question-1-le-pib">Question 1 — Le PIB</h3>
+<div class="qcm-container" id="m2q1">
+  <p class="qcm-question">Parmi ces propositions, laquelle est une limite reconnue du PIB comme indicateur de bien-être ?</p>
+  <label class="qcm-option"><input type="radio" name="m2q1"> Le PIB ne mesure pas la production des entreprises étrangères</label>
+  <label class="qcm-option"><input type="radio" name="m2q1"> Le PIB ne prend pas en compte les inégalités de distribution des revenus</label>
+  <label class="qcm-option"><input type="radio" name="m2q1"> Le PIB surestime la production industrielle par rapport aux services</label>
+  <label class="qcm-option"><input type="radio" name="m2q1"> Le PIB est calculé chaque mois ce qui le rend peu fiable</label>
+  <div class="qcm-feedback"></div>
+  <button class="qcm-btn">Valider</button>
+</div>
+</section>
+<section id="question-2-facteurs-de-croissance" class="level3">
+<h3 class="anchored" data-anchor-id="question-2-facteurs-de-croissance">Question 2 — Facteurs de croissance</h3>
+<div class="qcm-container" id="m2q2">
+  <p class="qcm-question">Selon les théories de la croissance endogène, quel est le principal moteur de la croissance à long terme ?</p>
+  <label class="qcm-option"><input type="radio" name="m2q2"> L'augmentation de la population active</label>
+  <label class="qcm-option"><input type="radio" name="m2q2"> L'accumulation de capital physique (machines, équipements)</label>
+  <label class="qcm-option"><input type="radio" name="m2q2"> Le progrès technique et l'innovation</label>
+  <label class="qcm-option"><input type="radio" name="m2q2"> La consommation des ménages</label>
+  <div class="qcm-feedback"></div>
+  <button class="qcm-btn">Valider</button>
+</div>
+</section>
+<section id="question-3-indicateurs-alternatifs" class="level3">
+<h3 class="anchored" data-anchor-id="question-3-indicateurs-alternatifs">Question 3 — Indicateurs alternatifs</h3>
+<div class="qcm-container" id="m2q3">
+  <p class="qcm-question">L'IDH (Indice de Développement Humain) mesure :</p>
+  <label class="qcm-option"><input type="radio" name="m2q3"> L'espérance de vie, le niveau d'éducation et le revenu</label>
+  <label class="qcm-option"><input type="radio" name="m2q3"> La croissance économique, l'inflation et le chômage</label>
+  <label class="qcm-option"><input type="radio" name="m2q3"> Le PIB par habitant et le niveau des inégalités</label>
+  <label class="qcm-option"><input type="radio" name="m2q3"> Le bonheur déclaré et le niveau de vie matériel</label>
+  <div class="qcm-feedback"></div>
+  <button class="qcm-btn">Valider</button>
+</div>
+<hr>
+<div style="display:flex; gap:1rem; margin-top:2rem;">
+  <a href="../modules/m1-principes.html" style="padding:0.6rem 1.2rem; border:1px solid #1a5c96; color:#1a5c96;
+     border-radius:0.5rem; text-decoration:none; font-weight:500;">← Module 1</a>
+  <a href="../modules/m3-dette.html" style="background:#1a5c96; color:white; padding:0.6rem 1.2rem;
+     border-radius:0.5rem; text-decoration:none; font-weight:500; margin-left:auto;">
+     Module 3 — Dette publique →</a>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Cours Économie Contemporaine — L1 EG</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Conçu avec <a href="https://quarto.org">Quarto</a> · R · JavaScript</p>
+</div>
+    <div class="nav-footer-right">
+<p>Site à usage pédagogique</p>
+</div>
+  </div>
+</footer>
+<script src="../qcm.js"></script>
+<script>
+  initQCM('m2q1', 1, "Le PIB mesure la valeur ajoutée totale produite dans un pays sur une période. Il ne mesure pas le bien-être, les inégalités ou la soutenabilité environnementale.");
+  initQCM('m2q2', 2, "Le progrès technique (innovation, productivité) est considéré comme le principal moteur de la croissance à long terme dans les modèles de croissance endogène (Romer, Lucas).");
+  initQCM('m2q3', 0, "L'Indice de Développement Humain (IDH) combine trois dimensions : espérance de vie, niveau d'éducation et revenu. Il a été créé par le PNUD pour dépasser les limites du PIB seul.");
+</script>
+
+
+
+
+</body></html>
