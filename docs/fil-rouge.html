@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>📰 Le fil rouge – Économie Contemporaine — L1 EG</title>
+<title>📰 Le fil rouge — Saison 2024–2025 – Économie Contemporaine — L1 EG</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -75,7 +40,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-612344f33efe495ea23d9d66e0ead968.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3c20794fc6d53403aa35f33823adc583.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -163,6 +128,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./modules/m5-international.html">
  <span class="dropdown-text">Module 5 — Éco. internationale</span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./modules/exam-blanc.html">
+ <span class="dropdown-text">📝 Examen blanc</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modules/flashcards.html">
+ <span class="dropdown-text">🃏 Flashcards</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -179,6 +153,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./modules/personnage.html"> 
+<span class="menu-text">🎮 Mon personnage</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./ressources.html"> 
 <span class="menu-text">📚 Ressources</span></a>
@@ -221,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">📰 Le fil rouge</h1>
+<h1 class="title">📰 Le fil rouge — Saison 2024–2025</h1>
 <p class="subtitle lead">Suivre l’actualité économique française tout au long du semestre</p>
 </div>
 
@@ -288,49 +266,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>En lien avec : Module 4 (chômage)</em></p>
 <p>Le marché du travail français montre des signes contradictoires : le chômage reste stable à 7,3 %, mais le sous-emploi progresse et les “travailleurs pauvres” se multiplient. L’IA et l’automatisation commencent à peser sur certains secteurs.</p>
 <p><strong>Données en temps réel :</strong></p>
-<div class="cell">
-<details class="code-fold">
-<summary>Voir le code R</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df_age <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">annee =</span> <span class="fu">rep</span>(<span class="dv">2018</span><span class="sc">:</span><span class="dv">2024</span>, <span class="dv">3</span>),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">taux =</span> <span class="fu">c</span>(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Moins de 25 ans</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fl">20.2</span>, <span class="fl">19.6</span>, <span class="fl">20.1</span>, <span class="fl">19.0</span>, <span class="fl">17.6</span>, <span class="fl">16.8</span>, <span class="fl">16.0</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 25-49 ans</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fl">8.5</span>, <span class="fl">8.1</span>, <span class="fl">8.2</span>, <span class="fl">7.8</span>, <span class="fl">7.3</span>, <span class="fl">7.0</span>, <span class="fl">6.9</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 50 ans et plus</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="fl">6.5</span>, <span class="fl">6.2</span>, <span class="fl">6.4</span>, <span class="fl">6.1</span>, <span class="fl">5.8</span>, <span class="fl">5.6</span>, <span class="fl">5.4</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">tranche =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Moins de 25 ans"</span>, <span class="st">"25–49 ans"</span>, <span class="st">"50 ans et plus"</span>), <span class="at">each =</span> <span class="dv">7</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_age, <span class="fu">aes</span>(<span class="at">x =</span> annee, <span class="at">y =</span> taux, <span class="at">color =</span> tranche, <span class="at">group =</span> tranche)) <span class="sc">+</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#1a5c96"</span>, <span class="st">"#2c7a4b"</span>, <span class="st">"#e8a020"</span>)) <span class="sc">+</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2018</span><span class="sc">:</span><span class="dv">2024</span>) <span class="sc">+</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Taux de chômage (%)"</span>, <span class="at">color =</span> <span class="st">"Tranche d'âge"</span>,</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Chômage par tranche d'âge — Les jeunes toujours les plus exposés"</span>,</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Données illustratives — Source : DARES / INSEE"</span>) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-dares" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-dares-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="fil-rouge_files/figure-html/fig-dares-1.png" class="img-fluid figure-img" width="768">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dares-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Illustration — évolution du chômage par tranche d’âge (données illustratives)
-</figcaption>
+<figure style="margin:1.5rem 0;" class="figure">
+<figcaption style="font-size:0.85rem;color:var(--color-text-secondary);font-style:italic;text-align:center;margin-bottom:0.5rem;">Évolution du chômage par tranche d'âge — Données illustratives (Source : DARES / INSEE)</figcaption>
+<svg viewbox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;">
+  <line x1="40" y1="185.5" x2="570" y2="185.5" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="189.5" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">5%</text><line x1="40" y1="138.2" x2="570" y2="138.2" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="142.2" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">10%</text><line x1="40" y1="90.8" x2="570" y2="90.8" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="94.8" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">15%</text><line x1="40" y1="43.4" x2="570" y2="43.4" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="47.4" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">20%</text>
+  <polyline points="40.0,41.5 128.3,47.2 216.7,42.5 305.0,52.9 393.3,66.2 481.7,73.7 570.0,81.3" fill="none" stroke="#1a5c96" stroke-width="2.5"></polyline><circle cx="40.0" cy="41.5" r="3.5" fill="#1a5c96"></circle><circle cx="128.3" cy="47.2" r="3.5" fill="#1a5c96"></circle><circle cx="216.7" cy="42.5" r="3.5" fill="#1a5c96"></circle><circle cx="305.0" cy="52.9" r="3.5" fill="#1a5c96"></circle><circle cx="393.3" cy="66.2" r="3.5" fill="#1a5c96"></circle><circle cx="481.7" cy="73.7" r="3.5" fill="#1a5c96"></circle><circle cx="570.0" cy="81.3" r="3.5" fill="#1a5c96"></circle><polyline points="40.0,152.4 128.3,156.2 216.7,155.2 305.0,159.0 393.3,163.7 481.7,166.6 570.0,167.5" fill="none" stroke="#2c7a4b" stroke-width="2.5"></polyline><circle cx="40.0" cy="152.4" r="3.5" fill="#2c7a4b"></circle><circle cx="128.3" cy="156.2" r="3.5" fill="#2c7a4b"></circle><circle cx="216.7" cy="155.2" r="3.5" fill="#2c7a4b"></circle><circle cx="305.0" cy="159.0" r="3.5" fill="#2c7a4b"></circle><circle cx="393.3" cy="163.7" r="3.5" fill="#2c7a4b"></circle><circle cx="481.7" cy="166.6" r="3.5" fill="#2c7a4b"></circle><circle cx="570.0" cy="167.5" r="3.5" fill="#2c7a4b"></circle><polyline points="40.0,171.3 128.3,174.2 216.7,172.3 305.0,175.1 393.3,177.9 481.7,179.8 570.0,181.7" fill="none" stroke="#e8a020" stroke-width="2.5"></polyline><circle cx="40.0" cy="171.3" r="3.5" fill="#e8a020"></circle><circle cx="128.3" cy="174.2" r="3.5" fill="#e8a020"></circle><circle cx="216.7" cy="172.3" r="3.5" fill="#e8a020"></circle><circle cx="305.0" cy="175.1" r="3.5" fill="#e8a020"></circle><circle cx="393.3" cy="177.9" r="3.5" fill="#e8a020"></circle><circle cx="481.7" cy="179.8" r="3.5" fill="#e8a020"></circle><circle cx="570.0" cy="181.7" r="3.5" fill="#e8a020"></circle>
+  <text x="40.0" y="222" font-size="10" fill="var(--color-text-secondary)" text-anchor="middle">2018</text><text x="128.3" y="222" font-size="10" fill="var(--color-text-secondary)" text-anchor="middle">2019</text><text x="216.7" y="222" font-size="10" fill="var(--color-text-secondary)" text-anchor="middle">2020</text><text x="305.0" y="222" font-size="10" fill="var(--color-text-secondary)" text-anchor="middle">2021</text><text x="393.3" y="222" font-size="10" fill="var(--color-text-secondary)" text-anchor="middle">2022</text><text x="481.7" y="222" font-size="10" fill="var(--color-text-secondary)" text-anchor="middle">2023</text><text x="570.0" y="222" font-size="10" fill="var(--color-text-secondary)" text-anchor="middle">2024</text>
+</svg>
+<div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:0.5rem;"><div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:14px;height:3px;background:#1a5c96;border-radius:2px;"></span><span style="font-size:0.78rem;color:var(--color-text-secondary);">Moins de 25 ans (16.0%)</span></div><div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:14px;height:3px;background:#2c7a4b;border-radius:2px;"></span><span style="font-size:0.78rem;color:var(--color-text-secondary);">25–49 ans (6.9%)</span></div><div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:14px;height:3px;background:#e8a020;border-radius:2px;"></span><span style="font-size:0.78rem;color:var(--color-text-secondary);">50 ans et plus (5.4%)</span></div></div>
 </figure>
-</div>
-</div>
-</div>
 <hr>
 </section>
 <section id="épisode-4-la-france-dans-la-mondialisation" class="level2">
@@ -777,6 +721,7 @@ Figure&nbsp;1: Illustration — évolution du chômage par tranche d’âge (don
 </div>
   </div>
 </footer>
+<script src="eco-global.js"></script>
 
 
 

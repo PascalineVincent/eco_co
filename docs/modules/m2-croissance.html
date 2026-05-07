@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -75,7 +40,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-612344f33efe495ea23d9d66e0ead968.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3c20794fc6d53403aa35f33823adc583.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -192,6 +157,15 @@ window.Quarto = {
     <a class="dropdown-item" href="../modules/m5-international.html">
  <span class="dropdown-text">Module 5 — Éco. internationale</span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../modules/exam-blanc.html">
+ <span class="dropdown-text">📝 Examen blanc</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/flashcards.html">
+ <span class="dropdown-text">🃏 Flashcards</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -208,6 +182,10 @@ window.Quarto = {
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../modules/personnage.html"> 
+<span class="menu-text">🎮 Mon personnage</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../ressources.html"> 
 <span class="menu-text">📚 Ressources</span></a>
@@ -294,42 +272,18 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="quest-ce-que-la-croissance-économique">1. Qu’est-ce que la croissance économique ?</h2>
 <p>La <strong>croissance économique</strong> désigne l’augmentation soutenue de la production d’une économie sur une période longue. Elle se mesure principalement par le <strong>taux de variation du PIB en volume</strong>.</p>
 <p><span class="math display">\[\text{Taux de croissance} = \frac{\text{PIB}_t - \text{PIB}_{t-1}}{\text{PIB}_{t-1}} \times 100\]</span></p>
-<div class="cell">
-<details class="code-fold">
-<summary>Voir le code R</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pib_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">annee =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">taux =</span> <span class="fu">c</span>(<span class="fl">1.9</span>, <span class="fl">2.1</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>, <span class="fl">1.0</span>, <span class="fl">1.1</span>, <span class="fl">1.2</span>, <span class="fl">2.3</span>, <span class="fl">1.8</span>, <span class="fl">1.5</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>           <span class="sc">-</span><span class="fl">7.9</span>, <span class="fl">6.8</span>, <span class="fl">2.6</span>, <span class="fl">0.9</span>, <span class="fl">1.1</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pib_df, <span class="fu">aes</span>(<span class="at">x =</span> annee, <span class="at">y =</span> taux,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fill =</span> <span class="fu">ifelse</span>(taux <span class="sc">&gt;=</span> <span class="dv">0</span>, <span class="st">"#93c5fd"</span>, <span class="st">"#fca5a5"</span>))) <span class="sc">+</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">alpha =</span> <span class="fl">0.85</span>, <span class="at">width =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#374151"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_identity</span>() <span class="sc">+</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>) <span class="sc">+</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Taux de croissance (%)"</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Croissance du PIB en France — 2010 à 2024"</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"La chute de 2020 (COVID-19) et le rebond de 2021 dominent la période — Données illustratives"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-pib-france" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-pib-france-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="m2-croissance_files/figure-html/fig-pib-france-1.png" class="img-fluid figure-img" width="768">
+<figure style="margin:1.5rem 0;" class="figure">
+<figcaption style="font-size:0.85rem;color:var(--color-text-secondary);font-style:italic;text-align:center;margin-bottom:0.5rem;">Taux de croissance du PIB français (%) — Source : INSEE, comptes nationaux base 2020</figcaption>
+<svg viewbox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;">
+  <line x1="45" y1="185.5" x2="685" y2="185.5" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="189.5" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">-8%</text><line x1="45" y1="146.6" x2="685" y2="146.6" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="150.6" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">-4%</text><line x1="45" y1="107.6" x2="685" y2="107.6" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="111.6" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">0%</text><line x1="45" y1="68.7" x2="685" y2="68.7" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="72.7" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">4%</text><line x1="45" y1="29.7" x2="685" y2="29.7" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="33.7" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">8%</text>
+  <line x1="45" y1="107.6" x2="685" y2="107.6" stroke="var(--color-text-secondary)" stroke-width="1"></line>
+  <rect x="47.3" y="89.1" width="38" height="18.5" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="66.3" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2010</text><rect x="90.0" y="87.2" width="38" height="20.4" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="109.0" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2011</text><rect x="132.7" y="104.7" width="38" height="2.9" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="151.7" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2012</text><rect x="175.3" y="101.8" width="38" height="5.8" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="194.3" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2013</text><rect x="218.0" y="97.9" width="38" height="9.7" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="237.0" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2014</text><rect x="260.7" y="96.9" width="38" height="10.7" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="279.7" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2015</text><rect x="303.3" y="95.9" width="38" height="11.7" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="322.3" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2016</text><rect x="346.0" y="85.2" width="38" height="22.4" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="365.0" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2017</text><rect x="388.7" y="90.1" width="38" height="17.5" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="407.7" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2018</text><rect x="431.3" y="93.0" width="38" height="14.6" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="450.3" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2019</text><rect x="474.0" y="107.6" width="38" height="76.9" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="493.0" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2020</text><rect x="516.7" y="41.4" width="38" height="66.2" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="535.7" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2021</text><rect x="559.3" y="82.3" width="38" height="25.3" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="578.3" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2022</text><rect x="602.0" y="98.9" width="38" height="8.8" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="621.0" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2023</text><rect x="644.7" y="96.9" width="38" height="10.7" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="663.7" y="232" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2024</text>
+</svg>
+<div style="display:flex;gap:1rem;justify-content:center;font-size:0.78rem;color:var(--color-text-secondary);margin-top:0.4rem;">
+  <span><span style="display:inline-block;width:12px;height:12px;background:#93c5fd;border-radius:2px;vertical-align:middle;margin-right:4px;"></span>Croissance positive</span>
+  <span><span style="display:inline-block;width:12px;height:12px;background:#fca5a5;border-radius:2px;vertical-align:middle;margin-right:4px;"></span>Récession / contraction</span>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pib-france-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Taux de croissance du PIB français (%) — Source : INSEE, comptes nationaux base 2020
-</figcaption>
 </figure>
-</div>
-</div>
-</div>
 <hr>
 </section>
 <section id="les-facteurs-de-croissance" class="level2">
@@ -852,6 +806,8 @@ Figure&nbsp;1: Taux de croissance du PIB français (%) — Source : INSEE, compt
   </div>
 </footer>
 <script src="../qcm.js"></script>
+<script src="../hero.js"></script>
+<script src="../eco-global.js"></script>
 <script>
   initQCM('m2q1', 1, "Le PIB mesure la valeur ajoutée totale produite dans un pays sur une période. Il ne mesure pas le bien-être, les inégalités ou la soutenabilité environnementale.");
   initQCM('m2q2', 2, "Le progrès technique (innovation, productivité) est considéré comme le principal moteur de la croissance à long terme dans les modèles de croissance endogène (Romer, Lucas).");

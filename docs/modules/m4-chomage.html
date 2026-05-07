@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -75,7 +40,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-612344f33efe495ea23d9d66e0ead968.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3c20794fc6d53403aa35f33823adc583.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -163,6 +128,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../modules/m5-international.html">
  <span class="dropdown-text">Module 5 — Éco. internationale</span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../modules/exam-blanc.html">
+ <span class="dropdown-text">📝 Examen blanc</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/flashcards.html">
+ <span class="dropdown-text">🃏 Flashcards</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -179,6 +153,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../modules/personnage.html"> 
+<span class="menu-text">🎮 Mon personnage</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../ressources.html"> 
 <span class="menu-text">📚 Ressources</span></a>
@@ -274,45 +252,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Est disponible</strong> pour travailler dans les deux semaines</li>
 <li><strong>A effectué des démarches</strong> actives de recherche dans le mois précédent</li>
 </ol>
-<div class="cell">
-<details class="code-fold">
-<summary>Voir le code R</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>chom_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">annee =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">taux =</span> <span class="fu">c</span>(<span class="fl">9.3</span>, <span class="fl">9.6</span>, <span class="fl">9.8</span>, <span class="fl">10.4</span>, <span class="fl">10.4</span>, <span class="fl">10.4</span>, <span class="fl">10.1</span>, <span class="fl">9.4</span>, <span class="fl">9.0</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>           <span class="fl">8.4</span>, <span class="fl">8.0</span>, <span class="fl">7.9</span>, <span class="fl">7.3</span>, <span class="fl">7.3</span>, <span class="fl">7.3</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chom_df, <span class="fu">aes</span>(<span class="at">x =</span> annee, <span class="at">y =</span> taux)) <span class="sc">+</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">fill =</span> <span class="st">"#bfdbfe"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#1a5c96"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#1a5c96"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">7</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"#e8a020"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2013</span>, <span class="at">y =</span> <span class="fl">6.7</span>, <span class="at">label =</span> <span class="st">"Seuil 'plein emploi' conventionnel : ~7 %"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"#e8a020"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>) <span class="sc">+</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Taux de chômage (%)"</span>,</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Taux de chômage en France — 2010 à 2024"</span>,</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Données illustratives — Tendance générale à la baisse depuis 2015"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-chomage" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-chomage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="m4-chomage_files/figure-html/fig-chomage-1.png" class="img-fluid figure-img" width="768">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chomage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Taux de chômage en France (%) — Source : INSEE, enquête Emploi
-</figcaption>
+<figure style="margin:1.5rem 0;" class="figure">
+<figcaption style="font-size:0.85rem;color:var(--color-text-secondary);font-style:italic;text-align:center;margin-bottom:0.5rem;">Taux de chômage en France (%) — Source : INSEE, enquête Emploi</figcaption>
+<svg viewbox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;">
+  <line x1="45" y1="156.7" x2="685" y2="156.7" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="160.7" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">7%</text><line x1="45" y1="128.3" x2="685" y2="128.3" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="132.3" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">8%</text><line x1="45" y1="100.0" x2="685" y2="100.0" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="104.0" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">9%</text><line x1="45" y1="71.7" x2="685" y2="71.7" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="75.7" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">10%</text><line x1="45" y1="43.3" x2="685" y2="43.3" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="41" y="47.3" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">11%</text>
+  <polygon points="45.0,185.0 45.0,91.5 90.7,83.0 136.4,77.3 182.1,60.3 227.9,60.3 273.6,60.3 319.3,68.8 365.0,88.7 410.7,100.0 456.4,117.0 502.1,128.3 547.9,131.2 593.6,148.2 639.3,148.2 685.0,148.2 685.0,185.0" fill="#bfdbfe" opacity="0.45"></polygon>
+  <polyline points="45.0,91.5 90.7,83.0 136.4,77.3 182.1,60.3 227.9,60.3 273.6,60.3 319.3,68.8 365.0,88.7 410.7,100.0 456.4,117.0 502.1,128.3 547.9,131.2 593.6,148.2 639.3,148.2 685.0,148.2" fill="none" stroke="#1a5c96" stroke-width="2"></polyline>
+  <circle cx="45.0" cy="91.5" r="3" fill="#1a5c96"></circle><circle cx="90.7" cy="83.0" r="3" fill="#1a5c96"></circle><circle cx="136.4" cy="77.3" r="3" fill="#1a5c96"></circle><circle cx="182.1" cy="60.3" r="3" fill="#1a5c96"></circle><circle cx="227.9" cy="60.3" r="3" fill="#1a5c96"></circle><circle cx="273.6" cy="60.3" r="3" fill="#1a5c96"></circle><circle cx="319.3" cy="68.8" r="3" fill="#1a5c96"></circle><circle cx="365.0" cy="88.7" r="3" fill="#1a5c96"></circle><circle cx="410.7" cy="100.0" r="3" fill="#1a5c96"></circle><circle cx="456.4" cy="117.0" r="3" fill="#1a5c96"></circle><circle cx="502.1" cy="128.3" r="3" fill="#1a5c96"></circle><circle cx="547.9" cy="131.2" r="3" fill="#1a5c96"></circle><circle cx="593.6" cy="148.2" r="3" fill="#1a5c96"></circle><circle cx="639.3" cy="148.2" r="3" fill="#1a5c96"></circle><circle cx="685.0" cy="148.2" r="3" fill="#1a5c96"></circle>
+  <line x1="45" y1="156.7" x2="685" y2="156.7" stroke="#e8a020" stroke-width="1.5" stroke-dasharray="6,3"></line><text x="50" y="151.7" font-size="9" fill="#b07d12" font-style="italic">Seuil plein emploi ~7 %</text>
+  <text x="45.0" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2010</text><text x="90.7" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2011</text><text x="136.4" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2012</text><text x="182.1" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2013</text><text x="227.9" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2014</text><text x="273.6" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2015</text><text x="319.3" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2016</text><text x="365.0" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2017</text><text x="410.7" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2018</text><text x="456.4" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2019</text><text x="502.1" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2020</text><text x="547.9" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2021</text><text x="593.6" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2022</text><text x="639.3" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2023</text><text x="685.0" y="212" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2024</text>
+</svg>
 </figure>
-</div>
-</div>
-</div>
 <hr>
 </section>
 </section>
@@ -837,6 +787,8 @@ Figure&nbsp;1: Taux de chômage en France (%) — Source : INSEE, enquête Emplo
   </div>
 </footer>
 <script src="../qcm.js"></script>
+<script src="../hero.js"></script>
+<script src="../eco-global.js"></script>
 <script>
   initQCM('m4q1', 1, "Selon le BIT (Bureau International du Travail), un chômeur est une personne sans emploi, disponible pour travailler et en recherche active d'emploi. Cette définition internationale standardise la mesure du chômage.");
   initQCM('m4q2', 0, "Les politiques actives de l'emploi visent à améliorer le fonctionnement du marché du travail : formation, aide à la recherche d'emploi, subventions à l'embauche. Les politiques passives couvrent les risques (assurance chômage, RSA).");
