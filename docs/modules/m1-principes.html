@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -75,7 +40,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-612344f33efe495ea23d9d66e0ead968.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7b77d0e7ceb703b2b90193916f42d605.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -180,6 +145,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link" href="../modules/personnage.html"> 
+<span class="menu-text">🎮 Mon personnage</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../ressources.html"> 
 <span class="menu-text">📚 Ressources</span></a>
   </li>  
@@ -282,93 +251,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <section id="la-pyramide-des-besoins-maslow" class="level3">
 <h3 class="anchored" data-anchor-id="la-pyramide-des-besoins-maslow">La pyramide des besoins (Maslow)</h3>
-<div class="cell">
-<details class="code-fold">
-<summary>Voir le code R</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Chaque étage est un trapèze : plus on monte, plus la base est étroite</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># niveau 1 (bas) = Physiologiques, niveau 5 (sommet) = Réalisation</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>etages <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">niveau   =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">label    =</span> <span class="fu">c</span>(<span class="st">"Besoins physiologiques"</span>, <span class="st">"Sécurité"</span>, <span class="st">"Appartenance &amp; amour"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Estime de soi"</span>, <span class="st">"Réalisation</span><span class="sc">\n</span><span class="st">de soi"</span>),</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">couleur  =</span> <span class="fu">c</span>(<span class="st">"#1d4ed8"</span>, <span class="st">"#7c3aed"</span>, <span class="st">"#db2777"</span>, <span class="st">"#ea580c"</span>, <span class="st">"#16a34a"</span>),</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># demi-largeur de la base et du sommet de chaque trapèze</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_base   =</span> <span class="fu">c</span>(<span class="fl">5.0</span>, <span class="fl">4.0</span>, <span class="fl">3.0</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>),</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_top    =</span> <span class="fu">c</span>(<span class="fl">4.0</span>, <span class="fl">3.0</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="fl">0.2</span>),</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">y_bottom =</span> <span class="fu">c</span>(<span class="dv">0</span>,   <span class="dv">1</span>,   <span class="dv">2</span>,   <span class="dv">3</span>,   <span class="dv">4</span>),</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">y_top    =</span> <span class="fu">c</span>(<span class="dv">1</span>,   <span class="dv">2</span>,   <span class="dv">3</span>,   <span class="dv">4</span>,   <span class="dv">5</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Construire les polygones (trapèzes)</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>poly_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(etages)), <span class="cf">function</span>(i) {</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  e <span class="ot">&lt;-</span> etages[i, ]</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x       =</span> <span class="fu">c</span>(<span class="sc">-</span>e<span class="sc">$</span>x_base, e<span class="sc">$</span>x_base, e<span class="sc">$</span>x_top, <span class="sc">-</span>e<span class="sc">$</span>x_top),</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y       =</span> <span class="fu">c</span>(e<span class="sc">$</span>y_bottom, e<span class="sc">$</span>y_bottom, e<span class="sc">$</span>y_top, e<span class="sc">$</span>y_top),</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">niveau  =</span> e<span class="sc">$</span>niveau,</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">label   =</span> e<span class="sc">$</span>label,</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">couleur =</span> e<span class="sc">$</span>couleur</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>poly_df <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, poly_list)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Centres pour les labels</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>centres <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">x       =</span> <span class="dv">0</span>,</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">y       =</span> etages<span class="sc">$</span>y_bottom <span class="sc">+</span> <span class="fl">0.5</span>,</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">label   =</span> etages<span class="sc">$</span>label,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">couleur =</span> etages<span class="sc">$</span>couleur</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> poly_df,</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">group =</span> niveau, <span class="at">fill =</span> couleur),</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"white"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">alpha =</span> <span class="fl">0.92</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> centres,</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> label),</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">3.4</span>,</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">lineheight =</span> <span class="fl">0.9</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_identity</span>() <span class="sc">+</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fl">0.5</span><span class="sc">:</span><span class="fl">4.5</span>,</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"1 — Survie"</span>, <span class="st">"2 — Protection"</span>,</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>               <span class="st">"3 — Social"</span>, <span class="st">"4 — Reconnaissance"</span>, <span class="st">"5 — Épanouissement"</span>)</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">5.5</span>, <span class="fl">5.5</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">5.4</span>)) <span class="sc">+</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x  =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y  =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#374151"</span>, <span class="at">size =</span> <span class="dv">9</span>),</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid   =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title   =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"#0d2b4e"</span>, <span class="at">size =</span> <span class="dv">13</span>),</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#4a5568"</span>, <span class="at">size =</span> <span class="dv">9</span>)</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Pyramide de Maslow"</span>,</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Les besoins inférieurs doivent être satisfaits avant les besoins supérieurs"</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-maslow" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-maslow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="m1-principes_files/figure-html/fig-maslow-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maslow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Pyramide de Maslow — hiérarchie des besoins humains
-</figcaption>
+<figure style="margin:1.5rem 0;" class="figure">
+<figcaption style="font-size:0.85rem;color:var(--color-text-secondary);font-style:italic;text-align:center;margin-bottom:0.5rem;">Pyramide de Maslow — hiérarchie des besoins humains</figcaption>
+<svg viewbox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;">
+  <!-- Base: Physiologiques -->
+  <polygon points="60,260 540,260 470,210 130,210" fill="#2563eb" opacity="0.85"></polygon>
+  <text x="300" y="240" font-size="13" fill="white" font-weight="600" text-anchor="middle">Besoins physiologiques</text>
+  <text x="300" y="256" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">manger, dormir, respirer</text>
+  <!-- Sécurité -->
+  <polygon points="130,205 470,205 410,158 190,158" fill="#7c3aed" opacity="0.85"></polygon>
+  <text x="300" y="185" font-size="12" fill="white" font-weight="600" text-anchor="middle">Sécurité</text>
+  <text x="300" y="199" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">emploi, logement, santé</text>
+  <!-- Appartenance -->
+  <polygon points="190,153 410,153 355,110 245,110" fill="#db2777" opacity="0.85"></polygon>
+  <text x="300" y="130" font-size="12" fill="white" font-weight="600" text-anchor="middle">Appartenance sociale</text>
+  <text x="300" y="144" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">famille, amis, groupes</text>
+  <!-- Estime -->
+  <polygon points="245,105 355,105 312,65 288,65" fill="#ea580c" opacity="0.85"></polygon>
+  <text x="300" y="88" font-size="11" fill="white" font-weight="600" text-anchor="middle">Estime de soi</text>
+  <!-- Réalisation -->
+  <polygon points="288,60 312,60 300,25" fill="#16a34a" opacity="0.9"></polygon>
+  <text x="300" y="55" font-size="9" fill="white" font-weight="600" text-anchor="middle">Réalisation</text>
+</svg>
 </figure>
-</div>
-</div>
-</div>
 </section>
 <section id="le-coût-dopportunité" class="level3">
 <h3 class="anchored" data-anchor-id="le-coût-dopportunité">Le coût d’opportunité</h3>
@@ -429,64 +334,33 @@ Figure&nbsp;1: Pyramide de Maslow — hiérarchie des besoins humains
 <section id="économie-positive-vs-normative" class="level2">
 <h2 class="anchored" data-anchor-id="économie-positive-vs-normative">3. Économie positive vs normative</h2>
 <p>Cette distinction est cruciale pour <strong>lire l’actualité économique</strong> avec esprit critique.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Voir le code R</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Économie positive</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Le taux de chômage est de 7,3 % en France (T3 2024)"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Une hausse du SMIC augmente les coûts des entreprises"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"La dette publique française dépasse 110 % du PIB"</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Économie normative</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Il faut réduire le chômage en priorité"</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Le SMIC devrait être augmenté de 10 %"</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"La France doit impérativement réduire sa dette"</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(df, <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Économie positive (faits)"</span>, <span class="st">"Économie normative (recommandations)"</span>))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div id="tbl-pos-norm" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pos-norm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Exemples d’affirmations positives vs normatives
-</figcaption>
-<div aria-describedby="tbl-pos-norm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 53%">
-<col style="width: 46%">
-</colgroup>
+<figure style="margin:1.5rem 0;" class="figure">
+<figcaption style="font-size:0.85rem;color:var(--color-text-secondary);font-style:italic;text-align:center;margin-bottom:0.5rem;">Exemples d'affirmations positives vs normatives</figcaption>
+
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Économie positive (faits)</th>
-<th style="text-align: left;">Économie normative (recommandations)</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; background: #1a5c96; color: #fff; padding: 0.55rem 0.85rem; width: 50%;">Économie positive (faits)</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; background: #7c3aed; color: #fff; padding: 0.55rem 0.85rem; width: 50%;">Économie normative (recommandations)</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">Le taux de chômage est de 7,3 % en France (T3 2024)</td>
-<td style="text-align: left;">Il faut réduire le chômage en priorité</td>
+<tr class="odd" style="background:#f0f7fd;color:#2d3748;">
+<td style="padding: 0.5rem 0.85rem; border-bottom: 1px solid #e2e8f0">Le taux de chômage est de 7,3 % en France (T3 2024)</td>
+<td style="padding: 0.5rem 0.85rem; border-bottom: 1px solid #e2e8f0; background: #f5f3ff; color: #3b1d6e">Il faut réduire le chômage en priorité</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Une hausse du SMIC augmente les coûts des entreprises</td>
-<td style="text-align: left;">Le SMIC devrait être augmenté de 10 %</td>
+<tr class="even" style="color:#2d3748;">
+<td style="padding: 0.5rem 0.85rem; border-bottom: 1px solid #e2e8f0">Une hausse du SMIC augmente les coûts des entreprises</td>
+<td style="padding: 0.5rem 0.85rem; border-bottom: 1px solid #e2e8f0; background: #f5f3ff; color: #3b1d6e">Le SMIC devrait être augmenté de 10 %</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">La dette publique française dépasse 110 % du PIB</td>
-<td style="text-align: left;">La France doit impérativement réduire sa dette</td>
+<tr class="odd" style="background:#f0f7fd;color:#2d3748;">
+<td style="padding: 0.5rem 0.85rem">La dette publique française dépasse 110 % du PIB</td>
+<td style="padding: 0.5rem 0.85rem; background: #f5f3ff; color: #3b1d6e">La France doit impérativement réduire sa dette</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+
 </figure>
-</div>
-</div>
 <div class="fil-rouge-box">
 <p><strong>Fil rouge — Exercice d’analyse critique</strong></p>
 <p>Lisez cet extrait (fictif mais réaliste) d’un article des <em>Échos</em> :</p>
@@ -522,50 +396,34 @@ Table&nbsp;1: Exemples d’affirmations positives vs normatives
 <p>Une <strong>externalité</strong> est un effet (positif ou négatif) produit par l’activité d’un agent sur un autre agent, <strong>sans compensation monétaire</strong> via le marché.</p>
 </div>
 </div>
-<div class="cell">
-<details class="code-fold">
-<summary>Voir le code R</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>df_ext <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">q =</span> <span class="fu">rep</span>(q, <span class="dv">3</span>),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">100</span> <span class="sc">-</span> q,           <span class="co"># demande</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="dv">10</span> <span class="sc">+</span> <span class="fl">0.4</span> <span class="sc">*</span> q,      <span class="co"># coût marginal privé (offre)</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="dv">10</span> <span class="sc">+</span> <span class="fl">0.7</span> <span class="sc">*</span> q),     <span class="co"># coût marginal social</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Demande"</span>, <span class="st">"Coût marginal privé"</span>, <span class="st">"Coût marginal social"</span>), <span class="at">each =</span> <span class="dv">101</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_ext, <span class="fu">aes</span>(<span class="at">x =</span> q, <span class="at">y =</span> p, <span class="at">color =</span> type, <span class="at">linetype =</span> type)) <span class="sc">+</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="dv">64</span>, <span class="at">xend =</span> <span class="dv">64</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">36</span>,</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"#6b7280"</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="dv">48</span>, <span class="at">xend =</span> <span class="dv">48</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">44</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"#6b7280"</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">64</span>, <span class="at">y =</span> <span class="sc">-</span><span class="dv">4</span>, <span class="at">label =</span> <span class="st">"Q marché"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">48</span>, <span class="at">y =</span> <span class="sc">-</span><span class="dv">4</span>, <span class="at">label =</span> <span class="st">"Q optimal"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#1a5c96"</span>, <span class="st">"#e8a020"</span>, <span class="st">"#b91c1c"</span>)) <span class="sc">+</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"solid"</span>, <span class="st">"solid"</span>, <span class="st">"dashed"</span>)) <span class="sc">+</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">105</span>)) <span class="sc">+</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Quantité"</span>, <span class="at">y =</span> <span class="st">"Prix / Coût"</span>,</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">linetype =</span> <span class="cn">NULL</span>,</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Externalité négative (ex : pollution industrielle)"</span>,</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Le marché produit trop (Q marché &gt; Q optimal social)"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-externalite" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-externalite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="m1-principes_files/figure-html/fig-externalite-1.png" class="img-fluid figure-img" width="768">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-externalite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Externalité négative : le coût social dépasse le coût privé
-</figcaption>
+<figure style="margin:1.5rem 0;" class="figure">
+<figcaption style="font-size:0.85rem;color:var(--color-text-secondary);font-style:italic;text-align:center;margin-bottom:0.5rem;">Externalité négative : le coût social dépasse le coût privé</figcaption>
+<svg viewbox="0 0 620 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;">
+  <!-- Axes -->
+  <line x1="45" y1="20" x2="45" y2="220" stroke="var(--color-text-secondary)" stroke-width="1"></line>
+  <line x1="45" y1="220" x2="605" y2="220" stroke="var(--color-text-secondary)" stroke-width="1"></line>
+  <text x="40" y="25" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">P</text>
+  <text x="608" y="224" font-size="9" fill="var(--color-text-secondary)">Q</text>
+  <!-- Lines -->
+  <polyline points="45.0,38.2 56.2,41.8 67.4,45.5 78.6,49.1 89.8,52.7 101.0,56.4 112.2,60.0 123.4,63.6 134.6,67.3 145.8,70.9 157.0,74.5 168.2,78.2 179.4,81.8 190.6,85.5 201.8,89.1 213.0,92.7 224.2,96.4 235.4,100.0 246.6,103.6 257.8,107.3 269.0,110.9 280.2,114.5 291.4,118.2 302.6,121.8 313.8,125.5 325.0,129.1 336.2,132.7 347.4,136.4 358.6,140.0 369.8,143.6 381.0,147.3 392.2,150.9 403.4,154.5 414.6,158.2 425.8,161.8 437.0,165.5 448.2,169.1 459.4,172.7 470.6,176.4 481.8,180.0 493.0,183.6 504.2,187.3 515.4,190.9 526.6,194.5 537.8,198.2 549.0,201.8 560.2,205.5 571.4,209.1 582.6,212.7 593.8,216.4 605.0,220.0" fill="none" stroke="#1a5c96" stroke-width="2"></polyline>
+  <text x="577.0" y="206.9" font-size="10" fill="#1a5c96" text-anchor="middle">Demande</text>
+  <polyline points="45.0,201.8 56.2,200.4 67.4,198.9 78.6,197.5 89.8,196.0 101.0,194.5 112.2,193.1 123.4,191.6 134.6,190.2 145.8,188.7 157.0,187.3 168.2,185.8 179.4,184.4 190.6,182.9 201.8,181.5 213.0,180.0 224.2,178.5 235.4,177.1 246.6,175.6 257.8,174.2 269.0,172.7 280.2,171.3 291.4,169.8 302.6,168.4 313.8,166.9 325.0,165.5 336.2,164.0 347.4,162.5 358.6,161.1 369.8,159.6 381.0,158.2 392.2,156.7 403.4,155.3 414.6,153.8 425.8,152.4 437.0,150.9 448.2,149.5 459.4,148.0 470.6,146.5 481.8,145.1 493.0,143.6 504.2,142.2 515.4,140.7 526.6,139.3 537.8,137.8 549.0,136.4 560.2,134.9 571.4,133.5 582.6,132.0 593.8,130.5 605.0,129.1" fill="none" stroke="#16a34a" stroke-width="2"></polyline>
+  <text x="537.8" y="133.8" font-size="10" fill="#16a34a" text-anchor="middle">Coût privé</text>
+  <polyline points="45.0,201.8 56.2,199.3 67.4,196.7 78.6,194.2 89.8,191.6 101.0,189.1 112.2,186.5 123.4,184.0 134.6,181.5 145.8,178.9 157.0,176.4 168.2,173.8 179.4,171.3 190.6,168.7 201.8,166.2 213.0,163.6 224.2,161.1 235.4,158.5 246.6,156.0 257.8,153.5 269.0,150.9 280.2,148.4 291.4,145.8 302.6,143.3 313.8,140.7 325.0,138.2 336.2,135.6 347.4,133.1 358.6,130.5 369.8,128.0 381.0,125.5 392.2,122.9 403.4,120.4 414.6,117.8 425.8,115.3 437.0,112.7 448.2,110.2 459.4,107.6 470.6,105.1 481.8,102.5 493.0,100.0 504.2,97.5 515.4,94.9 526.6,92.4 537.8,89.8 549.0,87.3 560.2,84.7 571.4,82.2 582.6,79.6 593.8,77.1 605.0,74.5" fill="none" stroke="#b91c1c" stroke-width="2" stroke-dasharray="6,3"></polyline>
+  <text x="465.0" y="102.4" font-size="10" fill="#b91c1c" text-anchor="middle">Coût social</text>
+  <!-- Equilibrium markers -->
+  <line x1="405.1" y1="220" x2="405.1" y2="155.1" stroke="#6b7280" stroke-width="1" stroke-dasharray="4,2"></line>
+  <line x1="341.2" y1="220" x2="341.2" y2="134.4" stroke="#6b7280" stroke-width="1" stroke-dasharray="4,2"></line>
+  <circle cx="405.1" cy="155.1" r="4" fill="#16a34a"></circle>
+  <circle cx="341.2" cy="134.4" r="4" fill="#b91c1c"></circle>
+  <text x="405.1" y="232" font-size="9" fill="#16a34a" text-anchor="middle">Q*privé</text>
+  <text x="341.2" y="232" font-size="9" fill="#b91c1c" text-anchor="middle">Q*social</text>
+  <text x="410.1" y="150.1" font-size="9" fill="#6b7280">Sur-production</text>
+</svg>
+<p style="font-size:0.8rem;color:var(--color-text-secondary);text-align:center;margin-top:0.4rem;">
+  L'entreprise s'arrête à Q*privé, mais le coût social optimal est Q*social. La différence représente la sur-production génératrice de nuisances.
+</p>
 </figure>
-</div>
-</div>
-</div>
 </section>
 <section id="les-biens-publics" class="level3">
 <h3 class="anchored" data-anchor-id="les-biens-publics">Les biens publics</h3>
@@ -672,7 +530,7 @@ Figure&nbsp;2: Externalité négative : le coût social dépasse le coût privé
 <section id="pour-aller-plus-loin" class="level2">
 <h2 class="anchored" data-anchor-id="pour-aller-plus-loin">Pour aller plus loin</h2>
 <ul>
-<li>🎧 France Culture — <em>Entendez-vous l’éco?</em></li>
+<li>🎧 France Culture — <em>L’économie en questions</em></li>
 <li>📖 <em>Economix</em> (Goodwin) — ch.&nbsp;1 à 3</li>
 <li>📊 <a href="https://www.insee.fr/fr/statistiques">INSEE - Données macroéconomiques</a></li>
 </ul>
@@ -1104,6 +962,7 @@ Figure&nbsp;2: Externalité négative : le coût social dépasse le coût privé
   </div>
 </footer>
 <script src="../qcm.js"></script>
+<script src="../hero.js"></script>
 <script>
   initQCM('m1q1', 0, "La rareté est le principe fondateur : les ressources sont limitées face à des besoins illimités, ce qui contraint les agents à faire des choix et à accepter des coûts d'opportunité.");
   initQCM('m1q2', 2, "L'économie normative formule des recommandations basées sur des jugements de valeur ('il faudrait'). Les deux autres propositions décrivent des faits observables, donc relèvent de l'économie positive.");

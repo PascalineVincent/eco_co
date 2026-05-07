@@ -74,4 +74,7 @@ window.loadProgress = function() {
   } catch(e) {}
 };
 
-document.addEventListener('DOMContentLoaded', window.loadProgress);
+document.addEventListener('DOMContentLoaded', function() {
+  window.loadProgress();
+  if (window.HeroSystem) window.HeroSystem.refreshHeroWidget();
+});

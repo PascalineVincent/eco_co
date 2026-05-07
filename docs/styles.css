@@ -29,3 +29,20 @@ thead { background: #f8f7f4; }
   color: #1d4ed8;
   font-weight: 500;
 }
+
+/* ── Correctif tableaux : forcer les couleurs de texte ── */
+thead tr th,
+.table thead tr th,
+table thead tr th {
+  background-color: #0d2b4e !important;
+  color: #ffffff !important;
+}
+tbody tr td,
+.table tbody tr td,
+table tbody tr td {
+  color: #2d3748 !important;
+}
+tbody tr:nth-child(even) td {
+  background-color: #f0f7fd;
+  color: #2d3748 !important;
+}
