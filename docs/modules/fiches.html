@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>🎮 Mon personnage – Économie Contemporaine — L1 EG</title>
+<title>📄 Fiches de révision – Économie Contemporaine — L1 EG</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,6 +137,18 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../modules/flashcards.html">
  <span class="dropdown-text">🃏 Flashcards</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/speed-round.html">
+ <span class="dropdown-text">⚡ Speed Round</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/calculs.html">
+ <span class="dropdown-text">🧮 Exercices de calcul</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../modules/fiches.html">
+ <span class="dropdown-text">📄 Fiches de révision</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -154,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../modules/personnage.html" aria-current="page"> 
+    <a class="nav-link" href="../modules/personnage.html"> 
 <span class="menu-text">🎮 Mon personnage</span></a>
   </li>  
   <li class="nav-item">
@@ -186,8 +198,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">🎮 Mon personnage</h1>
-<p class="subtitle lead">Votre alter ego économiste — progression, badges et palmarès</p>
+<h1 class="title">📄 Fiches de révision</h1>
+<p class="subtitle lead">Synthèses imprimables — 1 fiche par module, format recto-verso</p>
 </div>
 
 
@@ -204,170 +216,466 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div id="hero-profile-full"></div>
+<style>
+#fiches-app { font-family: 'Inter', sans-serif; max-width: 860px; margin: 0 auto; }
+.fiches-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem; margin-bottom: 2rem; }
+.fiche-card { border: 2px solid #e2e8f0; border-radius: 0.9rem; padding: 1.25rem;
+  background: #fff; transition: all 0.18s; }
+.fiche-card:hover { border-color: #1a5c96; box-shadow: 0 4px 14px rgba(26,92,150,0.1); transform: translateY(-2px); }
+.fiche-num { font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 0.35rem; }
+.fiche-title { font-size: 1rem; font-weight: 700; color: #0d2b4e; margin-bottom: 0.5rem; }
+.fiche-topics { font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; line-height: 1.5; }
+.fiche-btn { width: 100%; padding: 0.6rem; border-radius: 0.5rem; border: none;
+  font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.18s;
+  display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
+.fiche-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.fiche-preview { margin-top: 0; display: none; }
+#preview-modal { display: none; position: fixed; inset: 0; z-index: 9990;
+  background: rgba(0,0,0,0.6); align-items: center; justify-content: center; padding: 1rem; }
+#preview-modal.open { display: flex; }
+#preview-inner { background: #fff; border-radius: 1rem; max-width: 800px; width: 100%;
+  max-height: 90vh; overflow-y: auto; }
+#preview-header { background: #0d2b4e; color: #fff; padding: 1rem 1.5rem;
+  border-radius: 1rem 1rem 0 0; display: flex; justify-content: space-between; align-items: center; }
+#preview-header h3 { margin: 0; font-size: 1rem; color: #f0d080; }
+#preview-close { background: none; border: none; color: #fff; font-size: 1.5rem;
+  cursor: pointer; line-height: 1; padding: 0; }
+#preview-body { padding: 1.5rem; }
+#preview-actions { padding: 1rem 1.5rem; border-top: 1px solid #e2e8f0;
+  display: flex; gap: 0.75rem; justify-content: flex-end; }
+</style>
+
+<div id="fiches-app">
+  <p style="color:#475569;font-size:0.9rem;margin-bottom:1.5rem;">
+    Chaque fiche résume les notions essentielles d'un module en une page recto-verso. Visualisez-la ou téléchargez le PDF prêt à imprimer.
+  </p>
+  <div class="fiches-grid" id="fiches-grid"></div>
+</div>
+
+<div id="preview-modal">
+  <div id="preview-inner">
+    <div id="preview-header">
+      <h3 id="preview-title" class="anchored">Fiche de révision</h3>
+      <button id="preview-close" onclick="closePreview()">×</button>
+    </div>
+    <div id="preview-body"></div>
+    <div id="preview-actions">
+      <button onclick="closePreview()" style="padding:0.6rem 1.2rem;border-radius:0.5rem;border:1.5px solid #e2e8f0;background:#fff;cursor:pointer;font-weight:600;color:#475569;">Fermer</button>
+      <button id="btn-dl" onclick="downloadCurrentFiche()" style="padding:0.6rem 1.4rem;border-radius:0.5rem;border:none;background:#0d2b4e;color:#f0d080;cursor:pointer;font-weight:700;">📥 Télécharger PDF</button>
+    </div>
+  </div>
+</div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  renderFullProfile();
-});
+const FICHES = [
+  {
+    id: 'M1',
+    title: "Grands principes de l'économie",
+    color: '#1a5c96', light: '#dbeafe',
+    topics: "Rareté · Coût d'opportunité · Micro vs Macro · Positif vs Normatif · Musgrave · Défaillances de marché",
+    sections: [
+      {
+        heading: "Concepts fondamentaux",
+        items: [
+          { term: "Rareté", def: "Les ressources sont limitées face à des besoins illimités → nécessité de faire des choix." },
+          { term: "Coût d'opportunité", def: "Valeur de la meilleure option sacrifiée lors d'un choix. Ex : aller en cours = renoncer à 12 €/h." },
+          { term: "Microéconomie", def: "Étudie les agents individuels (ménages, firmes) et leurs interactions sur les marchés." },
+          { term: "Macroéconomie", def: "Étudie les agrégats nationaux : PIB, inflation, chômage, balance commerciale." },
+        ]
+      },
+      {
+        heading: "Économie positive vs normative",
+        items: [
+          { term: "Positive", def: "Décrit des faits vérifiables. Ex : «Une hausse du SMIC augmente les coûts de production.»" },
+          { term: "Normative", def: "Formule des jugements de valeur. Ex : «Il faudrait augmenter le SMIC de 10 %.»" },
+        ]
+      },
+      {
+        heading: "Fonctions de l'État (Musgrave)",
+        items: [
+          { term: "Allocation", def: "Corriger les défaillances de marché, produire les biens publics." },
+          { term: "Redistribution", def: "Réduire les inégalités via l'impôt progressif et les transferts sociaux." },
+          { term: "Stabilisation", def: "Atténuer les cycles économiques par les politiques budgétaire et monétaire." },
+        ]
+      },
+      {
+        heading: "Défaillances de marché",
+        items: [
+          { term: "Externalité négative", def: "Coût imposé à des tiers sans compensation. Ex : pollution → sur-production par rapport à l'optimum." },
+          { term: "Externalité positive", def: "Bénéfice procuré à des tiers. Ex : vaccination → sous-production → subvention publique justifiée." },
+          { term: "Bien public pur", def: "Non-rival + non-excluable. Ex : défense nationale, phare. Problème du passager clandestin." },
+          { term: "Asymétrie d'info", def: "Sélection adverse (marché voitures d'occasion, Akerlof 1970) · Aléa moral (assurance)." },
+        ]
+      },
+      {
+        heading: "Formule clé",
+        formula: "Coût d'opportunité = Valeur du meilleur choix alternatif abandonné"
+      }
+    ]
+  },
+  {
+    id: 'M2',
+    title: "La croissance économique",
+    color: '#16a34a', light: '#dcfce7',
+    topics: "PIB · Valeur ajoutée · Facteurs de croissance · PTF · IDH · Limites du PIB",
+    sections: [
+      {
+        heading: "Le PIB",
+        items: [
+          { term: "Définition", def: "Valeur marchande de tous les biens/services finaux produits sur le territoire en un an." },
+          { term: "Valeur ajoutée", def: "VA = CA − Consommations intermédiaires. La somme des VA = PIB." },
+          { term: "PIB réel vs nominal", def: "Réel = corrigé de l'inflation via le déflateur. Mesure la vraie croissance de la production." },
+          { term: "Taux de croissance", def: "(PIB_t − PIB_{t-1}) / PIB_{t-1} × 100. France 2023 : +0,9 % ; 2020 : −7,9 %." },
+        ]
+      },
+      {
+        heading: "Facteurs de croissance : Q = f(K, L, A)",
+        items: [
+          { term: "K — Capital", def: "Stock d'équipements productifs. L'investissement (FBCF) l'accroît." },
+          { term: "L — Travail", def: "Quantité × qualité de main-d'œuvre (heures × productivité)." },
+          { term: "A — PTF", def: "Productivité Totale des Facteurs = progrès technique, résidu de Solow, ~50 % de la croissance LT." },
+        ]
+      },
+      {
+        heading: "Croissance endogène (Romer, Lucas)",
+        items: [
+          { term: "Principe", def: "Le progrès technique n'est pas exogène : il résulte des décisions d'investissement en R&D et éducation." },
+          { term: "Implications", def: "Les externalités de connaissance justifient l'intervention publique (financer la recherche)." },
+        ]
+      },
+      {
+        heading: "Au-delà du PIB",
+        items: [
+          { term: "IDH", def: "Indice PNUD : espérance de vie + éducation + revenu. France : 0,910, rang 26 (2023)." },
+          { term: "Limites du PIB", def: "Ne mesure pas : inégalités, bien-être subjectif, externalités environnementales, travail non marchand." },
+          { term: "Destruction créatrice", def: "Schumpeter : l'innovation détruit les activités obsolètes et en crée de nouvelles." },
+        ]
+      },
+      {
+        heading: "Formule clé",
+        formula: "VA = CA − CI  |  Taux de croissance = (PIB_t − PIB_{t−1}) / PIB_{t−1} × 100"
+      }
+    ]
+  },
+  {
+    id: 'M3',
+    title: "Budget et dette publique",
+    color: '#7c3aed', light: '#ede9fe',
+    topics: "4 principes budgétaires · Recettes & dépenses · Déficit · Dette · Maastricht · Débats",
+    sections: [
+      {
+        heading: "4 principes budgétaires",
+        items: [
+          { term: "Unité", def: "Un seul document budgétaire rassemblant toutes recettes et dépenses." },
+          { term: "Universalité", def: "Non-affectation : toutes les recettes financent toutes les dépenses." },
+          { term: "Spécialité", def: "Les crédits sont votés par programme précis et ne peuvent être détournés." },
+          { term: "Annualité", def: "Le budget est voté et exécuté sur une année civile." },
+        ]
+      },
+      {
+        heading: "Structure du budget (PLF 2025)",
+        items: [
+          { term: "1re recette", def: "TVA : ~209 Md€ (impôt indirect sur la consommation, taux 20 %/10 %/5,5 %)." },
+          { term: "2e recette", def: "Impôt sur le revenu (IR) : ~103 Md€ (impôt direct progressif)." },
+          { term: "3e recette", def: "Impôt sur les sociétés (IS) : ~57 Md€." },
+          { term: "Solde", def: "Déficit = Dépenses − Recettes. France 2024 : −5,5 % du PIB." },
+        ]
+      },
+      {
+        heading: "Déficit vs Dette",
+        items: [
+          { term: "Déficit", def: "Flux annuel : dépenses > recettes sur 1 an. Variable de flux." },
+          { term: "Dette", def: "Stock : accumulation des déficits non remboursés. France : ~110 % du PIB (2024) ≈ 3 100 Md€." },
+        ]
+      },
+      {
+        heading: "Critères de Maastricht & débats",
+        items: [
+          { term: "Règles", def: "Déficit < 3 % du PIB  ET  dette < 60 % du PIB. France dépasse les deux → procédure déficit excessif." },
+          { term: "Keynes (relance)", def: "Multiplicateur budgétaire > 1 → la dépense publique en récession génère plus de PIB qu'elle ne coûte." },
+          { term: "Libéraux (austérité)", def: "Effet d'éviction : l'emprunt public fait monter les taux et évince l'investissement privé." },
+        ]
+      },
+      {
+        heading: "Formule clé",
+        formula: "Solde primaire = Recettes − Dépenses hors intérêts  |  Dette/PIB stable si r < g"
+      }
+    ]
+  },
+  {
+    id: 'M4',
+    title: "Chômage et politiques de l'emploi",
+    color: '#ea580c', light: '#ffedd5',
+    topics: "Définition BIT · Types de chômage · Taux · Politiques actives/passives · Phillips · NAIRU",
+    sections: [
+      {
+        heading: "Mesurer le chômage (BIT)",
+        items: [
+          { term: "Chômeur BIT", def: "Sans emploi (0h/semaine) + disponible sous 2 semaines + en recherche active." },
+          { term: "Taux de chômage", def: "Chômeurs / Population active × 100. France T3 2024 : ~7,3 %. Jeunes : ~17 %." },
+          { term: "Halo du chômage", def: "Personnes souhaitant travailler mais non comptabilisées BIT : ~1,9 M en France." },
+          { term: "Taux d'emploi", def: "Personnes en emploi / Population 15-64 ans × 100. Différent du taux de chômage." },
+        ]
+      },
+      {
+        heading: "Les 3 types de chômage",
+        items: [
+          { term: "Frictionnel", def: "Transition entre 2 emplois. Court, souvent volontaire. Existe même en plein emploi." },
+          { term: "Structurel", def: "Inadéquation durable qualifications/emplois. Résiste à la relance → politiques actives nécessaires." },
+          { term: "Conjoncturel", def: "Lié au ralentissement économique. Se résorbe avec la reprise." },
+        ]
+      },
+      {
+        heading: "Politiques de l'emploi",
+        items: [
+          { term: "Actives", def: "Améliorent l'employabilité : formation, apprentissage (1M contrats en 2023), aides à l'embauche." },
+          { term: "Passives", def: "Indemnisent les chômeurs : ARE (allocations chômage), RSA. N'agissent pas sur les causes." },
+          { term: "Flexisécurité", def: "Modèle danois : flexibilité + allocations généreuses (90 %) + activation intensive." },
+        ]
+      },
+      {
+        heading: "Courbe de Phillips & NAIRU",
+        items: [
+          { term: "Phillips (1958)", def: "Relation inverse inflation ↔ chômage à court terme." },
+          { term: "Friedman-Phelps", def: "À long terme, la courbe est verticale au NAIRU : les anticipations annulent l'arbitrage." },
+          { term: "NAIRU France", def: "~7 % (Banque de France). En dessous → l'inflation s'accélère." },
+        ]
+      },
+      {
+        heading: "Formule clé",
+        formula: "Taux de chômage = Chômeurs / Population active × 100"
+      }
+    ]
+  },
+  {
+    id: 'M5',
+    title: "Économie internationale",
+    color: '#0891b2', light: '#cffafe',
+    topics: "Avantage comparatif · Taux de change · Balance commerciale · Protectionnisme · OMC",
+    sections: [
+      {
+        heading: "Théories du commerce",
+        items: [
+          { term: "Avantage absolu (Smith)", def: "Produire avec moins de ressources que tous les autres. Base du commerce selon Smith (1776)." },
+          { term: "Avantage comparatif (Ricardo)", def: "Se spécialiser où le désavantage relatif est le plus faible. Vrai même si un pays domine partout." },
+          { term: "Stolper-Samuelson", def: "Le libre-échange bénéficie au facteur abondant et nuit au facteur rare de chaque pays." },
+        ]
+      },
+      {
+        heading: "Taux de change",
+        items: [
+          { term: "Nominal", def: "Prix d'une devise en une autre. EUR/USD=1,10 → 1€ = 1,10$." },
+          { term: "Réel", def: "Nominal × (prix étranger / prix national). Mesure la compétitivité-prix réelle." },
+          { term: "Appréciation euro", def: "→ exportations plus chères en $ → compétitivité-prix baisse / importations moins chères." },
+        ]
+      },
+      {
+        heading: "Balance des paiements",
+        items: [
+          { term: "Balance commerciale", def: "Exports − Imports. France 2023 : déficit −73 Md€ (structurel)." },
+          { term: "Balance des paiements", def: "Toujours équilibrée (= 0) : compte courant + compte de capital/financier = 0." },
+          { term: "Termes de l'échange", def: "Indice prix exports / indice prix imports. Amélioration = les exports se vendent mieux." },
+        ]
+      },
+      {
+        heading: "Politique commerciale",
+        items: [
+          { term: "Libre-échange", def: "Gain net global mais crée des perdants nationaux → redistribution nécessaire." },
+          { term: "Protectionnisme", def: "Droits de douane, quotas, BNT. Protège les producteurs, nuit aux consommateurs." },
+          { term: "OMC (1995)", def: "Régule le commerce mondial, clause NPF : tout avantage accordé à un pays vaut pour tous." },
+          { term: "MACF (2023)", def: "Mécanisme UE : taxe les imports à haute intensité carbone pour éviter la fuite carbone." },
+        ]
+      },
+      {
+        heading: "Formule clé",
+        formula: "Balance commerciale = X − M  |  Taux de change réel = e × (P*/P)"
+      }
+    ]
+  }
+];
 
-function renderFullProfile() {
-  const hero    = window.HeroSystem ? window.HeroSystem.getState() : {};
-  const xp      = hero.xp || 0;
-  const LEVELS  = window.HeroSystem ? window.HeroSystem.LEVELS : [];
-  const BADGES  = window.HeroSystem ? window.HeroSystem.BADGES : [];
-  const level   = window.HeroSystem ? window.HeroSystem.getLevelForXP(xp) : { level:1, title:'...', avatar:'🧑‍🎓', desc:'', xpRequired:0 };
-  const prog    = window.HeroSystem ? window.HeroSystem.getXPProgress(xp) : { pct: 0, xpInLevel: 0, xpNeeded: 0 };
-  const earned  = BADGES.filter(b => (hero.badges||[]).includes(b.id));
-  const locked  = BADGES.filter(b => !(hero.badges||[]).includes(b.id));
+let currentFiche = null;
 
-  const el = document.getElementById('hero-profile-full');
-  if (!el) return;
-
-  el.innerHTML = `
-  <!-- HERO CARD PRINCIPALE -->
-  <div style="background:linear-gradient(135deg,#0d2b4e 0%,#1a5096 60%,#1e63a8 100%);
-              color:#fff;border-radius:1.2rem;padding:2rem 2.5rem;margin-bottom:2rem;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;opacity:0.05;background:url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z\'/%3E%3C/g%3E%3C/svg%3E');"></div>
-
-    <div style="display:flex;align-items:center;gap:1.5rem;position:relative;">
-      <div style="width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,0.12);
-                  display:flex;align-items:center;justify-content:center;font-size:3.2rem;
-                  border:3px solid rgba(240,208,128,0.5);flex-shrink:0;">
-        ${level.avatar}
-      </div>
-      <div style="flex:1;">
-        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;opacity:0.6;text-transform:uppercase;margin-bottom:0.2rem;">
-          Niveau ${level.level} · ${xp} XP total
-        </div>
-        <div style="font-size:1.8rem;font-weight:700;line-height:1.2;margin-bottom:0.3rem;">${level.title}</div>
-        <div style="opacity:0.75;font-size:0.9rem;">${level.desc}</div>
-      </div>
-      <div style="text-align:right;flex-shrink:0;">
-        <div style="font-size:2.2rem;font-weight:800;color:#f0d080;">${xp}</div>
-        <div style="font-size:0.72rem;opacity:0.65;text-transform:uppercase;letter-spacing:0.08em;">points XP</div>
-      </div>
-    </div>
-
-    <!-- Barre XP -->
-    <div style="margin-top:1.5rem;position:relative;">
-      <div style="display:flex;justify-content:space-between;font-size:0.78rem;opacity:0.7;margin-bottom:0.4rem;">
-        <span>${level.title}</span>
-        <span>${prog.xpInLevel} / ${prog.xpNeeded > 0 ? prog.xpNeeded : '—'} XP</span>
-      </div>
-      <div style="background:rgba(255,255,255,0.15);border-radius:999px;height:10px;overflow:hidden;">
-        <div style="background:linear-gradient(90deg,#e8a020,#f0d080);height:100%;
-                    width:${prog.pct}%;border-radius:999px;transition:width 0.8s ease;"></div>
-      </div>
-      <div style="font-size:0.72rem;opacity:0.55;margin-top:0.35rem;text-align:right;">
-        ${prog.xpNeeded > 0 ? (prog.xpNeeded - prog.xpInLevel) + ' XP jusqu\'au prochain niveau' : '🏆 Niveau maximum atteint !'}
-      </div>
-    </div>
-  </div>
-
-  <!-- STATS RAPIDES -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:0.75rem;margin-bottom:2rem;">
-    ${[
-      { label:"Réponses justes",  value: hero.totalCorrect || 0,   icon:"✓", color:"#166534", bg:"#d4eddf" },
-      { label:"Questions tentées",value: hero.totalAnswered || 0,  icon:"📝", color:"#1a5c96", bg:"#daeaf8" },
-      { label:"Badges obtenus",   value: earned.length + "/" + BADGES.length, icon:"🏅", color:"#7a5400", bg:"#fef3d0" },
-      { label:"Précision",        value: hero.totalAnswered > 0 ? Math.round(((hero.totalCorrect||0)/(hero.totalAnswered||1))*100) + "%" : "—", icon:"🎯", color:"#7e22ce", bg:"#f5f3ff" }
-    ].map(s => `
-      <div style="background:${s.bg};border-radius:0.65rem;padding:1rem;text-align:center;border:1px solid rgba(0,0,0,0.06);">
-        <div style="font-size:1.5rem;">${s.icon}</div>
-        <div style="font-size:1.4rem;font-weight:700;color:${s.color};line-height:1.2;">${s.value}</div>
-        <div style="font-size:0.72rem;color:${s.color};opacity:0.75;font-weight:600;margin-top:0.15rem;">${s.label}</div>
-      </div>
-    `).join('')}
-  </div>
-
-  <!-- PARCOURS DE NIVEAUX -->
-  <h2 style="font-size:1.2rem;font-weight:700;color:#0d2b4e;margin-bottom:1rem;border-bottom:2px solid #daeaf8;padding-bottom:0.4rem;">
-    🗺️ Parcours de niveaux
-  </h2>
-  <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2rem;">
-    ${LEVELS.map(l => {
-      const reached  = xp >= l.xpRequired;
-      const current  = level.level === l.level;
-      return `
-      <div style="display:flex;align-items:center;gap:0.85rem;padding:0.65rem 1rem;border-radius:0.6rem;
-                  background:${current ? '#eff6ff' : reached ? '#f0fdf4' : '#f8f7f4'};
-                  border:1.5px solid ${current ? '#2879c8' : reached ? '#34d399' : '#e2e8f0'};
-                  opacity:${reached ? 1 : 0.5};">
-        <div style="font-size:1.6rem;width:2.4rem;text-align:center;">${l.avatar}</div>
-        <div style="flex:1;">
-          <div style="font-weight:700;font-size:0.9rem;color:${current ? '#1a5c96' : '#163d6e'};">
-            Niv. ${l.level} — ${l.title}
-            ${current ? '<span style="font-size:0.7rem;background:#2879c8;color:#fff;padding:0.15rem 0.5rem;border-radius:999px;margin-left:0.5rem;">En cours</span>' : ''}
-          </div>
-          <div style="font-size:0.78rem;color:#4a5568;margin-top:0.1rem;">${l.desc}</div>
-        </div>
-        <div style="font-size:0.78rem;font-weight:600;color:${reached ? '#1e6b45' : '#94a3b8'};">
-          ${l.xpRequired} XP ${reached ? '✓' : ''}
-        </div>
-      </div>
-      `;
-    }).join('')}
-  </div>
-
-  <!-- BADGES -->
-  <h2 style="font-size:1.2rem;font-weight:700;color:#0d2b4e;margin-bottom:1rem;border-bottom:2px solid #daeaf8;padding-bottom:0.4rem;">
-    🏅 Collection de badges
-  </h2>
-  ${earned.length > 0 ? `
-  <div style="margin-bottom:1rem;">
-    <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#1e6b45;margin-bottom:0.6rem;">
-      ✓ Obtenus (${earned.length})
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.65rem;">
-      ${earned.map(b => `
-        <div style="background:#f0fdf4;border:1.5px solid #34d399;border-radius:0.65rem;padding:0.75rem;display:flex;align-items:center;gap:0.65rem;color:#2d3748;">
-          <div style="font-size:1.8rem;flex-shrink:0;">${b.icon}</div>
-          <div>
-            <div style="font-weight:700;font-size:0.88rem;color:#1e6b45;">${b.label}</div>
-            <div style="font-size:0.75rem;color:#2d6a4f;">${b.desc}</div>
-            <div style="font-size:0.72rem;color:#2c7a4b;font-weight:600;margin-top:0.15rem;">+${b.xp} XP</div>
-          </div>
-        </div>
-      `).join('')}
-    </div>
-  </div>` : ''}
-
-  <div>
-    <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:0.6rem;">
-      À débloquer (${locked.length})
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.65rem;">
-      ${locked.map(b => `
-        <div style="background:#f8f7f4;border:1.5px solid #e2e8f0;border-radius:0.65rem;padding:0.75rem;display:flex;align-items:center;gap:0.65rem;opacity:0.55;color:#2d3748;">
-          <div style="font-size:1.8rem;flex-shrink:0;filter:grayscale(1);">🔒</div>
-          <div>
-            <div style="font-weight:700;font-size:0.88rem;color:#4a5568;">${b.label}</div>
-            <div style="font-size:0.75rem;color:#64748b;">${b.desc}</div>
-            <div style="font-size:0.72rem;color:#94a3b8;font-weight:600;margin-top:0.15rem;">+${b.xp} XP</div>
-          </div>
-        </div>
-      `).join('')}
-    </div>
-  </div>
-
-  <!-- RESET -->
-  <div style="margin-top:2.5rem;padding:1rem 1.25rem;background:#fff8f0;border:1.5px solid #fed7aa;border-radius:0.65rem;font-size:0.85rem;color:#7c2d12;">
-    <strong>⚠️ Réinitialiser mon personnage</strong> — 
-    <button onclick="resetHero()" style="background:none;border:none;color:#b91c1c;font-weight:700;cursor:pointer;text-decoration:underline;font-size:0.85rem;padding:0;">
-      Recommencer à zéro
-    </button>
-    <span style="color:#9a3412;"> (irréversible)</span>
-  </div>
-  `;
+function renderGrid() {
+  const grid = document.getElementById('fiches-grid');
+  grid.innerHTML = FICHES.map(f => `
+    <div class="fiche-card">
+      <div class="fiche-num" style="color:${f.color}">Module ${f.id}</div>
+      <div class="fiche-title">${f.title}</div>
+      <div class="fiche-topics">${f.topics}</div>
+      <button class="fiche-btn" style="background:${f.light};color:${f.color};"
+        onclick="openPreview('${f.id}')">
+        👁 Aperçu &amp; téléchargement
+      </button>
+    </div>`).join('');
 }
 
-window.resetHero = function() {
-  if (confirm('Êtes-vous sûr·e de vouloir réinitialiser votre personnage ? Toutes vos XP et badges seront perdus.')) {
-    localStorage.removeItem('eco-hero-v1');
-    renderFullProfile();
+function buildFicheHTML(f) {
+  const cols = f.sections.filter(s => !s.formula);
+  const formula = f.sections.find(s => s.formula);
+  return `
+    <div style="font-family:Inter,sans-serif;">
+      <!-- Header -->
+      <div style="background:${f.color};color:#fff;border-radius:0.65rem;padding:1rem 1.25rem;margin-bottom:1.25rem;">
+        <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;opacity:0.7;">Module ${f.id} — Fiche de révision</div>
+        <div style="font-size:1.15rem;font-weight:800;margin-top:0.2rem;">${f.title}</div>
+        <div style="font-size:0.78rem;opacity:0.75;margin-top:0.2rem;">${f.topics}</div>
+      </div>
+      <!-- Sections -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+        ${cols.map(s => `
+          <div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:0.55rem;padding:0.85rem;">
+            <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:${f.color};margin-bottom:0.6rem;">${s.heading}</div>
+            ${s.items.map(it => `
+              <div style="margin-bottom:0.5rem;">
+                <div style="font-size:0.82rem;font-weight:700;color:#0d2b4e;">${it.term}</div>
+                <div style="font-size:0.8rem;color:#374151;line-height:1.45;">${it.def}</div>
+              </div>`).join('')}
+          </div>`).join('')}
+      </div>
+      ${formula ? `
+      <!-- Formule -->
+      <div style="background:${f.color};color:#fff;border-radius:0.55rem;padding:0.75rem 1rem;margin-top:0.75rem;font-size:0.85rem;font-weight:700;text-align:center;">
+        📐 ${formula.formula}
+      </div>` : ''}
+    </div>`;
+}
+
+function openPreview(id) {
+  currentFiche = FICHES.find(f => f.id === id);
+  document.getElementById('preview-title').textContent = `M${id} — ${currentFiche.title}`;
+  document.getElementById('preview-body').innerHTML = buildFicheHTML(currentFiche);
+  document.getElementById('preview-modal').classList.add('open');
+}
+
+function closePreview() {
+  document.getElementById('preview-modal').classList.remove('open');
+}
+
+async function downloadCurrentFiche() {
+  if (!currentFiche) return;
+  const btn = document.getElementById('btn-dl');
+  btn.textContent = '⏳ Génération…';
+  btn.disabled = true;
+
+  try {
+    if (!window.jspdf) {
+      await new Promise((res,rej) => {
+        const s = document.createElement('script');
+        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+        s.onload = res; s.onerror = rej;
+        document.head.appendChild(s);
+      });
+    }
+    const { jsPDF } = window.jspdf;
+    const f = currentFiche;
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+    const W = 210, H = 297;
+
+    // Parse hex color to RGB
+    function hexRGB(hex) {
+      const r = parseInt(hex.slice(1,3),16);
+      const g = parseInt(hex.slice(3,5),16);
+      const b = parseInt(hex.slice(5,7),16);
+      return [r,g,b];
+    }
+    const COL  = hexRGB(f.color);
+    const GRAY = [55,65,81];
+    const DARK = [13,43,78];
+
+    // ── HEADER ──
+    doc.setFillColor(...COL);
+    doc.roundedRect(10, 10, W-20, 28, 3, 3, 'F');
+    doc.setTextColor(255,255,255);
+    doc.setFontSize(7); doc.setFont('helvetica','normal');
+    doc.text(`MODULE ${f.id} — FICHE DE RÉVISION`, W/2, 18, {align:'center'});
+    doc.setFontSize(14); doc.setFont('helvetica','bold');
+    doc.text(f.title, W/2, 25, {align:'center'});
+    doc.setFontSize(7.5); doc.setFont('helvetica','normal'); doc.setTextColor(230,240,255);
+    doc.text(f.topics, W/2, 32, {align:'center'});
+
+    // ── SECTIONS (2 columns) ──
+    let y = 45;
+    const colW = (W-24)/2;
+    const sections = f.sections.filter(s => !s.formula);
+    const midIdx = Math.ceil(sections.length / 2);
+    const leftSec  = sections.slice(0, midIdx);
+    const rightSec = sections.slice(midIdx);
+
+    function drawSection(sec, x, yStart) {
+      let cy = yStart;
+      // Section header
+      doc.setFillColor(...COL);
+      doc.roundedRect(x, cy, colW, 7, 1.5, 1.5, 'F');
+      doc.setTextColor(255,255,255);
+      doc.setFontSize(7.5); doc.setFont('helvetica','bold');
+      doc.text(sec.heading, x+3, cy+5);
+      cy += 10;
+
+      sec.items.forEach(item => {
+        // Term
+        doc.setTextColor(...DARK);
+        doc.setFontSize(8); doc.setFont('helvetica','bold');
+        doc.text(item.term, x+2, cy);
+        cy += 4;
+        // Def
+        doc.setTextColor(...GRAY);
+        doc.setFontSize(7.5); doc.setFont('helvetica','normal');
+        const lines = doc.splitTextToSize(item.def, colW-4);
+        doc.text(lines, x+2, cy);
+        cy += lines.length * 3.8 + 2;
+        // Separator
+        doc.setDrawColor(226,232,240);
+        doc.line(x+2, cy-1, x+colW-2, cy-1);
+        cy += 1;
+      });
+      return cy;
+    }
+
+    const leftX  = 12;
+    const rightX = 12 + colW + 4;
+    let leftY  = y;
+    let rightY = y;
+
+    leftSec.forEach(sec  => { leftY  = drawSection(sec,  leftX,  leftY) + 4; });
+    rightSec.forEach(sec => { rightY = drawSection(sec, rightX, rightY) + 4; });
+
+    // ── FORMULA ──
+    const formula = f.sections.find(s => s.formula);
+    if (formula) {
+      const formulaY = Math.max(leftY, rightY) + 4;
+      doc.setFillColor(...COL);
+      doc.roundedRect(10, formulaY, W-20, 12, 3, 3, 'F');
+      doc.setTextColor(240,208,128);
+      doc.setFontSize(9); doc.setFont('helvetica','bold');
+      doc.text(`📐  ${formula.formula}`, W/2, formulaY+8, {align:'center'});
+    }
+
+    // ── FOOTER ──
+    doc.setFontSize(7); doc.setFont('helvetica','italic');
+    doc.setTextColor(148,163,184);
+    doc.text(`Économie Contemporaine — L1 EG · Module ${f.id} · fiche imprimable`, W/2, H-8, {align:'center'});
+
+    doc.save(`fiche-m${f.id.toLowerCase()}-${f.title.slice(0,20).replace(/\s/g,'-').toLowerCase()}.pdf`);
+
+    if (window.HeroSystem) window.HeroSystem.awardXP(5, 'fiche téléchargée');
+  } catch(e) {
+    console.error(e);
+    alert('Erreur PDF : ' + e.message);
+  } finally {
+    btn.textContent = '📥 Télécharger PDF';
+    btn.disabled = false;
   }
-};
+}
+
+// Close on backdrop click
+document.getElementById('preview-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('preview-modal')) closePreview();
+});
+
+document.addEventListener('DOMContentLoaded', renderGrid);
 </script>
 
 
@@ -787,7 +1095,6 @@ window.resetHero = function() {
 </div>
   </div>
 </footer>
-<script src="../qcm.js"></script>
 <script src="../hero.js"></script>
 <script src="../eco-global.js"></script>
 
