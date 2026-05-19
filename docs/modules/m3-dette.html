@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -40,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3c20794fc6d53403aa35f33823adc583.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-612344f33efe495ea23d9d66e0ead968.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,15 +162,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../modules/m5-international.html">
  <span class="dropdown-text">Module 5 — Éco. internationale</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../modules/exam-blanc.html">
- <span class="dropdown-text">📝 Examen blanc</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../modules/flashcards.html">
- <span class="dropdown-text">🃏 Flashcards</span></a>
   </li>  
     </ul>
   </li>
@@ -317,48 +343,103 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="structure-des-recettes-plf-2025" class="level3">
 <h3 class="anchored" data-anchor-id="structure-des-recettes-plf-2025">Structure des recettes (PLF 2025)</h3>
-<figure style="margin:1.5rem 0;" class="figure">
-<figcaption style="font-size:0.85rem;color:var(--color-text-secondary);font-style:italic;text-align:center;margin-bottom:0.5rem;">Recettes de l'État français — Projet de loi de finances 2025 (Source : Ministère de l'Économie)</figcaption>
-<svg viewbox="0 0 620 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;">
-  
-    <text x="162" y="31.9" font-size="10" fill="var(--color-text-primary)" text-anchor="end">TVA</text>
-    <rect x="170" y="15" width="361.0" height="26" fill="#1a5c96" opacity="0.85" rx="3"></rect>
-    <text x="536.0" y="31.9" font-size="10" fill="var(--color-text-secondary)">209 Md€ (47.5%)</text>
-    <text x="162" y="65.9" font-size="10" fill="var(--color-text-primary)" text-anchor="end">Impôt sur le revenu</text>
-    <rect x="170" y="49" width="177.9" height="26" fill="#2c7a4b" opacity="0.85" rx="3"></rect>
-    <text x="352.9" y="65.9" font-size="10" fill="var(--color-text-secondary)">103 Md€ (23.4%)</text>
-    <text x="162" y="99.9" font-size="10" fill="var(--color-text-primary)" text-anchor="end">Impôt sur les sociétés</text>
-    <rect x="170" y="83" width="98.5" height="26" fill="#7c3aed" opacity="0.85" rx="3"></rect>
-    <text x="273.5" y="99.9" font-size="10" fill="var(--color-text-secondary)">57 Md€ (13.0%)</text>
-    <text x="162" y="133.9" font-size="10" fill="var(--color-text-primary)" text-anchor="end">Taxe intérieure énergie</text>
-    <rect x="170" y="117" width="24.2" height="26" fill="#e8a020" opacity="0.85" rx="3"></rect>
-    <text x="199.2" y="133.9" font-size="10" fill="var(--color-text-secondary)">14 Md€ (3.2%)</text>
-    <text x="162" y="167.9" font-size="10" fill="var(--color-text-primary)" text-anchor="end">Autres recettes fiscales</text>
-    <rect x="170" y="151" width="58.7" height="26" fill="#6b7280" opacity="0.85" rx="3"></rect>
-    <text x="233.7" y="167.9" font-size="10" fill="var(--color-text-secondary)">34 Md€ (7.7%)</text>
-    <text x="162" y="201.9" font-size="10" fill="var(--color-text-primary)" text-anchor="end">Recettes non fiscales</text>
-    <rect x="170" y="185" width="39.7" height="26" fill="#0891b2" opacity="0.85" rx="3"></rect>
-    <text x="214.7" y="201.9" font-size="10" fill="var(--color-text-secondary)">23 Md€ (5.2%)</text>
-</svg>
+<div class="cell">
+<details class="code-fold">
+<summary>Voir le code R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>recettes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">poste =</span> <span class="fu">c</span>(<span class="st">"TVA"</span>, <span class="st">"Impôt sur le revenu"</span>, <span class="st">"Impôt sur les sociétés"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Taxe intérieure énergie"</span>, <span class="st">"Autres recettes fiscales"</span>, <span class="st">"Recettes non fiscales"</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">montant =</span> <span class="fu">c</span>(<span class="dv">209</span>, <span class="dv">103</span>, <span class="dv">57</span>, <span class="dv">14</span>, <span class="dv">34</span>, <span class="dv">23</span>),  <span class="co"># Md€ approximatifs</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">couleur =</span> <span class="fu">c</span>(<span class="st">"#1a5c96"</span>, <span class="st">"#2c7a4b"</span>, <span class="st">"#7c3aed"</span>, <span class="st">"#e8a020"</span>, <span class="st">"#6b7280"</span>, <span class="st">"#0891b2"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>recettes <span class="ot">&lt;-</span> recettes <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(montant)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">poste =</span> <span class="fu">factor</span>(poste, <span class="at">levels =</span> poste),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct =</span> <span class="fu">round</span>(montant <span class="sc">/</span> <span class="fu">sum</span>(montant) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">paste0</span>(montant, <span class="st">" Md€</span><span class="sc">\n</span><span class="st">("</span>, pct, <span class="st">"%)"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(recettes, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(poste, montant), <span class="at">y =</span> montant, <span class="at">fill =</span> couleur)) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(montant, <span class="st">" Md€"</span>)), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">color =</span> <span class="st">"#374151"</span>) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_identity</span>() <span class="sc">+</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>(<span class="at">xlim =</span> <span class="cn">NULL</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">240</span>)) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Principales recettes de l'État (PLF 2025)"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"En milliards d'euros — Chiffres indicatifs"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-recettes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-recettes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="m3-dette_files/figure-html/fig-recettes-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-recettes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Recettes de l’État français — Projet de loi de finances 2025 (Source : Ministère de l’Économie)
+</figcaption>
 </figure>
+</div>
+</div>
+</div>
 <hr>
 </section>
 <section id="évolution-du-solde-budgétaire" class="level3">
 <h3 class="anchored" data-anchor-id="évolution-du-solde-budgétaire">Évolution du solde budgétaire</h3>
-<figure style="margin:1.5rem 0;" class="figure">
-<figcaption style="font-size:0.85rem;color:var(--color-text-secondary);font-style:italic;text-align:center;margin-bottom:0.5rem;">Solde budgétaire de la France (% du PIB) — Source : INSEE, comptes nationaux base 2020</figcaption>
-<svg viewbox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;">
-  <line x1="40" y1="180.0" x2="685" y2="180.0" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="184.0" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">-10%</text><line x1="40" y1="150.0" x2="685" y2="150.0" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="154.0" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">-8%</text><line x1="40" y1="120.0" x2="685" y2="120.0" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="124.0" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">-6%</text><line x1="40" y1="90.0" x2="685" y2="90.0" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="94.0" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">-4%</text><line x1="40" y1="60.0" x2="685" y2="60.0" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="64.0" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">-2%</text><line x1="40" y1="30.0" x2="685" y2="30.0" stroke="var(--color-border-tertiary)" stroke-width="0.5"></line><text x="36" y="34.0" font-size="9" fill="var(--color-text-secondary)" text-anchor="end">0%</text>
-  <rect x="44.5" y="132.0" width="34" height="102.0" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="61.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2010</text><rect x="87.5" y="106.5" width="34" height="76.5" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="104.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2011</text><rect x="130.5" y="102.0" width="34" height="72.0" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="147.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2012</text><rect x="173.5" y="90.0" width="34" height="60.0" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="190.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2013</text><rect x="216.5" y="88.5" width="34" height="58.5" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="233.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2014</text><rect x="259.5" y="84.0" width="34" height="54.0" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="276.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2015</text><rect x="302.5" y="82.5" width="34" height="52.5" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="319.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2016</text><rect x="345.5" y="73.5" width="34" height="43.5" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="362.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2017</text><rect x="388.5" y="64.5" width="34" height="34.5" fill="#93c5fd" opacity="0.85" rx="2"></rect><text x="405.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2018</text><rect x="431.5" y="82.5" width="34" height="52.5" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="448.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2019</text><rect x="474.5" y="165.0" width="34" height="135.0" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="491.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2020</text><rect x="517.5" y="127.5" width="34" height="97.5" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="534.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2021</text><rect x="560.5" y="100.5" width="34" height="70.5" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="577.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2022</text><rect x="603.5" y="112.5" width="34" height="82.5" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="620.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2023</text><rect x="646.5" y="112.5" width="34" height="82.5" fill="#fca5a5" opacity="0.85" rx="2"></rect><text x="663.5" y="222" font-size="9" fill="var(--color-text-secondary)" text-anchor="middle">2024</text>
-  <polyline points="61.5,132.0 104.5,106.5 147.5,102.0 190.5,90.0 233.5,88.5 276.5,84.0 319.5,82.5 362.5,73.5 405.5,64.5 448.5,82.5 491.5,165.0 534.5,127.5 577.5,100.5 620.5,112.5 663.5,112.5" fill="none" stroke="#1a5c96" stroke-width="1.5" opacity="0.8"></polyline>
-  <line x1="40" y1="75.0" x2="685" y2="75.0" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="6,3"></line>
-  <text x="45" y="70.0" font-size="9" fill="#b91c1c" font-style="italic">Seuil Maastricht : −3 %</text>
-</svg>
-<div style="display:flex;gap:1rem;justify-content:center;font-size:0.78rem;color:var(--color-text-secondary);margin-top:0.4rem;">
-  <span><span style="display:inline-block;width:12px;height:12px;background:#fca5a5;border-radius:2px;vertical-align:middle;margin-right:4px;"></span>Déficit excessif (&lt;−3%)</span>
-  <span><span style="display:inline-block;width:12px;height:12px;background:#93c5fd;border-radius:2px;vertical-align:middle;margin-right:4px;"></span>Dans les clous de Maastricht</span>
+<div class="cell">
+<details class="code-fold">
+<summary>Voir le code R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Données indicatives basées sur données INSEE/Eurostat</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>solde_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">annee =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">solde =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">6.8</span>, <span class="sc">-</span><span class="fl">5.1</span>, <span class="sc">-</span><span class="fl">4.8</span>, <span class="sc">-</span><span class="fl">4.0</span>, <span class="sc">-</span><span class="fl">3.9</span>, <span class="sc">-</span><span class="fl">3.6</span>, <span class="sc">-</span><span class="fl">3.5</span>, <span class="sc">-</span><span class="fl">2.9</span>, <span class="sc">-</span><span class="fl">2.3</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>            <span class="sc">-</span><span class="fl">3.5</span>, <span class="sc">-</span><span class="fl">9.0</span>, <span class="sc">-</span><span class="fl">6.5</span>, <span class="sc">-</span><span class="fl">4.7</span>, <span class="sc">-</span><span class="fl">5.5</span>, <span class="sc">-</span><span class="fl">5.5</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>maastricht_y <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(solde_df, <span class="fu">aes</span>(<span class="at">x =</span> annee, <span class="at">y =</span> solde)) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> maastricht_y, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"#b91c1c"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">ifelse</span>(solde <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">3</span>, <span class="st">"#fca5a5"</span>, <span class="st">"#93c5fd"</span>)), <span class="at">alpha =</span> <span class="fl">0.85</span>) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#1a5c96"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#1a5c96"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2014</span>, <span class="at">y =</span> <span class="sc">-</span><span class="fl">2.6</span>, <span class="at">label =</span> <span class="st">"Seuil Maastricht : −3 %"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"#b91c1c"</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_identity</span>() <span class="sc">+</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">ifelse</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>, x, <span class="st">""</span>)) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Solde (% du PIB)"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"La France dépasse régulièrement le seuil de Maastricht"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Barres rouges = déficit &gt; 3 % du PIB — Données illustratives"</span>) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-solde" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-solde-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="m3-dette_files/figure-html/fig-solde-1.png" class="img-fluid figure-img" width="768">
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-solde-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Solde budgétaire de la France (% du PIB) — Source : INSEE, comptes nationaux base 2020
+</figcaption>
 </figure>
+</div>
+</div>
+</div>
 <hr>
 </section>
 </section>
@@ -871,7 +952,6 @@ ul.task-list li input[type="checkbox"] {
 </footer>
 <script src="../qcm.js"></script>
 <script src="../hero.js"></script>
-<script src="../eco-global.js"></script>
 <script>
   initQCM('m3q1', 2, "Le traité de Maastricht (1992) fixe deux critères de convergence : déficit public < 3 % du PIB ET dette publique < 60 % du PIB. Ces règles s'appliquent à tous les États membres de l'UE.");
   initQCM('m3q2', 0, "Le principe d'annualité signifie que le budget est voté et exécuté sur une année civile. C'est l'un des quatre grands principes budgétaires avec l'unité, l'universalité et la spécialité.");

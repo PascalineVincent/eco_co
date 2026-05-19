@@ -35,6 +35,195 @@
     "text": "Votre progression\n\n  \n    Score cumulé : Chargement...\n  \n  \n    ✓ Accueil\n    Diagnostic\n    Module 1\n    Module 2\n    Module 3\n    Module 4\n    Module 5\n  \n\n\n\n\n\n  \n    → Voir mon profil complet et mes badges"
   },
   {
+    "objectID": "ressources.html",
+    "href": "ressources.html",
+    "title": "📚 Ressources",
+    "section": "",
+    "text": "Ouvrage\nAuteur(s)\nUsage recommandé\n\n\n\n\nQuestions économiques contemporaines\nGuerrero N. (2013)\nCours complet, lecture parallèle\n\n\nDCG5 : Économie contemporaine\nCastaing, Charles, Coquet, Kurowska\nExercices et QCM\n\n\nEconomix\nGoodwin M.\nIntroduction accessible en BD\n\n\nMacroéconomie\nCyriac Guillaumin (2020)\nApprofondissement positive/normative"
+  },
+  {
+    "objectID": "ressources.html#manuels-de-référence",
+    "href": "ressources.html#manuels-de-référence",
+    "title": "📚 Ressources",
+    "section": "",
+    "text": "Ouvrage\nAuteur(s)\nUsage recommandé\n\n\n\n\nQuestions économiques contemporaines\nGuerrero N. (2013)\nCours complet, lecture parallèle\n\n\nDCG5 : Économie contemporaine\nCastaing, Charles, Coquet, Kurowska\nExercices et QCM\n\n\nEconomix\nGoodwin M.\nIntroduction accessible en BD\n\n\nMacroéconomie\nCyriac Guillaumin (2020)\nApprofondissement positive/normative"
+  },
+  {
+    "objectID": "ressources.html#données-économiques-en-accès-libre",
+    "href": "ressources.html#données-économiques-en-accès-libre",
+    "title": "📚 Ressources",
+    "section": "Données économiques en accès libre",
+    "text": "Données économiques en accès libre\n\nINSEE — Données françaises : PIB, chômage, prix, comptes nationaux\nBanque de France — Données monétaires et financières\nBCE / Eurostat — Données européennes comparées\nOCDE — Comparaisons internationales\ndata.gouv.fr — Open data français"
+  },
+  {
+    "objectID": "ressources.html#podcasts-et-médias",
+    "href": "ressources.html#podcasts-et-médias",
+    "title": "📚 Ressources",
+    "section": "Podcasts et médias",
+    "text": "Podcasts et médias\n\n🎙️ France Culture — L’économie en questions — vulgarisation accessible\n🎙️ Xerfi Canal — analyses courtes de conjoncture\n📰 Alternatives Économiques — perspective critique et pédagogique\n📰 Les Échos — actualité économique française et internationale\n📰 Courrier International — regards croisés internationaux"
+  },
+  {
+    "objectID": "ressources.html#outils-r-recommandés-pour-les-tp",
+    "href": "ressources.html#outils-r-recommandés-pour-les-tp",
+    "title": "📚 Ressources",
+    "section": "Outils R recommandés pour les TP",
+    "text": "Outils R recommandés pour les TP\n# Packages essentiels\ninstall.packages(c(\n  \"ggplot2\",    # Visualisation\n  \"dplyr\",      # Manipulation de données\n  \"readxl\",     # Import Excel (données INSEE)\n  \"eurostat\",   # API Eurostat directe\n  \"insee\",      # API INSEE directe\n  \"knitr\",      # Tableaux dans Quarto\n  \"scales\"      # Formatage des axes\n))\n\n# Exemple : télécharger le chômage depuis l'API INSEE\nlibrary(insee)\nchomage &lt;- get_dataset(\"CHOMAGE-TRIM-NATIONAL\")"
+  },
+  {
+    "objectID": "ressources.html#charte-de-lecture-de-la-presse-économique",
+    "href": "ressources.html#charte-de-lecture-de-la-presse-économique",
+    "title": "📚 Ressources",
+    "section": "Charte de lecture de la presse économique",
+    "text": "Charte de lecture de la presse économique\nPour chaque article lu dans le cadre du fil rouge, posez-vous ces questions :\n\nSource : qui a écrit cet article ? Quel est le positionnement éditorial du média ?\nFaits vs opinions : distinguez les données vérifiables des jugements de valeur\nÉconomie positive vs normative : l’auteur décrit-il ou prescrit-il ?\nIntérêts en présence : qui a intérêt à défendre la thèse présentée ?\nConcepts mobilisés : quel(s) concept(s) du cours permettent d’analyser ce fait ?"
+  },
+  {
+    "objectID": "modules/m5-international.html",
+    "href": "modules/m5-international.html",
+    "title": "Module 5 — Économie internationale",
+    "section": "",
+    "text": "NoteObjectifs du module\n\n\n\n\nComprendre le principe de l’avantage comparatif (Ricardo)\nAnalyser les effets des taux de change sur les échanges\nDistinguer les instruments de politique commerciale\nPorter un regard critique sur la mondialisation"
+  },
+  {
+    "objectID": "modules/m5-international.html#pourquoi-commercer-lavantage-comparatif",
+    "href": "modules/m5-international.html#pourquoi-commercer-lavantage-comparatif",
+    "title": "Module 5 — Économie internationale",
+    "section": "1. Pourquoi commercer ? L’avantage comparatif",
+    "text": "1. Pourquoi commercer ? L’avantage comparatif\nDavid Ricardo (1817) démontre qu’un pays a intérêt à se spécialiser même s’il est moins efficace dans toutes les productions.\n\n\nVoir le code R\nlibrary(knitr)\ndf_rc &lt;- data.frame(\n  Pays = c(\"France\", \"Chine\"),\n  `Vin (heures/unité)` = c(10, 20),\n  `Textile (heures/unité)` = c(15, 18)\n)\nkable(df_rc, col.names = c(\"Pays\", \"Vin (h/unité)\", \"Textile (h/unité)\"),\n      caption = \"Nombre d'heures de travail nécessaires par unité produite\")\n\n\n\n\nTable 1: Exemple d’avantage comparatif : France et Chine\n\n\n\n\nNombre d’heures de travail nécessaires par unité produite\n\n\nPays\nVin (h/unité)\nTextile (h/unité)\n\n\n\n\nFrance\n10\n15\n\n\nChine\n20\n18\n\n\n\n\n\n\n\n\nLa France est plus productive dans les deux secteurs. Pourtant, elle a avantage à se spécialiser dans le vin (son avantage relatif est plus fort) et à importer du textile de Chine."
+  },
+  {
+    "objectID": "modules/m5-international.html#les-effets-du-taux-de-change",
+    "href": "modules/m5-international.html#les-effets-du-taux-de-change",
+    "title": "Module 5 — Économie internationale",
+    "section": "2. Les effets du taux de change",
+    "text": "2. Les effets du taux de change\n\n\nVoir le code R\nlibrary(ggplot2)\n\n# Données illustratives EUR/USD\nfx_df &lt;- data.frame(\n  annee = 2015:2024,\n  eurusd = c(1.09, 1.11, 1.13, 1.18, 1.12, 1.14, 1.22, 1.05, 1.08, 1.09)\n)\n\nggplot(fx_df, aes(x = annee, y = eurusd)) +\n  geom_line(color = \"#1a5c96\", linewidth = 1.5) +\n  geom_point(color = \"#1a5c96\", size = 3) +\n  geom_hline(yintercept = 1.0, linetype = \"dashed\", color = \"#b91c1c\", alpha = 0.7) +\n  annotate(\"text\", x = 2017, y = 0.98, label = \"Parité EUR = USD\",\n           color = \"#b91c1c\", size = 3, fontface = \"italic\") +\n  scale_x_continuous(breaks = 2015:2024) +\n  scale_y_continuous(limits = c(0.9, 1.3)) +\n  theme_minimal(base_size = 11) +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +\n  labs(x = NULL, y = \"1 EUR = X USD\",\n       title = \"Taux de change EUR/USD — 2015 à 2024\",\n       subtitle = \"Un euro fort renchérit les exportations européennes — Données illustratives\")\n\n\n\n\n\n\n\n\nFigure 1: Évolution EUR/USD — Impact sur la compétitivité française"
+  },
+  {
+    "objectID": "modules/m5-international.html#les-instruments-de-politique-commerciale",
+    "href": "modules/m5-international.html#les-instruments-de-politique-commerciale",
+    "title": "Module 5 — Économie internationale",
+    "section": "3. Les instruments de politique commerciale",
+    "text": "3. Les instruments de politique commerciale\n\n\n\n\n\n\n\n\n\nInstrument\nDéfinition\nEffet sur les producteurs\nEffet sur les consommateurs\n\n\n\n\nDroit de douane\nTaxe sur les importations\nProtecteur ↑\nPrix plus élevés ↓\n\n\nQuota\nLimite en volume des importations\nProtecteur ↑\nPénurie possible ↓\n\n\nSubvention export\nAide publique aux exportateurs\nCompétitivité ↑\nCoût fiscal ↓\n\n\nLibre-échange\nSuppression de toutes les barrières\nConcurrence ↓\nPrix bas ↑"
+  },
+  {
+    "objectID": "modules/m5-international.html#qcm-de-consolidation",
+    "href": "modules/m5-international.html#qcm-de-consolidation",
+    "title": "Module 5 — Économie internationale",
+    "section": "✅ QCM de consolidation",
+    "text": "✅ QCM de consolidation\n\nQuestion 1 — Avantage comparatif\n\n  Le principe d'avantage comparatif (Ricardo) signifie qu'un pays a intérêt à se spécialiser :\n   Dans la production où son désavantage relatif est le plus faible\n   Uniquement dans les secteurs où il est le plus productif au monde\n   Dans les secteurs où sa main-d'œuvre est la moins chère\n   Dans les industries à forte valeur ajoutée uniquement\n  \n  Valider\n\n\n\nQuestion 2 — Taux de change\n\n  Une dépréciation de l'euro par rapport au dollar a pour effet de :\n   Renchérir les exportations européennes et alléger les importations\n   Réduire à la fois les exportations et les importations européennes\n   Rendre les exportations européennes moins chères et les importations plus chères\n   N'avoir aucun effet sur les échanges commerciaux\n  \n  Valider\n\n\n\nQuestion 3 — Politique commerciale\n\n  Un droit de douane est :\n   Une limite en volume imposée aux produits importés\n   Une taxe prélevée sur les produits importés à la frontière\n   Une aide publique accordée aux entreprises exportatrices\n   Un accord bilatéral de commerce préférentiel\n  \n  Valider\n\n\n\n  ← Module 4\n  \n     Mon bilan de progression →"
+  },
+  {
+    "objectID": "modules/m4-chomage.html",
+    "href": "modules/m4-chomage.html",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "",
+    "text": "NoteObjectifs du module\n\n\n\n\nMaîtriser les définitions et mesures du chômage (BIT, INSEE)\nComprendre les déterminants du marché du travail\nDistinguer politiques actives et passives de l’emploi\nAnalyser l’efficacité des politiques publiques en matière d’emploi"
+  },
+  {
+    "objectID": "modules/m4-chomage.html#mesurer-le-chômage",
+    "href": "modules/m4-chomage.html#mesurer-le-chômage",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "1. Mesurer le chômage",
+    "text": "1. Mesurer le chômage\n\nLa définition du BIT\nSelon le Bureau International du Travail, est chômeur toute personne qui :\n\nEst sans emploi sur la semaine de référence\nEst disponible pour travailler dans les deux semaines\nA effectué des démarches actives de recherche dans le mois précédent\n\n\n\nVoir le code R\nlibrary(ggplot2)\n\nchom_df &lt;- data.frame(\n  annee = 2010:2024,\n  taux = c(9.3, 9.6, 9.8, 10.4, 10.4, 10.4, 10.1, 9.4, 9.0,\n           8.4, 8.0, 7.9, 7.3, 7.3, 7.3)\n)\n\nggplot(chom_df, aes(x = annee, y = taux)) +\n  geom_area(fill = \"#bfdbfe\", alpha = 0.4) +\n  geom_line(color = \"#1a5c96\", linewidth = 1.5) +\n  geom_point(color = \"#1a5c96\", size = 2.5) +\n  geom_hline(yintercept = 7, linetype = \"dashed\", color = \"#e8a020\", linewidth = 0.8) +\n  annotate(\"text\", x = 2013, y = 6.7, label = \"Seuil 'plein emploi' conventionnel : ~7 %\",\n           color = \"#e8a020\", size = 3, fontface = \"italic\") +\n  scale_x_continuous(breaks = 2010:2024) +\n  scale_y_continuous(limits = c(6, 12)) +\n  theme_minimal(base_size = 11) +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +\n  labs(x = NULL, y = \"Taux de chômage (%)\",\n       title = \"Taux de chômage en France — 2010 à 2024\",\n       subtitle = \"Données illustratives — Tendance générale à la baisse depuis 2015\")\n\n\n\n\n\n\n\n\nFigure 1: Taux de chômage en France (%) — Source : INSEE, enquête Emploi"
+  },
+  {
+    "objectID": "modules/m4-chomage.html#les-types-de-chômage",
+    "href": "modules/m4-chomage.html#les-types-de-chômage",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "2. Les types de chômage",
+    "text": "2. Les types de chômage\n\n\n\n\n\n\n\n\nType\nDéfinition\nPolitique adaptée\n\n\n\n\nFrictionnel\nEntre deux emplois (transition normale)\nAméliorer l’information sur le marché\n\n\nStructurel\nInadéquation qualifications/postes disponibles\nFormation, reconversion\n\n\nConjoncturel\nLié au ralentissement économique\nPolitiques de relance\n\n\nTechnologique\nRemplacement par le capital/IA\nTransition professionnelle"
+  },
+  {
+    "objectID": "modules/m4-chomage.html#politiques-actives-vs-passives",
+    "href": "modules/m4-chomage.html#politiques-actives-vs-passives",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "3. Politiques actives vs passives",
+    "text": "3. Politiques actives vs passives\n\n🔎 Simulation — Vous êtes conseiller du ministre\nLa France a un taux de chômage de 7,3 %. Vous disposez de 5 milliards € de budget supplémentaire. Choisissez parmi :\n\nA : 500 000 formations professionnelles à 10 000 € chacune\nB : Réduction des charges patronales pour les bas salaires (3 Md€)\nC : Augmentation des allocations chômage (+20 % pendant 1 an)\nD : Création directe d’emplois publics aidés (50 000 postes)\n\nArgumentez votre choix en mobilisant les concepts du cours."
+  },
+  {
+    "objectID": "modules/m4-chomage.html#qcm-de-consolidation",
+    "href": "modules/m4-chomage.html#qcm-de-consolidation",
+    "title": "Module 4 — Chômage, emploi et politiques publiques",
+    "section": "✅ QCM de consolidation",
+    "text": "✅ QCM de consolidation\n\nQuestion 1 — Définition du chômage\n\n  Selon la définition du BIT, un chômeur est une personne qui :\n   N'a pas d'emploi et a renoncé à en chercher un\n   Est sans emploi, disponible et en recherche active d'emploi\n   Travaille moins de 35 heures par semaine\n   Perçoit des allocations chômage de Pôle Emploi\n  \n  Valider\n\n\n\nQuestion 2 — Politiques de l’emploi\n\n  Les politiques actives de l'emploi visent à :\n   Améliorer le fonctionnement du marché du travail via la formation et les incitations\n   Indemniser les personnes privées d'emploi via l'assurance chômage\n   Réduire le temps de travail pour partager l'emploi disponible\n   Contrôler l'immigration pour protéger le marché du travail national\n  \n  Valider\n\n\n\nQuestion 3 — Types de chômage\n\n  Le chômage frictionnel désigne :\n   Le chômage lié à une récession économique grave\n   L'inadéquation entre les compétences des travailleurs et les besoins des entreprises\n   Les personnes momentanément entre deux emplois lors d'une transition\n   Le chômage causé par l'automatisation et les robots\n  \n  Valider\n\n\n\n  ← Module 3\n  \n     Module 5 — Éco. internationale →"
+  },
+  {
+    "objectID": "modules/m3-dette.html",
+    "href": "modules/m3-dette.html",
+    "title": "Module 3 — La dette publique",
+    "section": "",
+    "text": "NoteObjectifs du module\n\n\n\n\nComprendre la structure du budget de l’État français\nAnalyser l’évolution des recettes et des dépenses publiques\nConnaître les règles budgétaires européennes (critères de Maastricht)\nConstruire une argumentation sur la discipline budgétaire"
+  },
+  {
+    "objectID": "modules/m3-dette.html#le-budget-de-létat-recettes-et-dépenses",
+    "href": "modules/m3-dette.html#le-budget-de-létat-recettes-et-dépenses",
+    "title": "Module 3 — La dette publique",
+    "section": "1. Le budget de l’État : recettes et dépenses",
+    "text": "1. Le budget de l’État : recettes et dépenses\nLe budget de l’État est le document financier qui retrace l’ensemble des recettes et des dépenses publiques sur une année. Il répond à quatre grands principes budgétaires.\n\nLes quatre principes budgétaires\n\n\n\n\n\n\nAstucePrincipe d’universalité\n\n\n\n\n\nToutes les recettes alimentent un pot commun sans être affectées à une dépense précise. Cela garantit la lisibilité et la transparence pour le Parlement.\n\n\n\n\n\n\n\n\n\nAstucePrincipe d’unité\n\n\n\n\n\nToutes les recettes et dépenses figurent dans un document unique. L’objectif : exhaustivité et transparence.\n\n\n\n\n\n\n\n\n\nAstucePrincipe de spécialité\n\n\n\n\n\nChaque dépense est autorisée pour un but défini : une ligne budgétaire = une mission.\n\n\n\n\n\n\n\n\n\nAstucePrincipe d’annualité\n\n\n\n\n\nLe budget est voté et exécuté sur une année civile. Chaque dépense doit être justifiée annuellement (“au premier euro”).\n\n\n\n\n\n\nStructure des recettes (PLF 2025)\n\n\nVoir le code R\nlibrary(ggplot2)\nlibrary(dplyr)\n\nrecettes &lt;- data.frame(\n  poste = c(\"TVA\", \"Impôt sur le revenu\", \"Impôt sur les sociétés\",\n            \"Taxe intérieure énergie\", \"Autres recettes fiscales\", \"Recettes non fiscales\"),\n  montant = c(209, 103, 57, 14, 34, 23),  # Md€ approximatifs\n  couleur = c(\"#1a5c96\", \"#2c7a4b\", \"#7c3aed\", \"#e8a020\", \"#6b7280\", \"#0891b2\")\n)\n\nrecettes &lt;- recettes %&gt;%\n  arrange(desc(montant)) %&gt;%\n  mutate(\n    poste = factor(poste, levels = poste),\n    pct = round(montant / sum(montant) * 100, 1),\n    label = paste0(montant, \" Md€\\n(\", pct, \"%)\")\n  )\n\nggplot(recettes, aes(x = reorder(poste, montant), y = montant, fill = couleur)) +\n  geom_col(width = 0.7, alpha = 0.9) +\n  geom_text(aes(label = paste0(montant, \" Md€\")), hjust = -0.1, size = 3.5, color = \"#374151\") +\n  scale_fill_identity() +\n  coord_flip(xlim = NULL, ylim = c(0, 240)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    axis.text.x = element_blank(),\n    axis.ticks = element_blank(),\n    panel.grid.major.x = element_blank(),\n    panel.grid.minor = element_blank()\n  ) +\n  labs(x = NULL, y = NULL,\n       title = \"Principales recettes de l'État (PLF 2025)\",\n       subtitle = \"En milliards d'euros — Chiffres indicatifs\")\n\n\n\n\n\n\n\n\nFigure 1: Recettes de l’État français — Projet de loi de finances 2025 (Source : Ministère de l’Économie)\n\n\n\n\n\n\n\n\nÉvolution du solde budgétaire\n\n\nVoir le code R\nlibrary(ggplot2)\n\n# Données indicatives basées sur données INSEE/Eurostat\nsolde_df &lt;- data.frame(\n  annee = 2010:2024,\n  solde = c(-6.8, -5.1, -4.8, -4.0, -3.9, -3.6, -3.5, -2.9, -2.3,\n            -3.5, -9.0, -6.5, -4.7, -5.5, -5.5)\n)\n\nmaastricht_y &lt;- -3\n\nggplot(solde_df, aes(x = annee, y = solde)) +\n  geom_hline(yintercept = maastricht_y, linetype = \"dashed\",\n             color = \"#b91c1c\", linewidth = 0.8, alpha = 0.8) +\n  geom_col(aes(fill = ifelse(solde &lt; -3, \"#fca5a5\", \"#93c5fd\")), alpha = 0.85) +\n  geom_line(color = \"#1a5c96\", linewidth = 1) +\n  geom_point(color = \"#1a5c96\", size = 2) +\n  annotate(\"text\", x = 2014, y = -2.6, label = \"Seuil Maastricht : −3 %\",\n           color = \"#b91c1c\", size = 3.2, fontface = \"italic\") +\n  scale_fill_identity() +\n  scale_x_continuous(breaks = 2010:2024, labels = function(x) ifelse(x %% 2 == 0, x, \"\")) +\n  theme_minimal(base_size = 12) +\n  labs(x = NULL, y = \"Solde (% du PIB)\",\n       title = \"La France dépasse régulièrement le seuil de Maastricht\",\n       subtitle = \"Barres rouges = déficit &gt; 3 % du PIB — Données illustratives\") +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\nFigure 2: Solde budgétaire de la France (% du PIB) — Source : INSEE, comptes nationaux base 2020"
+  },
+  {
+    "objectID": "modules/m3-dette.html#les-règles-européennes-les-critères-de-maastricht",
+    "href": "modules/m3-dette.html#les-règles-européennes-les-critères-de-maastricht",
+    "title": "Module 3 — La dette publique",
+    "section": "2. Les règles européennes : les critères de Maastricht",
+    "text": "2. Les règles européennes : les critères de Maastricht\nLe Traité de Maastricht (1992) prévoit deux critères de convergence pour les États membres :\n\n\n\nCritère\nSeuil\nSituation France (2024, approx.)\n\n\n\n\nDéficit public\n&lt; 3 % du PIB\n~5,5 % ⚠️\n\n\nDette publique\n&lt; 60 % du PIB\n~110 % ⚠️"
+  },
+  {
+    "objectID": "modules/m3-dette.html#débat-faut-il-respecter-la-règle-des-3",
+    "href": "modules/m3-dette.html#débat-faut-il-respecter-la-règle-des-3",
+    "title": "Module 3 — La dette publique",
+    "section": "3. Débat — Faut-il respecter la règle des 3 % ?",
+    "text": "3. Débat — Faut-il respecter la règle des 3 % ?\n\nFil rouge — France 2024 : la tension budgétaire\nLa France a été placée sous procédure pour déficit excessif par la Commission européenne en 2024. Le gouvernement doit présenter un plan de retour sous les 3 % à horizon 2027.\nSources : Ministère de l’Économie, Cour des Comptes 2024\n\n\n⚖️ Débat contradictoire (30 min)\nDivisez-vous en deux groupes :\nGROUPE A — Pour la discipline budgétaire - La dette est un fardeau pour les générations futures - Des taux d’intérêt plus élevés freinent l’investissement privé - La crédibilité vis-à-vis des marchés financiers est essentielle - L’expérience grecque (2010-2015) montre les risques d’une dette excessive\nGROUPE B — Contre l’austérité stricte - En période de ralentissement, couper les dépenses aggrave la récession (multiplicateur keynésien) - Les règles de 3 % sont arbitraires et non fondées économiquement (Blanchard, 2019) - Certains investissements publics (éducation, infrastructure verte) génèrent des rendements élevés - L’Allemagne elle-même a suspendu son “frein à l’endettement” en 2023\nProduction attendue : un argument central + une réfutation de l’argument adverse"
+  },
+  {
+    "objectID": "modules/m3-dette.html#qcm-de-consolidation",
+    "href": "modules/m3-dette.html#qcm-de-consolidation",
+    "title": "Module 3 — La dette publique",
+    "section": "✅ QCM de consolidation",
+    "text": "✅ QCM de consolidation\n\nQuestion 1 — Les critères de Maastricht\n\n  Quels sont les deux critères budgétaires fixés par le traité de Maastricht ?\n   Déficit &lt; 5 % du PIB et dette &lt; 80 % du PIB\n   Déficit &lt; 2 % du PIB et dette &lt; 50 % du PIB\n   Déficit &lt; 3 % du PIB et dette &lt; 60 % du PIB\n   Déficit &lt; 1 % du PIB et dette &lt; 40 % du PIB\n  \n  Valider\n\n\n\nQuestion 2 — Principe budgétaire\n\n  Le principe d'annualité budgétaire signifie que :\n   Le budget est voté et exécuté sur une période d'un an\n   Toutes les recettes alimentent un pot commun sans affectation\n   Chaque dépense est autorisée pour un usage défini\n   L'ensemble des dépenses et recettes figure dans un seul document\n  \n  Valider\n\n\n\nQuestion 3 — Déficit vs dette\n\n  Un déficit budgétaire correspond à :\n   Le stock de dettes accumulées depuis plusieurs années\n   L'excédent des dépenses sur les recettes au cours d'une année\n   La différence entre exportations et importations\n   Le montant des intérêts payés sur la dette publique\n  \n  Valider\n\n\n\n  ← Module 2\n  \n     Module 4 — Chômage →"
+  },
+  {
+    "objectID": "modules/m2-croissance.html",
+    "href": "modules/m2-croissance.html",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "",
+    "text": "NoteObjectifs du module\n\n\n\n\nSavoir calculer et interpréter le taux de croissance du PIB\nIdentifier les facteurs de croissance (travail, capital, progrès technique)\nComprendre les limites du PIB comme indicateur de bien-être\nAnalyser les enjeux de la croissance durable"
+  },
+  {
+    "objectID": "modules/m2-croissance.html#quest-ce-que-la-croissance-économique",
+    "href": "modules/m2-croissance.html#quest-ce-que-la-croissance-économique",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "1. Qu’est-ce que la croissance économique ?",
+    "text": "1. Qu’est-ce que la croissance économique ?\nLa croissance économique désigne l’augmentation soutenue de la production d’une économie sur une période longue. Elle se mesure principalement par le taux de variation du PIB en volume.\n\\[\\text{Taux de croissance} = \\frac{\\text{PIB}_t - \\text{PIB}_{t-1}}{\\text{PIB}_{t-1}} \\times 100\\]\n\n\nVoir le code R\nlibrary(ggplot2)\n\npib_df &lt;- data.frame(\n  annee = 2010:2024,\n  taux = c(1.9, 2.1, 0.3, 0.6, 1.0, 1.1, 1.2, 2.3, 1.8, 1.5,\n           -7.9, 6.8, 2.6, 0.9, 1.1)\n)\n\nggplot(pib_df, aes(x = annee, y = taux,\n                   fill = ifelse(taux &gt;= 0, \"#93c5fd\", \"#fca5a5\"))) +\n  geom_col(alpha = 0.85, width = 0.75) +\n  geom_hline(yintercept = 0, color = \"#374151\", linewidth = 0.5) +\n  scale_fill_identity() +\n  scale_x_continuous(breaks = 2010:2024) +\n  theme_minimal(base_size = 11) +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +\n  labs(x = NULL, y = \"Taux de croissance (%)\",\n       title = \"Croissance du PIB en France — 2010 à 2024\",\n       subtitle = \"La chute de 2020 (COVID-19) et le rebond de 2021 dominent la période — Données illustratives\")\n\n\n\n\n\n\n\n\nFigure 1: Taux de croissance du PIB français (%) — Source : INSEE, comptes nationaux base 2020"
+  },
+  {
+    "objectID": "modules/m2-croissance.html#les-facteurs-de-croissance",
+    "href": "modules/m2-croissance.html#les-facteurs-de-croissance",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "2. Les facteurs de croissance",
+    "text": "2. Les facteurs de croissance\nLa fonction de production de Solow décompose la croissance en trois sources :\n\n\n\n\n\n\n\n\nFacteur\nDescription\nExemple\n\n\n\n\nTravail (L)\nQuantité et qualité de main-d’œuvre\nHausse du taux d’activité, formation\n\n\nCapital (K)\nStock d’équipements productifs\nInvestissement en machines, bâtiments\n\n\nProgrès technique (A)\nProductivité totale des facteurs\nInnovation, R&D, numérique"
+  },
+  {
+    "objectID": "modules/m2-croissance.html#les-limites-du-pib",
+    "href": "modules/m2-croissance.html#les-limites-du-pib",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "3. Les limites du PIB",
+    "text": "3. Les limites du PIB\n\nFil rouge — “Le PIB ne dit pas tout”\nEn 2024, la France a connu une croissance de ~1,1 % du PIB. Mais dans le même temps : les inégalités de revenus ont progressé, les émissions de CO₂ n’ont pas atteint les objectifs climatiques, et le bien-être subjectif des Français est resté stable.\n→ Faut-il compléter le PIB par d’autres indicateurs ?\n\n\n📊 Activité — Lire un graphe de l’INSEE\nRendez-vous sur insee.fr → Statistiques → Indicateurs de richesse.\n\nComparez l’évolution du PIB et de l’IDH (Indice de Développement Humain) sur 20 ans.\nCherchez le taux de pauvreté en France : suit-il le PIB ?\nConclusion : le PIB est-il un bon résumé du “progrès” d’une société ?"
+  },
+  {
+    "objectID": "modules/m2-croissance.html#qcm-de-consolidation",
+    "href": "modules/m2-croissance.html#qcm-de-consolidation",
+    "title": "Module 2 — La croissance économique en débat",
+    "section": "✅ QCM de consolidation",
+    "text": "✅ QCM de consolidation\n\nQuestion 1 — Le PIB\n\n  Parmi ces propositions, laquelle est une limite reconnue du PIB comme indicateur de bien-être ?\n   Le PIB ne mesure pas la production des entreprises étrangères\n   Le PIB ne prend pas en compte les inégalités de distribution des revenus\n   Le PIB surestime la production industrielle par rapport aux services\n   Le PIB est calculé chaque mois ce qui le rend peu fiable\n  \n  Valider\n\n\n\nQuestion 2 — Facteurs de croissance\n\n  Selon les théories de la croissance endogène, quel est le principal moteur de la croissance à long terme ?\n   L'augmentation de la population active\n   L'accumulation de capital physique (machines, équipements)\n   Le progrès technique et l'innovation\n   La consommation des ménages\n  \n  Valider\n\n\n\nQuestion 3 — Indicateurs alternatifs\n\n  L'IDH (Indice de Développement Humain) mesure :\n   L'espérance de vie, le niveau d'éducation et le revenu\n   La croissance économique, l'inflation et le chômage\n   Le PIB par habitant et le niveau des inégalités\n   Le bonheur déclaré et le niveau de vie matériel\n  \n  Valider\n\n\n\n  ← Module 1\n  \n     Module 3 — Dette publique →"
+  },
+  {
+    "objectID": "glossaire.html",
+    "href": "glossaire.html",
+    "title": "📖 Glossaire",
+    "section": "",
+    "text": "🔍\n  \n\n\n\n\n\n\n\n  Aucun terme ne correspond à votre recherche."
+  },
+  {
     "objectID": "diagnostic.html",
     "href": "diagnostic.html",
     "title": "Diagnostic de départ",
@@ -84,95 +273,39 @@
     "text": "Interprétez votre résultat\n\n  Votre score : Répondez aux questions ci-dessus\n  \n\n\n\nScore\nProfil\nConseil\n\n\n\n\n0–1 / 5\nDébutant\nCommencez par Module 1 en détail, consultez le glossaire\n\n\n2–3 / 5\nIntermédiaire\nParcours standard recommandé — suivez l'ordre des modules\n\n\n4–5 / 5\nAvancé\nVous pouvez aller directement aux activités et débats de chaque module\n\n\n\n\n\n\n\n  \n    Commencer le Module 1 →"
   },
   {
-    "objectID": "modules/m1-principes.html",
-    "href": "modules/m1-principes.html",
-    "title": "Module 1 — Grands principes de l’économie",
+    "objectID": "carnet.html",
+    "href": "carnet.html",
+    "title": "📓 Mon carnet de bord",
     "section": "",
-    "text": "NoteObjectifs du module\n\n\n\nÀ l’issue de ce module, vous serez capable de :\n\nExpliquer pourquoi la rareté oblige à faire des choix économiques\nDistinguer microéconomie et macroéconomie\nDifférencier une affirmation positive d’une affirmation normative\nIdentifier les trois fonctions de l’État dans l’économie"
+    "text": "Carnet de bord — Économie Contemporaine\n    Vos traces d'apprentissage\n    Sauvegardé automatiquement dans votre navigateur\n  \n  \n    \n      0\n      fiches remplies\n    \n    \n      0\n      mots écrits\n    \n    \n      0/5\n      modules engagés\n    \n  \n\n\n\n\n  Module 1\n  Module 2\n  Module 3\n  Module 4\n  Module 5\n  ✦ Synthèse\n\n\n\n\n  Module 1 — Grands principes de l'économie\n\n  \n    ① Ce que j'ai compris\n    Reformulez en 3–5 phrases le concept qui vous a semblé le plus important dans ce module. Utilisez vos propres mots, sans regarder vos notes.\n    \n    0 mot\n  \n\n  \n    ② Ce qui me pose encore question\n    Notez 1 à 3 points du cours qui restent flous pour vous. Formulez-les comme des questions précises — cela vous aidera à les poser en séance.\n    \n    0 mot\n  \n\n  \n    ③ Un exemple tiré de mon quotidien\n    Identifiez un arbitrage ou une externalité que vous avez vécus personnellement cette semaine. Décrivez-le en mobilisant le vocabulaire du cours.\n    \n    0 mot\n  \n\n  \n    ④ Mon article du fil rouge\n    Résumez en 5–8 lignes un article de presse en lien avec ce module. Indiquez la source, distinguez les faits (économie positive) des jugements (économie normative).\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  Module 2 — La croissance économique en débat\n\n  \n    ① Ce que j'ai compris\n    Expliquez avec vos mots pourquoi le PIB est imparfait comme mesure du bien-être. Citez deux limites concrètes.\n    \n    0 mot\n  \n\n  \n    ② Lecture d'un graphique INSEE\n    Rendez-vous sur insee.fr, cherchez l'évolution du PIB sur 10 ans. Décrivez ce que vous observez : tendances, ruptures, anomalies. Que se passe-t-il en 2020 ?\n    \n    0 mot\n  \n\n  \n    ③ Ma position dans le débat\n    Faut-il « dépasser le PIB » ou en rester à cet indicateur ? Défendez une position argumentée en 5–8 lignes. Mobilisez au moins un argument du cours et une référence concrète.\n    \n    0 mot\n  \n\n  \n    ④ Mon article du fil rouge\n    Trouvez un article sur la croissance française ou un indicateur alternatif (IDH, bien-être, empreinte carbone). Résumez et analysez.\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  Module 3 — La dette publique\n\n  \n    ① Ce que j'ai compris\n    Expliquez la différence entre déficit et dette avec une analogie personnelle (budget étudiant, budget familial).\n    \n    0 mot\n  \n\n  \n    ② Arguments du débat budgétaire\n    Après le débat en classe (ou la lecture du module), listez les 3 meilleurs arguments pour la discipline budgétaire et les 3 meilleurs contre l'austérité. Quel camp vous convainc le plus ?\n    \n    0 mot\n  \n\n  \n    ③ Mon article du fil rouge\n    Cherchez un article sur la procédure de déficit excessif ouverte contre la France. Qui parle ? Quelles solutions sont avancées ? Quels intérêts s'affrontent ?\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  Module 4 — Chômage, emploi et politiques publiques\n\n  \n    ① Ce que j'ai compris\n    Expliquez pourquoi le taux de chômage officiel (BIT) sous-estime souvent la réalité du mal-emploi. Citez les catégories non prises en compte.\n    \n    0 mot\n  \n\n  \n    ② Ma politique de l'emploi idéale\n    Si vous étiez ministre du Travail avec 5 Md€ de budget, quelle mesure adopteriez-vous en priorité ? Justifiez en une dizaine de lignes en mobilisant les concepts du cours.\n    \n    0 mot\n  \n\n  \n    ③ Mon article du fil rouge\n    Cherchez une actualité sur le marché du travail en France (données DARES, Pôle Emploi, réforme de l'assurance chômage). Analysez-la.\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  Module 5 — Économie internationale\n\n  \n    ① Ce que j'ai compris\n    Expliquez l'avantage comparatif avec un exemple que vous avez trouvé vous-même — différent de celui du cours.\n    \n    0 mot\n  \n\n  \n    ② Mondialisation : bilan personnel\n    Listez 3 façons dont la mondialisation affecte concrètement votre vie quotidienne (produits que vous consommez, applications que vous utilisez, emplois dans votre région). Puis: est-elle, selon vous, globalement positive ou négative pour la France ?\n    \n    0 mot\n  \n\n  \n    ③ Mon article du fil rouge\n    Cherchez un article sur les tensions commerciales récentes (droits de douane, relocalisations, chaînes d'approvisionnement). Analysez-le avec les outils du module.\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  ✦ Synthèse de fin de semestre\n\n  \n    ① Le concept qui a le plus changé ma vision\n    Parmi tous les concepts vus dans le cours, lequel a le plus modifié votre façon de comprendre l'économie ou l'actualité ? Expliquez en quoi votre regard a changé.\n    \n    0 mot\n  \n\n  \n    ② Les liens entre modules\n    Montrez comment deux thèmes différents du cours s'articulent. Par exemple : comment la dette publique est-elle liée au chômage ? Comment la croissance affecte-t-elle le commerce international ?\n    \n    0 mot\n  \n\n  \n    ③ Ma question d'examen\n    Formulez vous-même une question d'examen de type « Présentez et discutez… » qui couvre au moins deux modules. Puis esquissez un plan en trois parties.\n    \n    0 mot\n  \n\n  \n    ④ Mon bilan d'apprentissage\n    Évaluez honnêtement votre progression sur le semestre. Quelles sont vos forces ? Vos lacunes persistantes ? Que feriez-vous différemment ?\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer la synthèse\n    📄 Exporter tout le carnet\n    Sauvegardé ✓\n  \n\n\n\n\n\n\n  ℹ️ Confidentialité — Vos réponses sont sauvegardées uniquement dans votre navigateur (localStorage). Elles ne sont jamais envoyées à un serveur. Utilisez Exporter pour conserver une copie en dehors du navigateur."
   },
   {
-    "objectID": "modules/m1-principes.html#des-ressources-limitées-face-à-des-besoins-illimités",
-    "href": "modules/m1-principes.html#des-ressources-limitées-face-à-des-besoins-illimités",
-    "title": "Module 1 — Grands principes de l’économie",
-    "section": "1. Des ressources limitées face à des besoins illimités",
-    "text": "1. Des ressources limitées face à des besoins illimités\nLa question centrale de l’économie est simple à formuler, difficile à résoudre : comment satisfaire des besoins illimités avec des ressources limitées ?\n\nLa rareté est la situation dans laquelle les ressources disponibles sont insuffisantes pour satisfaire tous les désirs des individus. C’est le problème fondamental de la science économique (Samuelson).\n\n\nLa pyramide des besoins (Maslow)\n\nPyramide de Maslow — hiérarchie des besoins humains\n\n  \n  \n  Besoins physiologiques\n  manger, dormir, respirer\n  \n  \n  Sécurité\n  emploi, logement, santé\n  \n  \n  Appartenance sociale\n  famille, amis, groupes\n  \n  \n  Estime de soi\n  \n  \n  Réalisation\n\n\n\n\nLe coût d’opportunité\nChoisir, c’est renoncer. Chaque décision a un coût d’opportunité : la valeur de la meilleure option abandonnée.\n\nActivité — Choisir, c’est renoncer\nImaginez : vous avez 3 heures libres ce soir. Vous hésitez entre :\n\nRéviser ce cours (valeur : bonne note à l’exam)\nTravailler en job étudiant à 12 €/h (valeur : 36 €)\nSortir avec des amis (valeur : plaisir social)\n\nSi vous choisissez de réviser, votre coût d’opportunité est le maximum entre les 36 € et la soirée entre amis. Réfléchissez : quel choix faites-vous habituellement ? Êtes-vous pleinement conscient du coût que vous acceptez ?"
-  },
-  {
-    "objectID": "modules/m1-principes.html#micro-vs-macroéconomie",
-    "href": "modules/m1-principes.html#micro-vs-macroéconomie",
-    "title": "Module 1 — Grands principes de l’économie",
-    "section": "2. Micro vs Macroéconomie",
-    "text": "2. Micro vs Macroéconomie\n\n\n\n\n\n\n\n\n\nMicroéconomie\nMacroéconomie\n\n\n\n\nObjet\nAgents individuels\nÉconomie dans son ensemble\n\n\nQuestions\nPourquoi le prix du pain augmente-t-il ?\nPourquoi le chômage augmente-t-il ?\n\n\nExemples\nComportement du consommateur, firme\nPIB, inflation, chômage, balance commerciale\n\n\nPères fondateurs\nMarshall, Walras\nKeynes, Friedman"
-  },
-  {
-    "objectID": "modules/m1-principes.html#économie-positive-vs-normative",
-    "href": "modules/m1-principes.html#économie-positive-vs-normative",
-    "title": "Module 1 — Grands principes de l’économie",
-    "section": "3. Économie positive vs normative",
-    "text": "3. Économie positive vs normative\nCette distinction est cruciale pour lire l’actualité économique avec esprit critique.\n\nExemples d'affirmations positives vs normatives\n\n\n\n\nÉconomie positive (faits)\nÉconomie normative (recommandations)\n\n\n\n\nLe taux de chômage est de 7,3 % en France (T3 2024)\nIl faut réduire le chômage en priorité\n\n\nUne hausse du SMIC augmente les coûts des entreprises\nLe SMIC devrait être augmenté de 10 %\n\n\nLa dette publique française dépasse 110 % du PIB\nLa France doit impérativement réduire sa dette\n\n\n\n\n\n\nFil rouge — Exercice d’analyse critique\nLisez cet extrait (fictif mais réaliste) d’un article des Échos :\n\n“La France, dont la dette atteint 3 228 milliards d’euros, doit absolument mettre en place un plan d’austérité sévère sous peine d’un effondrement financier.”\n\nQuestions : Identifiez les affirmations positives et normatives dans cet extrait. Quels jugements de valeur sont implicitement présents ? L’auteur est-il en train de décrire ou de prescrire ?"
-  },
-  {
-    "objectID": "modules/m1-principes.html#les-fonctions-de-létat-et-les-défaillances-de-marché",
-    "href": "modules/m1-principes.html#les-fonctions-de-létat-et-les-défaillances-de-marché",
-    "title": "Module 1 — Grands principes de l’économie",
-    "section": "4. Les fonctions de l’État et les défaillances de marché",
-    "text": "4. Les fonctions de l’État et les défaillances de marché\n\nTrois fonctions selon Musgrave\n\nAllocation : produire les biens collectifs que le marché ne fournit pas\nRedistribution : corriger les inégalités via la fiscalité et les transferts sociaux\nRégulation : stabiliser l’activité économique (politiques conjoncturelles)\n\n\n\nLes externalités\n\n\n\n\n\n\nAvertissementDéfinition\n\n\n\nUne externalité est un effet (positif ou négatif) produit par l’activité d’un agent sur un autre agent, sans compensation monétaire via le marché.\n\n\n\nExternalité négative : le coût social dépasse le coût privé\n\n  \n  \n  \n  P\n  Q\n  \n  \n  Demande\n  \n  Coût privé\n  \n  Coût social\n  \n  \n  \n  \n  \n  Q*privé\n  Q*social\n  Sur-production\n\n\n  L'entreprise s'arrête à Q*privé, mais le coût social optimal est Q*social. La différence représente la sur-production génératrice de nuisances.\n\n\n\n\nLes biens publics\n\n\n\n\n\n\n\n\n\nExcluable\nNon excluable\n\n\n\n\nRival\nBiens privés (pain, vêtements)\nBiens communs (ressources marines)\n\n\nNon rival\nBiens de club (autoroute à péage)\nBiens collectifs (défense, radio publique)"
-  },
-  {
-    "objectID": "modules/m1-principes.html#qcm-de-consolidation",
-    "href": "modules/m1-principes.html#qcm-de-consolidation",
-    "title": "Module 1 — Grands principes de l’économie",
-    "section": "✅ QCM de consolidation",
-    "text": "✅ QCM de consolidation\n\nQuestion 1 — La rareté\n\n  Quel est le principe qui fonde la nécessité de faire des choix en économie ?\n   La rareté des ressources face à des besoins illimités\n   L'abondance des biens de consommation sur les marchés\n   La régulation des marchés par l'État\n   La concurrence entre les entreprises\n  \n  Valider\n\n\n\nQuestion 2 — Positive ou normative ?\n\n  Laquelle de ces propositions relève de l'économie normative ?\n   L'inflation française était de 2,1 % en décembre 2024\n   Une hausse du taux directeur ralentit l'inflation\n   La BCE devrait baisser ses taux pour relancer la croissance\n   Le PIB de la zone euro a progressé de 0,4 % au T3 2024\n  \n  Valider\n\n\n\nQuestion 3 — Biens publics\n\n  Un bien public (collectif) est caractérisé par :\n   La rivalité et l'excluabilité\n   La non-rivalité et la non-excluabilité\n   La rivalité et la non-excluabilité\n   La non-rivalité et l'excluabilité\n  \n  Valider"
-  },
-  {
-    "objectID": "modules/m1-principes.html#activité-le-dilemme-du-prisonnier-en-classe",
-    "href": "modules/m1-principes.html#activité-le-dilemme-du-prisonnier-en-classe",
-    "title": "Module 1 — Grands principes de l’économie",
-    "section": "Activité — Le dilemme du prisonnier en classe",
-    "text": "Activité — Le dilemme du prisonnier en classe\n\n🎭 Jeu de rôle collectif (20 min)\nVous jouez deux entreprises concurrentes qui doivent décider de leur stratégie de prix sans communication :\n\n\n\n\nMaintenir prix haut\nCasser les prix\n\n\n\n\nMaintenir prix haut\n(10, 10)\n(2, 15)\n\n\nCasser les prix\n(15, 2)\n(5, 5)\n\n\n\nQuestion : Quelle stratégie choisissez-vous ? Que constatez-vous ? En quoi ce jeu illustre-t-il la difficulté de produire des biens collectifs ?\n→ Ce jeu est directement lié à la théorie des biens communs et aux externalités vues en cours."
-  },
-  {
-    "objectID": "modules/m1-principes.html#pour-aller-plus-loin",
-    "href": "modules/m1-principes.html#pour-aller-plus-loin",
-    "title": "Module 1 — Grands principes de l’économie",
-    "section": "Pour aller plus loin",
-    "text": "Pour aller plus loin\n\n🎧 France Culture — L’économie en questions\n📖 Economix (Goodwin) — ch. 1 à 3\n📊 INSEE - Données macroéconomiques\n\n\n\n  ← Diagnostic\n  \n     Module 2 — La croissance →"
-  },
-  {
-    "objectID": "modules/m3-dette.html",
-    "href": "modules/m3-dette.html",
-    "title": "Module 3 — La dette publique",
+    "objectID": "bilan.html",
+    "href": "bilan.html",
+    "title": "Mon bilan de progression",
     "section": "",
-    "text": "NoteObjectifs du module\n\n\n\n\nComprendre la structure du budget de l’État français\nAnalyser l’évolution des recettes et des dépenses publiques\nConnaître les règles budgétaires européennes (critères de Maastricht)\nConstruire une argumentation sur la discipline budgétaire"
+    "text": "Questions répondues\n    —\n    sur 20 questions au total\n  \n  \n    Bonnes réponses\n    —\n    des questions répondues\n  \n\n\n\n\n\n  Note : Votre progression est sauvegardée localement dans votre navigateur.\n  Elle persiste entre les sessions sur le même appareil et navigateur."
   },
   {
-    "objectID": "modules/m3-dette.html#le-budget-de-létat-recettes-et-dépenses",
-    "href": "modules/m3-dette.html#le-budget-de-létat-recettes-et-dépenses",
-    "title": "Module 3 — La dette publique",
-    "section": "1. Le budget de l’État : recettes et dépenses",
-    "text": "1. Le budget de l’État : recettes et dépenses\nLe budget de l’État est le document financier qui retrace l’ensemble des recettes et des dépenses publiques sur une année. Il répond à quatre grands principes budgétaires.\n\nLes quatre principes budgétaires\n\n\n\n\n\n\nAstucePrincipe d’universalité\n\n\n\n\n\nToutes les recettes alimentent un pot commun sans être affectées à une dépense précise. Cela garantit la lisibilité et la transparence pour le Parlement.\n\n\n\n\n\n\n\n\n\nAstucePrincipe d’unité\n\n\n\n\n\nToutes les recettes et dépenses figurent dans un document unique. L’objectif : exhaustivité et transparence.\n\n\n\n\n\n\n\n\n\nAstucePrincipe de spécialité\n\n\n\n\n\nChaque dépense est autorisée pour un but défini : une ligne budgétaire = une mission.\n\n\n\n\n\n\n\n\n\nAstucePrincipe d’annualité\n\n\n\n\n\nLe budget est voté et exécuté sur une année civile. Chaque dépense doit être justifiée annuellement (“au premier euro”).\n\n\n\n\n\n\nStructure des recettes (PLF 2025)\n\nRecettes de l'État français — Projet de loi de finances 2025 (Source : Ministère de l'Économie)\n\n  \n    TVA\n    \n    209 Md€ (47.5%)\n    Impôt sur le revenu\n    \n    103 Md€ (23.4%)\n    Impôt sur les sociétés\n    \n    57 Md€ (13.0%)\n    Taxe intérieure énergie\n    \n    14 Md€ (3.2%)\n    Autres recettes fiscales\n    \n    34 Md€ (7.7%)\n    Recettes non fiscales\n    \n    23 Md€ (5.2%)\n\n\n\n\n\nÉvolution du solde budgétaire\n\nSolde budgétaire de la France (% du PIB) — Source : INSEE, comptes nationaux base 2020\n\n  -10%-8%-6%-4%-2%0%\n  201020112012201320142015201620172018201920202021202220232024\n  \n  \n  Seuil Maastricht : −3 %\n\n\n  Déficit excessif (&lt;−3%)\n  Dans les clous de Maastricht"
+    "objectID": "bilan.html#votre-tableau-de-bord",
+    "href": "bilan.html#votre-tableau-de-bord",
+    "title": "Mon bilan de progression",
+    "section": "",
+    "text": "Questions répondues\n    —\n    sur 20 questions au total\n  \n  \n    Bonnes réponses\n    —\n    des questions répondues\n  \n\n\n\n\n\n  Note : Votre progression est sauvegardée localement dans votre navigateur.\n  Elle persiste entre les sessions sur le même appareil et navigateur."
   },
   {
-    "objectID": "modules/m3-dette.html#les-règles-européennes-les-critères-de-maastricht",
-    "href": "modules/m3-dette.html#les-règles-européennes-les-critères-de-maastricht",
-    "title": "Module 3 — La dette publique",
-    "section": "2. Les règles européennes : les critères de Maastricht",
-    "text": "2. Les règles européennes : les critères de Maastricht\nLe Traité de Maastricht (1992) prévoit deux critères de convergence pour les États membres :\n\n\n\nCritère\nSeuil\nSituation France (2024, approx.)\n\n\n\n\nDéficit public\n&lt; 3 % du PIB\n~5,5 % ⚠️\n\n\nDette publique\n&lt; 60 % du PIB\n~110 % ⚠️"
+    "objectID": "bilan.html#se-préparer-à-lexamen",
+    "href": "bilan.html#se-préparer-à-lexamen",
+    "title": "Mon bilan de progression",
+    "section": "Se préparer à l’examen",
+    "text": "Se préparer à l’examen\nL’évaluation finale est un examen écrit sur table. Voici les types d’exercices attendus :\n\nTypes de questions fréquentes\n\nQuestion de définition (4–6 pts) — Définissez le coût d’opportunité / l’externalité / le bien public\nAnalyse de document (6–8 pts) — Commentez un graphique ou tableau statistique\nQuestion de réflexion (8–10 pts) — Présentez les arguments pour et contre une politique économique\n\n\n\nFiches de révision rapide\n\n\n\n\n\n\nAstuceModule 1 — Mots-clés à maîtriser\n\n\n\n\n\nRareté · Coût d’opportunité · Microéconomie · Macroéconomie · Économie positive · Économie normative · Externalité · Bien public · Free rider · Fonctions de l’État (Musgrave)\n\n\n\n\n\n\n\n\n\nAstuceModule 2 — Mots-clés à maîtriser\n\n\n\n\n\nPIB · Taux de croissance · Facteurs de production · Productivité · Progrès technique · Croissance endogène · IDH · Développement durable · Indicateurs de richesse\n\n\n\n\n\n\n\n\n\nAstuceModule 3 — Mots-clés à maîtriser\n\n\n\n\n\nBudget de l’État · Recettes fiscales · TVA · Déficit budgétaire · Dette publique · Critères de Maastricht · Multiplicateur keynésien · Austérité · Pacte de stabilité\n\n\n\n\n\n\n\n\n\nAstuceModule 4 — Mots-clés à maîtriser\n\n\n\n\n\nChômage BIT · Chômage frictionnel / structurel / conjoncturel · Taux d’activité · SMIC · Politiques actives / passives · Assurance chômage · Flexisécurité\n\n\n\n\n\n\n\n\n\nAstuceModule 5 — Mots-clés à maîtriser\n\n\n\n\n\nAvantage comparatif · Spécialisation · Taux de change · Balance commerciale · Droit de douane · Protectionnisme · Libre-échange · OMC · Délocalisations"
   },
   {
-    "objectID": "modules/m3-dette.html#débat-faut-il-respecter-la-règle-des-3",
-    "href": "modules/m3-dette.html#débat-faut-il-respecter-la-règle-des-3",
-    "title": "Module 3 — La dette publique",
-    "section": "3. Débat — Faut-il respecter la règle des 3 % ?",
-    "text": "3. Débat — Faut-il respecter la règle des 3 % ?\n\nFil rouge — France 2024 : la tension budgétaire\nLa France a été placée sous procédure pour déficit excessif par la Commission européenne en 2024. Le gouvernement doit présenter un plan de retour sous les 3 % à horizon 2027.\nSources : Ministère de l’Économie, Cour des Comptes 2024\n\n\n⚖️ Débat contradictoire (30 min)\nDivisez-vous en deux groupes :\nGROUPE A — Pour la discipline budgétaire - La dette est un fardeau pour les générations futures - Des taux d’intérêt plus élevés freinent l’investissement privé - La crédibilité vis-à-vis des marchés financiers est essentielle - L’expérience grecque (2010-2015) montre les risques d’une dette excessive\nGROUPE B — Contre l’austérité stricte - En période de ralentissement, couper les dépenses aggrave la récession (multiplicateur keynésien) - Les règles de 3 % sont arbitraires et non fondées économiquement (Blanchard, 2019) - Certains investissements publics (éducation, infrastructure verte) génèrent des rendements élevés - L’Allemagne elle-même a suspendu son “frein à l’endettement” en 2023\nProduction attendue : un argument central + une réfutation de l’argument adverse"
-  },
-  {
-    "objectID": "modules/m3-dette.html#qcm-de-consolidation",
-    "href": "modules/m3-dette.html#qcm-de-consolidation",
-    "title": "Module 3 — La dette publique",
-    "section": "✅ QCM de consolidation",
-    "text": "✅ QCM de consolidation\n\nQuestion 1 — Les critères de Maastricht\n\n  Quels sont les deux critères budgétaires fixés par le traité de Maastricht ?\n   Déficit &lt; 5 % du PIB et dette &lt; 80 % du PIB\n   Déficit &lt; 2 % du PIB et dette &lt; 50 % du PIB\n   Déficit &lt; 3 % du PIB et dette &lt; 60 % du PIB\n   Déficit &lt; 1 % du PIB et dette &lt; 40 % du PIB\n  \n  Valider\n\n\n\nQuestion 2 — Principe budgétaire\n\n  Le principe d'annualité budgétaire signifie que :\n   Le budget est voté et exécuté sur une période d'un an\n   Toutes les recettes alimentent un pot commun sans affectation\n   Chaque dépense est autorisée pour un usage défini\n   L'ensemble des dépenses et recettes figure dans un seul document\n  \n  Valider\n\n\n\nQuestion 3 — Déficit vs dette\n\n  Un déficit budgétaire correspond à :\n   Le stock de dettes accumulées depuis plusieurs années\n   L'excédent des dépenses sur les recettes au cours d'une année\n   La différence entre exportations et importations\n   Le montant des intérêts payés sur la dette publique\n  \n  Valider\n\n\n\n  ← Module 2\n  \n     Module 4 — Chômage →"
+    "objectID": "bilan.html#bibliographie-de-révision",
+    "href": "bilan.html#bibliographie-de-révision",
+    "title": "Mon bilan de progression",
+    "section": "Bibliographie de révision",
+    "text": "Bibliographie de révision\n\nGuerrero N. — Questions économiques contemporaines (2013)\nCastaing et al. — DCG5 : Économie contemporaine\nGoodwin M. — Economix : la première histoire de l’économie en BD\n🎧 France Culture — L’économie en questions\n📰 Alternatives Économiques — Hors-série pédagogique\n📊 INSEE — Données et publications"
   },
   {
     "objectID": "a-propos.html",
@@ -215,257 +348,5 @@
     "title": "À propos de ce site",
     "section": "Contact",
     "text": "Contact\nPour toute question sur le contenu du cours ou le fonctionnement de ce site, contactez l’enseignant responsable via l’espace numérique de travail de votre université ou en séance.\n\n  Version du site : 1.0 — Semestre 1, année 2024–2025\n  Technologie : Quarto + R + JavaScript\n  Thème : Flatly (Bootstrap 5) personnalisé — palette bleue académique"
-  },
-  {
-    "objectID": "bilan.html",
-    "href": "bilan.html",
-    "title": "Mon bilan de progression",
-    "section": "",
-    "text": "Questions répondues\n    —\n    sur 20 questions au total\n  \n  \n    Bonnes réponses\n    —\n    des questions répondues\n  \n\n\n\n\n\n  Note : Votre progression est sauvegardée localement dans votre navigateur.\n  Elle persiste entre les sessions sur le même appareil et navigateur."
-  },
-  {
-    "objectID": "bilan.html#votre-tableau-de-bord",
-    "href": "bilan.html#votre-tableau-de-bord",
-    "title": "Mon bilan de progression",
-    "section": "",
-    "text": "Questions répondues\n    —\n    sur 20 questions au total\n  \n  \n    Bonnes réponses\n    —\n    des questions répondues\n  \n\n\n\n\n\n  Note : Votre progression est sauvegardée localement dans votre navigateur.\n  Elle persiste entre les sessions sur le même appareil et navigateur."
-  },
-  {
-    "objectID": "bilan.html#se-préparer-à-lexamen",
-    "href": "bilan.html#se-préparer-à-lexamen",
-    "title": "Mon bilan de progression",
-    "section": "Se préparer à l’examen",
-    "text": "Se préparer à l’examen\nL’évaluation finale est un examen écrit sur table — 2 heures — 20 points. Le sujet est structuré en deux parties égales :\n\n  \n    Partie I\n    QCM — 10 points\n    \n      20 questions à choix multiple (0,5 pt chacune, sans malus).\n      Couvre l'ensemble des modules du cours.\n      Durée conseillée : 30 min\n    \n  \n  \n    Partie II\n    Réflexion sur dossier — 10 points\n    \n      1 ou 2 documents (données chiffrées, extrait d'article).\n      Question de réflexion argumentée mobilisant le cours.\n      Durée conseillée : 1h30\n    \n  \n\n\n\n\n\n\n\nAstuceConseils pour la Partie II — Question de réflexion\n\n\n\n\nLisez d’abord les documents en entier avant de rédiger\nStructurez votre réponse : introduction (définir les termes, annoncer le plan), développement en 2-3 parties avec arguments ET contre-arguments, conclusion\nCitez les documents : “Selon le document 1…”, “Les données montrent que…”\nMobilisez les notions du cours : chaque notion correctement utilisée est valorisée\nSoignez la présentation : une copie aérée et bien structurée est plus agréable à corriger\n\n\n\n\nFiches de révision rapide\n\n\n\n\n\n\nAstuceModule 1 — Mots-clés à maîtriser\n\n\n\n\n\nRareté · Coût d’opportunité · Microéconomie · Macroéconomie · Économie positive · Économie normative · Externalité · Bien public · Free rider · Fonctions de l’État (Musgrave)\n\n\n\n\n\n\n\n\n\nAstuceModule 2 — Mots-clés à maîtriser\n\n\n\n\n\nPIB · Taux de croissance · Facteurs de production · Productivité · Progrès technique · Croissance endogène · IDH · Développement durable · Indicateurs de richesse\n\n\n\n\n\n\n\n\n\nAstuceModule 3 — Mots-clés à maîtriser\n\n\n\n\n\nBudget de l’État · Recettes fiscales · TVA · Déficit budgétaire · Dette publique · Critères de Maastricht · Multiplicateur keynésien · Austérité · Pacte de stabilité\n\n\n\n\n\n\n\n\n\nAstuceModule 4 — Mots-clés à maîtriser\n\n\n\n\n\nChômage BIT · Chômage frictionnel / structurel / conjoncturel · Taux d’activité · SMIC · Politiques actives / passives · Assurance chômage · Flexisécurité\n\n\n\n\n\n\n\n\n\nAstuceModule 5 — Mots-clés à maîtriser\n\n\n\n\n\nAvantage comparatif · Spécialisation · Taux de change · Balance commerciale · Droit de douane · Protectionnisme · Libre-échange · OMC · Délocalisations"
-  },
-  {
-    "objectID": "bilan.html#bibliographie-de-révision",
-    "href": "bilan.html#bibliographie-de-révision",
-    "title": "Mon bilan de progression",
-    "section": "Bibliographie de révision",
-    "text": "Bibliographie de révision\n\nGuerrero N. — Questions économiques contemporaines (2013)\nCastaing et al. — DCG5 : Économie contemporaine\nGoodwin M. — Economix : la première histoire de l’économie en BD\n🎧 France Culture — L’économie en questions\n📰 Alternatives Économiques — Hors-série pédagogique\n📊 INSEE — Données et publications"
-  },
-  {
-    "objectID": "carnet.html",
-    "href": "carnet.html",
-    "title": "📓 Mon carnet de bord",
-    "section": "",
-    "text": "Carnet de bord — Économie Contemporaine\n    Vos traces d'apprentissage\n    Sauvegardé automatiquement dans votre navigateur\n  \n  \n    \n      0\n      fiches remplies\n    \n    \n      0\n      mots écrits\n    \n    \n      0/5\n      modules engagés\n    \n  \n\n\n\n\n  Module 1\n  Module 2\n  Module 3\n  Module 4\n  Module 5\n  ✦ Synthèse\n\n\n\n\n  Module 1 — Grands principes de l'économie\n\n  \n    ① Ce que j'ai compris\n    Reformulez en 3–5 phrases le concept qui vous a semblé le plus important dans ce module. Utilisez vos propres mots, sans regarder vos notes.\n    \n    0 mot\n  \n\n  \n    ② Ce qui me pose encore question\n    Notez 1 à 3 points du cours qui restent flous pour vous. Formulez-les comme des questions précises — cela vous aidera à les poser en séance.\n    \n    0 mot\n  \n\n  \n    ③ Un exemple tiré de mon quotidien\n    Identifiez un arbitrage ou une externalité que vous avez vécus personnellement cette semaine. Décrivez-le en mobilisant le vocabulaire du cours.\n    \n    0 mot\n  \n\n  \n    ④ Mon article du fil rouge\n    Résumez en 5–8 lignes un article de presse en lien avec ce module. Indiquez la source, distinguez les faits (économie positive) des jugements (économie normative).\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  Module 2 — La croissance économique en débat\n\n  \n    ① Ce que j'ai compris\n    Expliquez avec vos mots pourquoi le PIB est imparfait comme mesure du bien-être. Citez deux limites concrètes.\n    \n    0 mot\n  \n\n  \n    ② Lecture d'un graphique INSEE\n    Rendez-vous sur insee.fr, cherchez l'évolution du PIB sur 10 ans. Décrivez ce que vous observez : tendances, ruptures, anomalies. Que se passe-t-il en 2020 ?\n    \n    0 mot\n  \n\n  \n    ③ Ma position dans le débat\n    Faut-il « dépasser le PIB » ou en rester à cet indicateur ? Défendez une position argumentée en 5–8 lignes. Mobilisez au moins un argument du cours et une référence concrète.\n    \n    0 mot\n  \n\n  \n    ④ Mon article du fil rouge\n    Trouvez un article sur la croissance française ou un indicateur alternatif (IDH, bien-être, empreinte carbone). Résumez et analysez.\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  Module 3 — La dette publique\n\n  \n    ① Ce que j'ai compris\n    Expliquez la différence entre déficit et dette avec une analogie personnelle (budget étudiant, budget familial).\n    \n    0 mot\n  \n\n  \n    ② Arguments du débat budgétaire\n    Après le débat en classe (ou la lecture du module), listez les 3 meilleurs arguments pour la discipline budgétaire et les 3 meilleurs contre l'austérité. Quel camp vous convainc le plus ?\n    \n    0 mot\n  \n\n  \n    ③ Mon article du fil rouge\n    Cherchez un article sur la procédure de déficit excessif ouverte contre la France. Qui parle ? Quelles solutions sont avancées ? Quels intérêts s'affrontent ?\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  Module 4 — Chômage, emploi et politiques publiques\n\n  \n    ① Ce que j'ai compris\n    Expliquez pourquoi le taux de chômage officiel (BIT) sous-estime souvent la réalité du mal-emploi. Citez les catégories non prises en compte.\n    \n    0 mot\n  \n\n  \n    ② Ma politique de l'emploi idéale\n    Si vous étiez ministre du Travail avec 5 Md€ de budget, quelle mesure adopteriez-vous en priorité ? Justifiez en une dizaine de lignes en mobilisant les concepts du cours.\n    \n    0 mot\n  \n\n  \n    ③ Mon article du fil rouge\n    Cherchez une actualité sur le marché du travail en France (données DARES, Pôle Emploi, réforme de l'assurance chômage). Analysez-la.\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  Module 5 — Économie internationale\n\n  \n    ① Ce que j'ai compris\n    Expliquez l'avantage comparatif avec un exemple que vous avez trouvé vous-même — différent de celui du cours.\n    \n    0 mot\n  \n\n  \n    ② Mondialisation : bilan personnel\n    Listez 3 façons dont la mondialisation affecte concrètement votre vie quotidienne (produits que vous consommez, applications que vous utilisez, emplois dans votre région). Puis: est-elle, selon vous, globalement positive ou négative pour la France ?\n    \n    0 mot\n  \n\n  \n    ③ Mon article du fil rouge\n    Cherchez un article sur les tensions commerciales récentes (droits de douane, relocalisations, chaînes d'approvisionnement). Analysez-le avec les outils du module.\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer\n    Sauvegardé ✓\n  \n\n\n\n\n  ✦ Synthèse de fin de semestre\n\n  \n    ① Le concept qui a le plus changé ma vision\n    Parmi tous les concepts vus dans le cours, lequel a le plus modifié votre façon de comprendre l'économie ou l'actualité ? Expliquez en quoi votre regard a changé.\n    \n    0 mot\n  \n\n  \n    ② Les liens entre modules\n    Montrez comment deux thèmes différents du cours s'articulent. Par exemple : comment la dette publique est-elle liée au chômage ? Comment la croissance affecte-t-elle le commerce international ?\n    \n    0 mot\n  \n\n  \n    ③ Ma question d'examen\n    Formulez vous-même une question d'examen de type « Présentez et discutez… » qui couvre au moins deux modules. Puis esquissez un plan en trois parties.\n    \n    0 mot\n  \n\n  \n    ④ Mon bilan d'apprentissage\n    Évaluez honnêtement votre progression sur le semestre. Quelles sont vos forces ? Vos lacunes persistantes ? Que feriez-vous différemment ?\n    \n    0 mot\n  \n\n  \n    💾 Enregistrer la synthèse\n    📄 Exporter tout le carnet\n    Sauvegardé ✓\n  \n\n\n\n\n\n\n  ℹ️ Confidentialité — Vos réponses sont sauvegardées uniquement dans votre navigateur (localStorage). Elles ne sont jamais envoyées à un serveur. Utilisez Exporter pour conserver une copie en dehors du navigateur."
-  },
-  {
-    "objectID": "fil-rouge.html",
-    "href": "fil-rouge.html",
-    "title": "📰 Le fil rouge — Saison 2024–2025",
-    "section": "",
-    "text": "Le fil rouge est un scénario narratif qui traverse tous les modules. Plutôt que d’étudier l’économie de manière abstraite, vous suivez l’actualité économique française de la rentrée 2024 à juin 2025 : une période marquée par des défis importants.\n\n\n\n\n\n\nImportantContexte de la saison 2024–2025\n\n\n\nLa France entre dans cette période avec une dette publique à 110 % du PIB, un déficit budgétaire autour de 5,5 % (bien au-delà des 3 % de Maastricht), un taux de chômage à 7,3 % qui résiste à la baisse, et une croissance atone (~1 %). Dans le même temps, la transition écologique exerce une pression croissante sur les choix budgétaires.\nUn contexte parfait pour mobiliser tous les outils du cours."
-  },
-  {
-    "objectID": "fil-rouge.html#quest-ce-que-le-fil-rouge",
-    "href": "fil-rouge.html#quest-ce-que-le-fil-rouge",
-    "title": "📰 Le fil rouge — Saison 2024–2025",
-    "section": "",
-    "text": "Le fil rouge est un scénario narratif qui traverse tous les modules. Plutôt que d’étudier l’économie de manière abstraite, vous suivez l’actualité économique française de la rentrée 2024 à juin 2025 : une période marquée par des défis importants.\n\n\n\n\n\n\nImportantContexte de la saison 2024–2025\n\n\n\nLa France entre dans cette période avec une dette publique à 110 % du PIB, un déficit budgétaire autour de 5,5 % (bien au-delà des 3 % de Maastricht), un taux de chômage à 7,3 % qui résiste à la baisse, et une croissance atone (~1 %). Dans le même temps, la transition écologique exerce une pression croissante sur les choix budgétaires.\nUn contexte parfait pour mobiliser tous les outils du cours."
-  },
-  {
-    "objectID": "fil-rouge.html#épisode-1-les-choix-impossibles-du-budget-2025",
-    "href": "fil-rouge.html#épisode-1-les-choix-impossibles-du-budget-2025",
-    "title": "📰 Le fil rouge — Saison 2024–2025",
-    "section": "Épisode 1 — Les choix impossibles du budget 2025",
-    "text": "Épisode 1 — Les choix impossibles du budget 2025\nEn lien avec : Module 1 (arbitrages) + Module 3 (dette)\nLe gouvernement présente en octobre 2024 un projet de budget avec 60 milliards d’économies. Chaque ligne de coupe illustre un arbitrage réel : réduire les dépenses de santé, ou de défense ? Augmenter les impôts des plus riches, ou couper les aides aux entreprises ?\nQuestions à explorer :\n\nQuels sont les arguments positifs et normatifs dans le débat budgétaire ?\nComment illustrer le coût d’opportunité d’une réduction des dépenses d’éducation ?\nQuelle est la part des intérêts de la dette dans le budget ? (Cherchez sur data.gouv.fr)"
-  },
-  {
-    "objectID": "fil-rouge.html#épisode-2-la-croissance-française-en-panne",
-    "href": "fil-rouge.html#épisode-2-la-croissance-française-en-panne",
-    "title": "📰 Le fil rouge — Saison 2024–2025",
-    "section": "Épisode 2 — La croissance française en panne ?",
-    "text": "Épisode 2 — La croissance française en panne ?\nEn lien avec : Module 2 (croissance)\nLa France croît moins vite que ses voisins européens. Le FMI et l’OCDE publient leurs prévisions : 1,1 % pour 2025, loin des 2 % espérés. Mais que mesure vraiment ce chiffre ?\nRessources à consulter :\n\nINSEE — Comptes nationaux\nFrance Culture — L’économie en questions : épisode sur la croissance\nAlternatives Économiques — dossier “Au-delà du PIB”\n\nActivité : Téléchargez les données INSEE sur le PIB trimestriel et reproduisez le graphique en R."
-  },
-  {
-    "objectID": "fil-rouge.html#épisode-3-lemploi-résiste-mais-pour-combien-de-temps",
-    "href": "fil-rouge.html#épisode-3-lemploi-résiste-mais-pour-combien-de-temps",
-    "title": "📰 Le fil rouge — Saison 2024–2025",
-    "section": "Épisode 3 — L’emploi résiste, mais pour combien de temps ?",
-    "text": "Épisode 3 — L’emploi résiste, mais pour combien de temps ?\nEn lien avec : Module 4 (chômage)\nLe marché du travail français montre des signes contradictoires : le chômage reste stable à 7,3 %, mais le sous-emploi progresse et les “travailleurs pauvres” se multiplient. L’IA et l’automatisation commencent à peser sur certains secteurs.\nDonnées en temps réel :\n\nÉvolution du chômage par tranche d'âge — Données illustratives (Source : DARES / INSEE)\n\n  5%10%15%20%\n  \n  2018201920202021202220232024\n\nMoins de 25 ans (16.0%)25–49 ans (6.9%)50 ans et plus (5.4%)"
-  },
-  {
-    "objectID": "fil-rouge.html#épisode-4-la-france-dans-la-mondialisation",
-    "href": "fil-rouge.html#épisode-4-la-france-dans-la-mondialisation",
-    "title": "📰 Le fil rouge — Saison 2024–2025",
-    "section": "Épisode 4 — La France dans la mondialisation",
-    "text": "Épisode 4 — La France dans la mondialisation\nEn lien avec : Module 5 (économie internationale)\nLa montée des tensions commerciales (USA–Chine, relocalisations post-COVID) interroge le modèle d’ouverture commerciale de la France. Les droits de douane américains sur les produits européens sont revenus dans l’actualité en 2025.\nDébat :\n\n“Le protectionnisme est-il une réponse légitime à la mondialisation ?”\n\nMobilisez le principe d’avantage comparatif, l’analyse des effets sur les consommateurs, et les données sur la balance commerciale française."
-  },
-  {
-    "objectID": "fil-rouge.html#votre-journal-de-bord",
-    "href": "fil-rouge.html#votre-journal-de-bord",
-    "title": "📰 Le fil rouge — Saison 2024–2025",
-    "section": "Votre journal de bord",
-    "text": "Votre journal de bord\n\n📓 Activité transversale — Tenir un journal économique\nTout au long du semestre, tenez un journal de 5 entrées (une par module) :\n\nUn article de presse en lien avec le module (source : Les Échos, Alternatives Éco, Le Monde)\nUn fait économique tiré de l’article, formulé de manière positive\nUn jugement de valeur présent dans l’article (économie normative)\nUn concept du cours que l’article illustre\nVotre opinion argumentée en 3 lignes\n\nCe journal est un excellent outil de préparation à l’examen écrit."
-  },
-  {
-    "objectID": "glossaire.html",
-    "href": "glossaire.html",
-    "title": "📖 Glossaire",
-    "section": "",
-    "text": "🔍\n  \n\n\n\n\n\n\n\n  Aucun terme ne correspond à votre recherche."
-  },
-  {
-    "objectID": "ressources.html",
-    "href": "ressources.html",
-    "title": "📚 Ressources",
-    "section": "",
-    "text": "Ouvrage\nAuteur(s)\nUsage recommandé\n\n\n\n\nQuestions économiques contemporaines\nGuerrero N. (2013)\nCours complet, lecture parallèle\n\n\nDCG5 : Économie contemporaine\nCastaing, Charles, Coquet, Kurowska\nExercices et QCM\n\n\nEconomix\nGoodwin M.\nIntroduction accessible en BD\n\n\nMacroéconomie\nCyriac Guillaumin (2020)\nApprofondissement positive/normative"
-  },
-  {
-    "objectID": "ressources.html#manuels-de-référence",
-    "href": "ressources.html#manuels-de-référence",
-    "title": "📚 Ressources",
-    "section": "",
-    "text": "Ouvrage\nAuteur(s)\nUsage recommandé\n\n\n\n\nQuestions économiques contemporaines\nGuerrero N. (2013)\nCours complet, lecture parallèle\n\n\nDCG5 : Économie contemporaine\nCastaing, Charles, Coquet, Kurowska\nExercices et QCM\n\n\nEconomix\nGoodwin M.\nIntroduction accessible en BD\n\n\nMacroéconomie\nCyriac Guillaumin (2020)\nApprofondissement positive/normative"
-  },
-  {
-    "objectID": "ressources.html#données-économiques-en-accès-libre",
-    "href": "ressources.html#données-économiques-en-accès-libre",
-    "title": "📚 Ressources",
-    "section": "Données économiques en accès libre",
-    "text": "Données économiques en accès libre\n\nINSEE — Données françaises : PIB, chômage, prix, comptes nationaux\nBanque de France — Données monétaires et financières\nBCE / Eurostat — Données européennes comparées\nOCDE — Comparaisons internationales\ndata.gouv.fr — Open data français"
-  },
-  {
-    "objectID": "ressources.html#podcasts-et-médias",
-    "href": "ressources.html#podcasts-et-médias",
-    "title": "📚 Ressources",
-    "section": "Podcasts et médias",
-    "text": "Podcasts et médias\n\n🎙️ France Culture — L’économie en questions — vulgarisation accessible\n🎙️ Xerfi Canal — analyses courtes de conjoncture\n📰 Alternatives Économiques — perspective critique et pédagogique\n📰 Les Échos — actualité économique française et internationale\n📰 Courrier International — regards croisés internationaux"
-  },
-  {
-    "objectID": "ressources.html#outils-r-recommandés-pour-les-tp",
-    "href": "ressources.html#outils-r-recommandés-pour-les-tp",
-    "title": "📚 Ressources",
-    "section": "Outils R recommandés pour les TP",
-    "text": "Outils R recommandés pour les TP\n# Packages essentiels\ninstall.packages(c(\n  \"ggplot2\",    # Visualisation\n  \"dplyr\",      # Manipulation de données\n  \"readxl\",     # Import Excel (données INSEE)\n  \"eurostat\",   # API Eurostat directe\n  \"insee\",      # API INSEE directe\n  \"knitr\",      # Tableaux dans Quarto\n  \"scales\"      # Formatage des axes\n))\n\n# Exemple : télécharger le chômage depuis l'API INSEE\nlibrary(insee)\nchomage &lt;- get_dataset(\"CHOMAGE-TRIM-NATIONAL\")"
-  },
-  {
-    "objectID": "ressources.html#charte-de-lecture-de-la-presse-économique",
-    "href": "ressources.html#charte-de-lecture-de-la-presse-économique",
-    "title": "📚 Ressources",
-    "section": "Charte de lecture de la presse économique",
-    "text": "Charte de lecture de la presse économique\nPour chaque article lu dans le cadre du fil rouge, posez-vous ces questions :\n\nSource : qui a écrit cet article ? Quel est le positionnement éditorial du média ?\nFaits vs opinions : distinguez les données vérifiables des jugements de valeur\nÉconomie positive vs normative : l’auteur décrit-il ou prescrit-il ?\nIntérêts en présence : qui a intérêt à défendre la thèse présentée ?\nConcepts mobilisés : quel(s) concept(s) du cours permettent d’analyser ce fait ?"
-  },
-  {
-    "objectID": "modules/exam-blanc.html",
-    "href": "modules/exam-blanc.html",
-    "title": "📝 Examen blanc",
-    "section": "",
-    "text": "Choisissez un sujet pour démarrer. Chaque sujet comprend 20 questions QCM (10 pts, 0,5 pt chacune) et une question de réflexion sur dossier documentaire (10 pts) — format identique à l'examen final.\n    \n      \n        Sujet 1\n        Fondements & Croissance\n        M1 + M22hStandard\n        Rareté, marchés, PIB, facteurs de croissance, IDH — Dossier : croissance et inégalités\n      \n      \n        Sujet 2\n        Politiques macroéconomiques\n        M3 + M42hApprofondissement\n        Budget, dette, Maastricht, chômage — Dossier : austérité et emploi\n      \n      \n        Sujet 3\n        Synthèse générale\n        M1→M53hApprofondissement\n        Tous les thèmes + économie internationale — Dossier : compétitivité française\n      \n    \n  \n\n  \n    \n      \n      \n      \n    \n    \n      Progression QCM0 / 20\n      \n    \n    📋 Partie I — QCM (20 questions · 0,5 pt chacune · total 10 pts)\n    \n    ✍️ Partie II — Question de réflexion sur dossier documentaire (10 pts)\n    \n    \n      📤 Soumettre et corriger\n      ← Choisir un autre sujet\n    \n  \n\n  \n    \n      Score QCM\n      \n      sur 10 points (0,5 pt par bonne réponse)\n      \n        Bonnes réponses\n        Erreurs\n        Mention\n      \n      \n    \n    📖 Correction — Partie II\n    \n    \n      ← Choisir un autre sujet\n      👁 Revoir mes réponses QCM"
-  },
-  {
-    "objectID": "modules/flashcards.html",
-    "href": "modules/flashcards.html",
-    "title": "🃏 Flashcards",
-    "section": "",
-    "text": "0Total\n      0Vues\n      0Maîtrisées ✓\n      0À revoir ✗\n    \n  \n  \n    Carte 1 / ?\n    \n  \n  \n    \n      \n        \n        Chargement…\n        Cliquez pour révéler la définition\n      \n      \n        \n        \n        \n        \n      \n    \n  \n  \n    ✗ À revoir\n    → Suivante\n    ✓ Je sais !\n  \n  \n    🎉 Série terminée !\n    \n    \n      🔄 Recommencer tout\n      ✗ Revoir les non-maîtrisées"
-  },
-  {
-    "objectID": "modules/m2-croissance.html",
-    "href": "modules/m2-croissance.html",
-    "title": "Module 2 — La croissance économique en débat",
-    "section": "",
-    "text": "NoteObjectifs du module\n\n\n\n\nSavoir calculer et interpréter le taux de croissance du PIB\nIdentifier les facteurs de croissance (travail, capital, progrès technique)\nComprendre les limites du PIB comme indicateur de bien-être\nAnalyser les enjeux de la croissance durable"
-  },
-  {
-    "objectID": "modules/m2-croissance.html#quest-ce-que-la-croissance-économique",
-    "href": "modules/m2-croissance.html#quest-ce-que-la-croissance-économique",
-    "title": "Module 2 — La croissance économique en débat",
-    "section": "1. Qu’est-ce que la croissance économique ?",
-    "text": "1. Qu’est-ce que la croissance économique ?\nLa croissance économique désigne l’augmentation soutenue de la production d’une économie sur une période longue. Elle se mesure principalement par le taux de variation du PIB en volume.\n\\[\\text{Taux de croissance} = \\frac{\\text{PIB}_t - \\text{PIB}_{t-1}}{\\text{PIB}_{t-1}} \\times 100\\]\n\nTaux de croissance du PIB français (%) — Source : INSEE, comptes nationaux base 2020\n\n  -8%-4%0%4%8%\n  \n  201020112012201320142015201620172018201920202021202220232024\n\n\n  Croissance positive\n  Récession / contraction"
-  },
-  {
-    "objectID": "modules/m2-croissance.html#les-facteurs-de-croissance",
-    "href": "modules/m2-croissance.html#les-facteurs-de-croissance",
-    "title": "Module 2 — La croissance économique en débat",
-    "section": "2. Les facteurs de croissance",
-    "text": "2. Les facteurs de croissance\nLa fonction de production de Solow décompose la croissance en trois sources :\n\n\n\n\n\n\n\n\nFacteur\nDescription\nExemple\n\n\n\n\nTravail (L)\nQuantité et qualité de main-d’œuvre\nHausse du taux d’activité, formation\n\n\nCapital (K)\nStock d’équipements productifs\nInvestissement en machines, bâtiments\n\n\nProgrès technique (A)\nProductivité totale des facteurs\nInnovation, R&D, numérique"
-  },
-  {
-    "objectID": "modules/m2-croissance.html#les-limites-du-pib",
-    "href": "modules/m2-croissance.html#les-limites-du-pib",
-    "title": "Module 2 — La croissance économique en débat",
-    "section": "3. Les limites du PIB",
-    "text": "3. Les limites du PIB\n\nFil rouge — “Le PIB ne dit pas tout”\nEn 2024, la France a connu une croissance de ~1,1 % du PIB. Mais dans le même temps : les inégalités de revenus ont progressé, les émissions de CO₂ n’ont pas atteint les objectifs climatiques, et le bien-être subjectif des Français est resté stable.\n→ Faut-il compléter le PIB par d’autres indicateurs ?\n\n\n📊 Activité — Lire un graphe de l’INSEE\nRendez-vous sur insee.fr → Statistiques → Indicateurs de richesse.\n\nComparez l’évolution du PIB et de l’IDH (Indice de Développement Humain) sur 20 ans.\nCherchez le taux de pauvreté en France : suit-il le PIB ?\nConclusion : le PIB est-il un bon résumé du “progrès” d’une société ?"
-  },
-  {
-    "objectID": "modules/m2-croissance.html#qcm-de-consolidation",
-    "href": "modules/m2-croissance.html#qcm-de-consolidation",
-    "title": "Module 2 — La croissance économique en débat",
-    "section": "✅ QCM de consolidation",
-    "text": "✅ QCM de consolidation\n\nQuestion 1 — Le PIB\n\n  Parmi ces propositions, laquelle est une limite reconnue du PIB comme indicateur de bien-être ?\n   Le PIB ne mesure pas la production des entreprises étrangères\n   Le PIB ne prend pas en compte les inégalités de distribution des revenus\n   Le PIB surestime la production industrielle par rapport aux services\n   Le PIB est calculé chaque mois ce qui le rend peu fiable\n  \n  Valider\n\n\n\nQuestion 2 — Facteurs de croissance\n\n  Selon les théories de la croissance endogène, quel est le principal moteur de la croissance à long terme ?\n   L'augmentation de la population active\n   L'accumulation de capital physique (machines, équipements)\n   Le progrès technique et l'innovation\n   La consommation des ménages\n  \n  Valider\n\n\n\nQuestion 3 — Indicateurs alternatifs\n\n  L'IDH (Indice de Développement Humain) mesure :\n   L'espérance de vie, le niveau d'éducation et le revenu\n   La croissance économique, l'inflation et le chômage\n   Le PIB par habitant et le niveau des inégalités\n   Le bonheur déclaré et le niveau de vie matériel\n  \n  Valider\n\n\n\n  ← Module 1\n  \n     Module 3 — Dette publique →"
-  },
-  {
-    "objectID": "modules/m4-chomage.html",
-    "href": "modules/m4-chomage.html",
-    "title": "Module 4 — Chômage, emploi et politiques publiques",
-    "section": "",
-    "text": "NoteObjectifs du module\n\n\n\n\nMaîtriser les définitions et mesures du chômage (BIT, INSEE)\nComprendre les déterminants du marché du travail\nDistinguer politiques actives et passives de l’emploi\nAnalyser l’efficacité des politiques publiques en matière d’emploi"
-  },
-  {
-    "objectID": "modules/m4-chomage.html#mesurer-le-chômage",
-    "href": "modules/m4-chomage.html#mesurer-le-chômage",
-    "title": "Module 4 — Chômage, emploi et politiques publiques",
-    "section": "1. Mesurer le chômage",
-    "text": "1. Mesurer le chômage\n\nLa définition du BIT\nSelon le Bureau International du Travail, est chômeur toute personne qui :\n\nEst sans emploi sur la semaine de référence\nEst disponible pour travailler dans les deux semaines\nA effectué des démarches actives de recherche dans le mois précédent\n\n\nTaux de chômage en France (%) — Source : INSEE, enquête Emploi\n\n  7%8%9%10%11%\n  \n  \n  \n  Seuil plein emploi ~7 %\n  201020112012201320142015201620172018201920202021202220232024"
-  },
-  {
-    "objectID": "modules/m4-chomage.html#les-types-de-chômage",
-    "href": "modules/m4-chomage.html#les-types-de-chômage",
-    "title": "Module 4 — Chômage, emploi et politiques publiques",
-    "section": "2. Les types de chômage",
-    "text": "2. Les types de chômage\n\n\n\n\n\n\n\n\nType\nDéfinition\nPolitique adaptée\n\n\n\n\nFrictionnel\nEntre deux emplois (transition normale)\nAméliorer l’information sur le marché\n\n\nStructurel\nInadéquation qualifications/postes disponibles\nFormation, reconversion\n\n\nConjoncturel\nLié au ralentissement économique\nPolitiques de relance\n\n\nTechnologique\nRemplacement par le capital/IA\nTransition professionnelle"
-  },
-  {
-    "objectID": "modules/m4-chomage.html#politiques-actives-vs-passives",
-    "href": "modules/m4-chomage.html#politiques-actives-vs-passives",
-    "title": "Module 4 — Chômage, emploi et politiques publiques",
-    "section": "3. Politiques actives vs passives",
-    "text": "3. Politiques actives vs passives\n\n🔎 Simulation — Vous êtes conseiller du ministre\nLa France a un taux de chômage de 7,3 %. Vous disposez de 5 milliards € de budget supplémentaire. Choisissez parmi :\n\nA : 500 000 formations professionnelles à 10 000 € chacune\nB : Réduction des charges patronales pour les bas salaires (3 Md€)\nC : Augmentation des allocations chômage (+20 % pendant 1 an)\nD : Création directe d’emplois publics aidés (50 000 postes)\n\nArgumentez votre choix en mobilisant les concepts du cours."
-  },
-  {
-    "objectID": "modules/m4-chomage.html#qcm-de-consolidation",
-    "href": "modules/m4-chomage.html#qcm-de-consolidation",
-    "title": "Module 4 — Chômage, emploi et politiques publiques",
-    "section": "✅ QCM de consolidation",
-    "text": "✅ QCM de consolidation\n\nQuestion 1 — Définition du chômage\n\n  Selon la définition du BIT, un chômeur est une personne qui :\n   N'a pas d'emploi et a renoncé à en chercher un\n   Est sans emploi, disponible et en recherche active d'emploi\n   Travaille moins de 35 heures par semaine\n   Perçoit des allocations chômage de Pôle Emploi\n  \n  Valider\n\n\n\nQuestion 2 — Politiques de l’emploi\n\n  Les politiques actives de l'emploi visent à :\n   Améliorer le fonctionnement du marché du travail via la formation et les incitations\n   Indemniser les personnes privées d'emploi via l'assurance chômage\n   Réduire le temps de travail pour partager l'emploi disponible\n   Contrôler l'immigration pour protéger le marché du travail national\n  \n  Valider\n\n\n\nQuestion 3 — Types de chômage\n\n  Le chômage frictionnel désigne :\n   Le chômage lié à une récession économique grave\n   L'inadéquation entre les compétences des travailleurs et les besoins des entreprises\n   Les personnes momentanément entre deux emplois lors d'une transition\n   Le chômage causé par l'automatisation et les robots\n  \n  Valider\n\n\n\n  ← Module 3\n  \n     Module 5 — Éco. internationale →"
-  },
-  {
-    "objectID": "modules/m5-international.html",
-    "href": "modules/m5-international.html",
-    "title": "Module 5 — Économie internationale",
-    "section": "",
-    "text": "NoteObjectifs du module\n\n\n\n\nComprendre le principe de l’avantage comparatif (Ricardo)\nAnalyser les effets des taux de change sur les échanges\nDistinguer les instruments de politique commerciale\nPorter un regard critique sur la mondialisation"
-  },
-  {
-    "objectID": "modules/m5-international.html#pourquoi-commercer-lavantage-comparatif",
-    "href": "modules/m5-international.html#pourquoi-commercer-lavantage-comparatif",
-    "title": "Module 5 — Économie internationale",
-    "section": "1. Pourquoi commercer ? L’avantage comparatif",
-    "text": "1. Pourquoi commercer ? L’avantage comparatif\nDavid Ricardo (1817) démontre qu’un pays a intérêt à se spécialiser même s’il est moins efficace dans toutes les productions.\n\nExemple d'avantage comparatif : France et Chine — Nombre d'heures de travail par unité produite\n\n\n\n\nPays\nVin (h/unité)\nTextile (h/unité)\nSpécialisation\n\n\n\n\nFrance\n10 h\n15 h\n→ Vin\n\n\nChine\n20 h\n18 h\n→ Textile\n\n\n\n\n\n  La France a un avantage absolu dans les deux secteurs, mais son avantage relatif est plus fort dans le vin.\n\n\nLa France est plus productive dans les deux secteurs. Pourtant, elle a avantage à se spécialiser dans le vin (son avantage relatif est plus fort) et à importer du textile de Chine."
-  },
-  {
-    "objectID": "modules/m5-international.html#les-effets-du-taux-de-change",
-    "href": "modules/m5-international.html#les-effets-du-taux-de-change",
-    "title": "Module 5 — Économie internationale",
-    "section": "2. Les effets du taux de change",
-    "text": "2. Les effets du taux de change\n\nÉvolution EUR/USD — Impact sur la compétitivité française (données illustratives)\n\n  0.901.001.101.201.30\n  \n  Parité EUR = USD\n  \n  2015: 1.092016: 1.112017: 1.132018: 1.182019: 1.122020: 1.142021: 1.222022: 1.052023: 1.082024: 1.09\n  2015201620172018201920202021202220232024"
-  },
-  {
-    "objectID": "modules/m5-international.html#les-instruments-de-politique-commerciale",
-    "href": "modules/m5-international.html#les-instruments-de-politique-commerciale",
-    "title": "Module 5 — Économie internationale",
-    "section": "3. Les instruments de politique commerciale",
-    "text": "3. Les instruments de politique commerciale\n\n\n\n\n\n\n\n\n\nInstrument\nDéfinition\nEffet sur les producteurs\nEffet sur les consommateurs\n\n\n\n\nDroit de douane\nTaxe sur les importations\nProtecteur ↑\nPrix plus élevés ↓\n\n\nQuota\nLimite en volume des importations\nProtecteur ↑\nPénurie possible ↓\n\n\nSubvention export\nAide publique aux exportateurs\nCompétitivité ↑\nCoût fiscal ↓\n\n\nLibre-échange\nSuppression de toutes les barrières\nConcurrence ↓\nPrix bas ↑"
-  },
-  {
-    "objectID": "modules/m5-international.html#qcm-de-consolidation",
-    "href": "modules/m5-international.html#qcm-de-consolidation",
-    "title": "Module 5 — Économie internationale",
-    "section": "✅ QCM de consolidation",
-    "text": "✅ QCM de consolidation\n\nQuestion 1 — Avantage comparatif\n\n  Le principe d'avantage comparatif (Ricardo) signifie qu'un pays a intérêt à se spécialiser :\n   Dans la production où son désavantage relatif est le plus faible\n   Uniquement dans les secteurs où il est le plus productif au monde\n   Dans les secteurs où sa main-d'œuvre est la moins chère\n   Dans les industries à forte valeur ajoutée uniquement\n  \n  Valider\n\n\n\nQuestion 2 — Taux de change\n\n  Une dépréciation de l'euro par rapport au dollar a pour effet de :\n   Renchérir les exportations européennes et alléger les importations\n   Réduire à la fois les exportations et les importations européennes\n   Rendre les exportations européennes moins chères et les importations plus chères\n   N'avoir aucun effet sur les échanges commerciaux\n  \n  Valider\n\n\n\nQuestion 3 — Politique commerciale\n\n  Un droit de douane est :\n   Une limite en volume imposée aux produits importés\n   Une taxe prélevée sur les produits importés à la frontière\n   Une aide publique accordée aux entreprises exportatrices\n   Un accord bilatéral de commerce préférentiel\n  \n  Valider\n\n\n\n  ← Module 4\n  \n     Mon bilan de progression →"
   }
 ]
