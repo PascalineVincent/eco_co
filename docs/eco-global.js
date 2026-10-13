@@ -237,6 +237,12 @@ function trackLastPage() {
   if (key && !path.endsWith('index.html') && !path.endsWith('/')) {
     localStorage.setItem(LAST_PAGE_KEY, JSON.stringify({ url: path, label: PAGE_LABELS[key], time: Date.now() }));
   }
+  // Thématiques de l'année : une page par thématique, libellé tiré du titre de la page
+  else if (/\/thematiques\/(en-cours|20\d\d-\d\d)\/[^/]+\.html$/.test(path)) {
+    const h1 = document.querySelector('h1.title');
+    const titre = h1 ? h1.textContent.trim() : 'Thématique';
+    localStorage.setItem(LAST_PAGE_KEY, JSON.stringify({ url: path, label: 'Thématique — ' + titre, time: Date.now() }));
+  }
 }
 
 function showResumeButton() {

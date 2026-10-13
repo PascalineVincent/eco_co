@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Économie Contemporaine – Économie Contemporaine — L1 EG</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -30,17 +33,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3c20794fc6d53403aa35f33823adc583.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0985e6881e6f135d86ba43e8f516d019.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,9 +72,67 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Recherche"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-themes-accueil .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-emoji','listing-ordre','listing-prepa','listing-categories','listing-path',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-_quarto-vars","listing-language","listing-annee","listing-toc","listing-toc-title","listing-include-after-body","listing-title","listing-description","listing-emoji","listing-ordre","listing-prepa","listing-categories","listing-note","listing-path","listing-outputHref","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-themes-accueil'] = new List('listing-themes-accueil', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,600;1,8..60,300&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -82,8 +144,6 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Économie Contemporaine — L1 EG</span>
     </a>
@@ -151,6 +211,10 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./thematiques/index.html"> 
+<span class="menu-text">🧭 Thématiques</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./fil-rouge.html"> 
 <span class="menu-text">📰 Fil rouge</span></a>
@@ -236,7 +300,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Ce site accompagne le cours en présentiel. Il propose un <strong>parcours progressif</strong> avec :</p>
 <ul>
 <li>Un <strong>diagnostic initial</strong> pour identifier vos acquis</li>
-<li><strong>5 modules</strong> thématiques avec cours, exemples et données réelles</li>
+<li><strong>5 modules</strong> avec cours, exemples et données réelles</li>
+<li>Des <strong>thématiques de l’année</strong> : de grandes questions pour prolonger le cours (accroche, travail préparatoire, lectures)</li>
 <li>Des <strong>QCM</strong> après chaque notion-clé pour consolider vos apprentissages</li>
 <li>Un <strong>fil rouge narratif</strong> : vous suivez l’actualité économique française tout au long du semestre</li>
 <li>Des <strong>activités engageantes</strong> : débats, simulations, analyses de graphiques</li>
@@ -290,6 +355,22 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <hr>
 </section>
+<section id="les-thématiques-de-lannée-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2076617220616e6e6565203e7d7d" class="level2">
+<h2 class="anchored" data-anchor-id="les-thématiques-de-lannée-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2076617220616e6e6565203e7d7d">Les thématiques de l’année 2026-27 🧭</h2>
+<p>Au-delà des 5 modules, le cours se prolonge par <strong>cinq grandes questions d’actualité</strong> : inégalités mondiales, bonheur, école, temps de travail, écarts de salaires femmes-hommes. Chaque fiche propose une accroche, des questions, un travail préparatoire et des conseils de lecture.</p>
+<div id="listing-themes-accueil" class="quarto-listing quarto-listing-container-custom">
+<div class="list theme-grid">
+<p><a class="module-card theme-card" href="./thematiques/en-cours/01-inegalites-mondiales.html"><span class="module-num">Thématique 1</span><span class="module-title">🌍 Les inégalités mondiales reculent-elles vraiment ?</span><span class="module-desc">Sortie de la pauvreté en Asie, « courbe de l’éléphant » de Milanovic, écarts Nord-Sud, rôle de l’aide au développement : le monde est-il plus égal qu’il y a trente ans ?</span><span class="theme-badges"><span class="badge-tag theme-badge-time">🕐 ≈ 45 min</span><span class="badge-tag theme-badge-mod">M2</span><span class="badge-tag theme-badge-mod">M5</span></span></a></p>
+<p><a class="module-card theme-card" href="./thematiques/en-cours/02-economie-du-bonheur.html"><span class="module-num">Thématique 2</span><span class="module-title">😊 L’économie du bonheur : l’argent fait-il vraiment le bonheur ?</span><span class="module-desc">Paradoxe d’Easterlin, revenu et satisfaction de vie, limites du PIB comme boussole : peut-on mesurer le bien-être d’une nation ?</span><span class="theme-badges"><span class="badge-tag theme-badge-time">🕐 ≈ 30 min</span><span class="badge-tag theme-badge-mod">M1</span><span class="badge-tag theme-badge-mod">M2</span></span></a></p>
+<p><a class="module-card theme-card" href="./thematiques/en-cours/03-ecole-et-inegalites.html"><span class="module-num">Thématique 3</span><span class="module-title">🎓 L’école réduit-elle les inégalités ou les reproduit-elle ?</span><span class="module-desc">Ascenseur social, origine sociale et réussite scolaire, effet des classes réduites, éducation prioritaire : que disent vraiment les données sur le rôle de l’école ?</span><span class="theme-badges"><span class="badge-tag theme-badge-time">🕐 ≈ 45 min</span><span class="badge-tag theme-badge-mod">M1</span><span class="badge-tag theme-badge-mod">M2</span><span class="badge-tag theme-badge-mod">M4</span></span></a></p>
+<p><a class="module-card theme-card" href="./thematiques/en-cours/04-travailler-moins.html"><span class="module-num">Thématique 4</span><span class="module-title">⏳ Faut-il travailler moins pour vivre mieux ?</span><span class="module-desc">Semaine de quatre jours, télétravail, réforme des retraites, rapport au travail des jeunes générations : productivité, bien-être et partage du temps de travail.</span><span class="theme-badges"><span class="badge-tag theme-badge-time">🕐 ≈ 40 min</span><span class="badge-tag theme-badge-mod">M2</span><span class="badge-tag theme-badge-mod">M4</span></span></a></p>
+<p><a class="module-card theme-card" href="./thematiques/en-cours/05-genre-salaires-identite.html"><span class="module-num">Thématique 5</span><span class="module-title">⚖️ Pourquoi les femmes gagnent-elles encore moins que les hommes, et l’identité y est-elle pour quelque chose ?</span><span class="module-desc">Normes de genre, « motherhood penalty », choix de carrière, théorie d’Akerlof et Kranton sur l’identité : quand les normes sociales pèsent autant que les compétences sur nos salaires.</span><span class="theme-badges"><span class="badge-tag theme-badge-time">🕐 ≈ 45 min</span><span class="badge-tag theme-badge-mod">M1</span><span class="badge-tag theme-badge-mod">M4</span></span></a></p>
+</div>
+<div class="listing-no-matching d-none">Aucun article correspondant</div>
+</div>
+<p>→ <a href="./thematiques/index.html">Voir toutes les thématiques</a></p>
+<hr>
+</section>
 <section id="le-fil-rouge-narratif" class="level2">
 <h2 class="anchored" data-anchor-id="le-fil-rouge-narratif">Le fil rouge narratif 📰</h2>
 <div class="fil-rouge-box">
@@ -323,6 +404,7 @@ ul.task-list li input[type="checkbox"] {
     → Voir mon profil complet et mes badges
   </a>
 </div>
+
 
 
 </section>

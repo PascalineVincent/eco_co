@@ -1,0 +1,57 @@
+[
+  {
+    "listing": "/thematiques/index.html",
+    "items": [
+      "/thematiques/en-cours/01-inegalites-mondiales.html",
+      "/thematiques/en-cours/02-economie-du-bonheur.html",
+      "/thematiques/en-cours/03-ecole-et-inegalites.html",
+      "/thematiques/en-cours/04-travailler-moins.html",
+      "/thematiques/en-cours/05-genre-salaires-identite.html"
+    ]
+  },
+  {
+    "listing": "/modules/m4-chomage.html",
+    "items": [
+      "/thematiques/en-cours/03-ecole-et-inegalites.html",
+      "/thematiques/en-cours/04-travailler-moins.html",
+      "/thematiques/en-cours/05-genre-salaires-identite.html"
+    ]
+  },
+  {
+    "listing": "/modules/m2-croissance.html",
+    "items": [
+      "/thematiques/en-cours/01-inegalites-mondiales.html",
+      "/thematiques/en-cours/02-economie-du-bonheur.html",
+      "/thematiques/en-cours/03-ecole-et-inegalites.html",
+      "/thematiques/en-cours/04-travailler-moins.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/thematiques/en-cours/01-inegalites-mondiales.html",
+      "/thematiques/en-cours/02-economie-du-bonheur.html",
+      "/thematiques/en-cours/03-ecole-et-inegalites.html",
+      "/thematiques/en-cours/04-travailler-moins.html",
+      "/thematiques/en-cours/05-genre-salaires-identite.html"
+    ]
+  },
+  {
+    "listing": "/modules/m1-principes.html",
+    "items": [
+      "/thematiques/en-cours/02-economie-du-bonheur.html",
+      "/thematiques/en-cours/03-ecole-et-inegalites.html",
+      "/thematiques/en-cours/05-genre-salaires-identite.html"
+    ]
+  },
+  {
+    "listing": "/modules/m3-dette.html",
+    "items": []
+  },
+  {
+    "listing": "/modules/m5-international.html",
+    "items": [
+      "/thematiques/en-cours/01-inegalites-mondiales.html"
+    ]
+  }
+]
